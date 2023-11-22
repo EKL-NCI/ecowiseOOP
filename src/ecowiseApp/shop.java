@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author erink
+ * @author Erin Lee
  */
 public class shop {
     private ArrayList <product> products;

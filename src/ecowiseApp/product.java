@@ -6,7 +6,7 @@ package ecowiseApp;
 
 /**
  *
- * @author erink
+ * @author Erin Lee
  */
 public class product {
     protected double price;

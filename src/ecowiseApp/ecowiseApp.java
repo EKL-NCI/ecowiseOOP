@@ -3,10 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package ecowiseApp;
-
+import javax.swing.JFrame;
 /**
  *
- * @author erink
+ * @author Erin Lee
  */
 public class ecowiseApp {
 
