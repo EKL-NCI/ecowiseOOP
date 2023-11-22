@@ -69,6 +69,22 @@ public class EcowiseGUI extends javax.swing.JFrame {
         product5 = new javax.swing.JLabel();
         product8 = new javax.swing.JLabel();
         product7 = new javax.swing.JLabel();
+        product8Desc = new javax.swing.JLabel();
+        product1Desc = new javax.swing.JLabel();
+        product2Desc = new javax.swing.JLabel();
+        product3Desc = new javax.swing.JLabel();
+        product4Desc = new javax.swing.JLabel();
+        product5Desc = new javax.swing.JLabel();
+        product6Desc = new javax.swing.JLabel();
+        product7Desc = new javax.swing.JLabel();
+        product8Btn = new javax.swing.JButton();
+        product1Btn = new javax.swing.JButton();
+        product2Btn = new javax.swing.JButton();
+        product3Btn = new javax.swing.JButton();
+        product4Btn = new javax.swing.JButton();
+        product5Btn = new javax.swing.JButton();
+        product6Btn = new javax.swing.JButton();
+        product7Btn = new javax.swing.JButton();
         calcPage = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         gamePage = new javax.swing.JPanel();
@@ -346,16 +362,72 @@ public class EcowiseGUI extends javax.swing.JFrame {
         shopPage.add(product3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 70, -1, -1));
 
         product6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/productFiller.png"))); // NOI18N
-        shopPage.add(product6, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 260, -1, -1));
+        shopPage.add(product6, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 270, -1, -1));
 
         product5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/productFiller.png"))); // NOI18N
-        shopPage.add(product5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, -1, -1));
+        shopPage.add(product5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, -1, -1));
 
         product8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/productFiller.png"))); // NOI18N
-        shopPage.add(product8, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 260, -1, -1));
+        shopPage.add(product8, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 270, -1, -1));
 
         product7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/productFiller.png"))); // NOI18N
-        shopPage.add(product7, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 260, -1, -1));
+        shopPage.add(product7, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 270, -1, -1));
+
+        product8Desc.setForeground(new java.awt.Color(50, 50, 50));
+        product8Desc.setText("Name + Price");
+        shopPage.add(product8Desc, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 370, 80, 30));
+
+        product1Desc.setForeground(new java.awt.Color(50, 50, 50));
+        product1Desc.setText("Name + Price");
+        shopPage.add(product1Desc, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, 80, 30));
+
+        product2Desc.setForeground(new java.awt.Color(50, 50, 50));
+        product2Desc.setText("Name + Price");
+        shopPage.add(product2Desc, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 170, 80, 30));
+
+        product3Desc.setForeground(new java.awt.Color(50, 50, 50));
+        product3Desc.setText("Name + Price");
+        shopPage.add(product3Desc, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 170, 80, 30));
+
+        product4Desc.setForeground(new java.awt.Color(50, 50, 50));
+        product4Desc.setText("Name + Price");
+        shopPage.add(product4Desc, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 170, 80, 30));
+
+        product5Desc.setForeground(new java.awt.Color(50, 50, 50));
+        product5Desc.setText("Name + Price");
+        shopPage.add(product5Desc, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 370, 80, 30));
+
+        product6Desc.setForeground(new java.awt.Color(50, 50, 50));
+        product6Desc.setText("Name + Price");
+        shopPage.add(product6Desc, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 370, 80, 30));
+
+        product7Desc.setForeground(new java.awt.Color(50, 50, 50));
+        product7Desc.setText("Name + Price");
+        shopPage.add(product7Desc, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 370, 80, 30));
+
+        product8Btn.setText("Add to Cart");
+        shopPage.add(product8Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 400, -1, -1));
+
+        product1Btn.setText("Add to Cart");
+        shopPage.add(product1Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, -1, -1));
+
+        product2Btn.setText("Add to Cart");
+        shopPage.add(product2Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 200, -1, -1));
+
+        product3Btn.setText("Add to Cart");
+        shopPage.add(product3Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 200, -1, -1));
+
+        product4Btn.setText("Add to Cart");
+        shopPage.add(product4Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 200, -1, -1));
+
+        product5Btn.setText("Add to Cart");
+        shopPage.add(product5Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 400, -1, -1));
+
+        product6Btn.setText("Add to Cart");
+        shopPage.add(product6Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 400, -1, -1));
+
+        product7Btn.setText("Add to Cart");
+        shopPage.add(product7Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 400, -1, -1));
 
         mainPanel.add(shopPage, "2");
 
@@ -537,13 +609,29 @@ public class EcowiseGUI extends javax.swing.JFrame {
     private javax.swing.JLabel logoLbl;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JLabel product1;
+    private javax.swing.JButton product1Btn;
+    private javax.swing.JLabel product1Desc;
     private javax.swing.JLabel product2;
+    private javax.swing.JButton product2Btn;
+    private javax.swing.JLabel product2Desc;
     private javax.swing.JLabel product3;
+    private javax.swing.JButton product3Btn;
+    private javax.swing.JLabel product3Desc;
     private javax.swing.JLabel product4;
+    private javax.swing.JButton product4Btn;
+    private javax.swing.JLabel product4Desc;
     private javax.swing.JLabel product5;
+    private javax.swing.JButton product5Btn;
+    private javax.swing.JLabel product5Desc;
     private javax.swing.JLabel product6;
+    private javax.swing.JButton product6Btn;
+    private javax.swing.JLabel product6Desc;
     private javax.swing.JLabel product7;
+    private javax.swing.JButton product7Btn;
+    private javax.swing.JLabel product7Desc;
     private javax.swing.JLabel product8;
+    private javax.swing.JButton product8Btn;
+    private javax.swing.JLabel product8Desc;
     private javax.swing.JLabel shopLbl;
     private javax.swing.JPanel shopPage;
     private javax.swing.JPanel shopPanel;
