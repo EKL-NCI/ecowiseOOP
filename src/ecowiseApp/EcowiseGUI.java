@@ -86,7 +86,20 @@ public class EcowiseGUI extends javax.swing.JFrame {
         product6Btn = new javax.swing.JButton();
         product7Btn = new javax.swing.JButton();
         calcPage = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
+        dryerLabel = new javax.swing.JLabel();
+        dryerTextField = new javax.swing.JTextField();
+        dryerLabel1 = new javax.swing.JLabel();
+        dryerTextField1 = new javax.swing.JTextField();
+        dryerLabel2 = new javax.swing.JLabel();
+        dryerTextField2 = new javax.swing.JTextField();
+        dryerLabel3 = new javax.swing.JLabel();
+        dryerTextField3 = new javax.swing.JTextField();
+        dryerLabel4 = new javax.swing.JLabel();
+        dryerTextField4 = new javax.swing.JTextField();
+        dryerLabel5 = new javax.swing.JLabel();
+        dryerTextField5 = new javax.swing.JTextField();
+        dryerLabel6 = new javax.swing.JLabel();
+        dryerTextField6 = new javax.swing.JTextField();
         gamePage = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
 
@@ -273,7 +286,6 @@ public class EcowiseGUI extends javax.swing.JFrame {
 
         bannerPanel.setBackground(new java.awt.Color(212, 232, 193));
 
-        exitBtn.setBackground(new java.awt.Color(255, 255, 255));
         exitBtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         exitBtn.setForeground(new java.awt.Color(50, 50, 50));
         exitBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/exitBtn.png"))); // NOI18N
@@ -434,24 +446,145 @@ public class EcowiseGUI extends javax.swing.JFrame {
         calcPage.setBackground(new java.awt.Color(255, 255, 255));
         calcPage.setMinimumSize(new java.awt.Dimension(849, 468));
 
-        jLabel3.setForeground(new java.awt.Color(50, 50, 50));
-        jLabel3.setText("Calculator");
+        dryerLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        dryerLabel.setText("Dryer");
+
+        dryerTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dryerTextFieldActionPerformed(evt);
+            }
+        });
+
+        dryerLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        dryerLabel1.setText("Tv");
+
+        dryerTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dryerTextField1ActionPerformed(evt);
+            }
+        });
+
+        dryerLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        dryerLabel2.setText("Water Heater");
+
+        dryerTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dryerTextField2ActionPerformed(evt);
+            }
+        });
+
+        dryerLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        dryerLabel3.setText("Dryer");
+
+        dryerTextField3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dryerTextField3ActionPerformed(evt);
+            }
+        });
+
+        dryerLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        dryerLabel4.setText("Washing Machine");
+
+        dryerTextField4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dryerTextField4ActionPerformed(evt);
+            }
+        });
+
+        dryerLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        dryerLabel5.setText("Appliances");
+
+        dryerTextField5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dryerTextField5ActionPerformed(evt);
+            }
+        });
+
+        dryerLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        dryerLabel6.setText("Freezer");
+
+        dryerTextField6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dryerTextField6ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout calcPageLayout = new javax.swing.GroupLayout(calcPage);
         calcPage.setLayout(calcPageLayout);
         calcPageLayout.setHorizontalGroup(
             calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(calcPageLayout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(740, Short.MAX_VALUE))
+                .addGap(61, 61, 61)
+                .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(dryerTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(dryerLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(dryerTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(dryerLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(dryerTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(dryerLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(dryerLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(calcPageLayout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(dryerTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(dryerTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(dryerLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(calcPageLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(dryerLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(calcPageLayout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addComponent(dryerTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(dryerTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(dryerLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(176, Short.MAX_VALUE))
         );
         calcPageLayout.setVerticalGroup(
             calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(calcPageLayout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(410, Short.MAX_VALUE))
+                .addGap(57, 57, 57)
+                .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(calcPageLayout.createSequentialGroup()
+                            .addComponent(dryerLabel6)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(dryerTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(calcPageLayout.createSequentialGroup()
+                            .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(dryerLabel5)
+                                .addComponent(dryerLabel4))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(dryerTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(dryerTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(calcPageLayout.createSequentialGroup()
+                            .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(dryerLabel3)
+                                .addComponent(dryerLabel2))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(dryerTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(dryerTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(calcPageLayout.createSequentialGroup()
+                            .addComponent(dryerLabel1)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(dryerTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(calcPageLayout.createSequentialGroup()
+                            .addComponent(dryerLabel)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(dryerTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(367, Short.MAX_VALUE))
         );
 
         mainPanel.add(calcPage, "3");
@@ -550,6 +683,34 @@ public class EcowiseGUI extends javax.swing.JFrame {
         card.show(mainPanel, "4");
     }//GEN-LAST:event_gamePanelMouseClicked
 
+    private void dryerTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dryerTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dryerTextFieldActionPerformed
+
+    private void dryerTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dryerTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dryerTextField1ActionPerformed
+
+    private void dryerTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dryerTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dryerTextField2ActionPerformed
+
+    private void dryerTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dryerTextField3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dryerTextField3ActionPerformed
+
+    private void dryerTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dryerTextField4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dryerTextField4ActionPerformed
+
+    private void dryerTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dryerTextField5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dryerTextField5ActionPerformed
+
+    private void dryerTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dryerTextField6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dryerTextField6ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -593,6 +754,20 @@ public class EcowiseGUI extends javax.swing.JFrame {
     private javax.swing.JPanel calcPanel;
     private javax.swing.JLabel calcTxt;
     private javax.swing.JLabel cartBtn;
+    private javax.swing.JLabel dryerLabel;
+    private javax.swing.JLabel dryerLabel1;
+    private javax.swing.JLabel dryerLabel2;
+    private javax.swing.JLabel dryerLabel3;
+    private javax.swing.JLabel dryerLabel4;
+    private javax.swing.JLabel dryerLabel5;
+    private javax.swing.JLabel dryerLabel6;
+    private javax.swing.JTextField dryerTextField;
+    private javax.swing.JTextField dryerTextField1;
+    private javax.swing.JTextField dryerTextField2;
+    private javax.swing.JTextField dryerTextField3;
+    private javax.swing.JTextField dryerTextField4;
+    private javax.swing.JTextField dryerTextField5;
+    private javax.swing.JTextField dryerTextField6;
     private javax.swing.JButton exitBtn;
     private javax.swing.JLabel gameLbl;
     private javax.swing.JPanel gamePage;
@@ -603,7 +778,6 @@ public class EcowiseGUI extends javax.swing.JFrame {
     private javax.swing.JPanel homePanel;
     private javax.swing.JLabel homeTxt;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel logoLbl;
