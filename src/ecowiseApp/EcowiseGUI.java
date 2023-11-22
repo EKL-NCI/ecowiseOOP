@@ -105,6 +105,10 @@ public class EcowiseGUI extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         mCompLabel = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        washingMLabel1 = new javax.swing.JLabel();
+        dryerTextField7 = new javax.swing.JTextField();
+        freezerLabel1 = new javax.swing.JLabel();
+        dryerTextField8 = new javax.swing.JTextField();
         gamePage = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
 
@@ -526,7 +530,25 @@ public class EcowiseGUI extends javax.swing.JFrame {
         mCompLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel7.setText("How much energy do you use?");
+        jLabel7.setText("Track your carbon emissions!");
+
+        washingMLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        washingMLabel1.setText("Washing Machine");
+
+        dryerTextField7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dryerTextField7ActionPerformed(evt);
+            }
+        });
+
+        freezerLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        freezerLabel1.setText("Freezer");
+
+        dryerTextField8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dryerTextField8ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout calcPageLayout = new javax.swing.GroupLayout(calcPage);
         calcPage.setLayout(calcPageLayout);
@@ -535,6 +557,16 @@ public class EcowiseGUI extends javax.swing.JFrame {
             .addGroup(calcPageLayout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(calcPageLayout.createSequentialGroup()
+                        .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(washingMLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(calcPageLayout.createSequentialGroup()
+                                .addGap(16, 16, 16)
+                                .addComponent(dryerTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
+                        .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(dryerTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(freezerLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jLabel7)
                     .addGroup(calcPageLayout.createSequentialGroup()
                         .addGap(2, 2, 2)
@@ -627,7 +659,17 @@ public class EcowiseGUI extends javax.swing.JFrame {
                     .addComponent(mCompLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(244, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(calcPageLayout.createSequentialGroup()
+                        .addComponent(freezerLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(dryerTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(calcPageLayout.createSequentialGroup()
+                        .addComponent(washingMLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(dryerTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(182, Short.MAX_VALUE))
         );
 
         mainPanel.add(calcPage, "3");
@@ -754,6 +796,14 @@ public class EcowiseGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_dryerTextField6ActionPerformed
 
+    private void dryerTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dryerTextField7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dryerTextField7ActionPerformed
+
+    private void dryerTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dryerTextField8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dryerTextField8ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -804,8 +854,11 @@ public class EcowiseGUI extends javax.swing.JFrame {
     private javax.swing.JTextField dryerTextField4;
     private javax.swing.JTextField dryerTextField5;
     private javax.swing.JTextField dryerTextField6;
+    private javax.swing.JTextField dryerTextField7;
+    private javax.swing.JTextField dryerTextField8;
     private javax.swing.JButton exitBtn;
     private javax.swing.JLabel freezerLabel;
+    private javax.swing.JLabel freezerLabel1;
     private javax.swing.JLabel gameLbl;
     private javax.swing.JPanel gamePage;
     private javax.swing.JPanel gamePanel;
@@ -860,6 +913,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
     private javax.swing.JLabel tvLabel;
     private javax.swing.JTextField tvTextField;
     private javax.swing.JLabel washingMLabel;
+    private javax.swing.JLabel washingMLabel1;
     private javax.swing.JLabel waterHLabel;
     // End of variables declaration//GEN-END:variables
 }
