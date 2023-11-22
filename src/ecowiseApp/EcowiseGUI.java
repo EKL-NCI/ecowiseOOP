@@ -103,12 +103,24 @@ public class EcowiseGUI extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        mCompLabel = new javax.swing.JLabel();
+        totalEmissionsLabel = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        washingMLabel1 = new javax.swing.JLabel();
-        dryerTextField7 = new javax.swing.JTextField();
-        freezerLabel1 = new javax.swing.JLabel();
-        dryerTextField8 = new javax.swing.JTextField();
+        kmDrivenLabel = new javax.swing.JLabel();
+        kmDrivenTextField = new javax.swing.JTextField();
+        gasCompLabel = new javax.swing.JLabel();
+        gasCompTextField = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        mCompLabel1 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        costPerHourLabel = new javax.swing.JLabel();
+        costPerHourTextField = new javax.swing.JTextField();
+        installationsLabel = new javax.swing.JLabel();
+        installationTextField = new javax.swing.JTextField();
+        mProLabel = new javax.swing.JLabel();
+        mProTextField = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
         gamePage = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
 
@@ -519,7 +531,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
         });
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel2.setText("How much energy do you use?");
+        jLabel2.setText("You will save");
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel3.setText("You use");
@@ -527,100 +539,182 @@ public class EcowiseGUI extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel4.setText("kwh Per month!");
 
-        mCompLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        totalEmissionsLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel7.setText("Track your carbon emissions!");
+        jLabel7.setText("per month");
 
-        washingMLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        washingMLabel1.setText("Washing Machine");
+        kmDrivenLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        kmDrivenLabel.setText("Kilometres Driven");
 
-        dryerTextField7.addActionListener(new java.awt.event.ActionListener() {
+        kmDrivenTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dryerTextField7ActionPerformed(evt);
+                kmDrivenTextFieldActionPerformed(evt);
             }
         });
 
-        freezerLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        freezerLabel1.setText("Freezer");
+        gasCompLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        gasCompLabel.setText("Gas Comsumption");
 
-        dryerTextField8.addActionListener(new java.awt.event.ActionListener() {
+        gasCompTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dryerTextField8ActionPerformed(evt);
+                gasCompTextFieldActionPerformed(evt);
             }
         });
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel8.setText("How much gas does your car emit?");
+
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel9.setText("Your car emits ");
+
+        mCompLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel10.setText("How much energy do you use?");
+
+        costPerHourLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        costPerHourLabel.setText("Cost of renewable electricity per hour");
+
+        costPerHourTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                costPerHourTextFieldActionPerformed(evt);
+            }
+        });
+
+        installationsLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        installationsLabel.setText("Installation Costs");
+
+        installationTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                installationTextFieldActionPerformed(evt);
+            }
+        });
+
+        mProLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        mProLabel.setText("Montlhy Proudction");
+
+        mProTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mProTextFieldActionPerformed(evt);
+            }
+        });
+
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel11.setText("How much energy will you save on when you switch?");
+
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel12.setText("You will save");
 
         javax.swing.GroupLayout calcPageLayout = new javax.swing.GroupLayout(calcPage);
         calcPage.setLayout(calcPageLayout);
         calcPageLayout.setHorizontalGroup(
             calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(calcPageLayout.createSequentialGroup()
-                .addGap(25, 25, 25)
                 .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(calcPageLayout.createSequentialGroup()
-                        .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(washingMLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(calcPageLayout.createSequentialGroup()
-                                .addGap(16, 16, 16)
-                                .addComponent(dryerTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18)
-                        .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(dryerTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(freezerLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jLabel7)
-                    .addGroup(calcPageLayout.createSequentialGroup()
-                        .addGap(2, 2, 2)
-                        .addComponent(jLabel2))
-                    .addGroup(calcPageLayout.createSequentialGroup()
-                        .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(dryerTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 71, Short.MAX_VALUE)
-                            .addComponent(dryerLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, calcPageLayout.createSequentialGroup()
-                                .addGap(7, 7, 7)
-                                .addComponent(mCompLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(calcPageLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(tvTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(tvLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(25, 25, 25)
                         .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(calcPageLayout.createSequentialGroup()
-                                .addGap(2, 2, 2)
-                                .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(kettleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(kettleTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(waterHLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(calcPageLayout.createSequentialGroup()
-                                        .addGap(6, 6, 6)
-                                        .addComponent(dryerTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(18, 18, 18)
-                                .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(dryerTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(appLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(washingMLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(kmDrivenLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(calcPageLayout.createSequentialGroup()
                                         .addGap(16, 16, 16)
-                                        .addComponent(dryerTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(kmDrivenTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(18, 18, 18)
-                                .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(dryerTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(freezerLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(gasCompLabel)
+                                    .addGroup(calcPageLayout.createSequentialGroup()
+                                        .addGap(15, 15, 15)
+                                        .addComponent(gasCompTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(26, 26, 26)
+                                        .addComponent(jLabel9)
+                                        .addGap(9, 9, 9)
+                                        .addComponent(totalEmissionsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jLabel7))))
                             .addGroup(calcPageLayout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel4)))))
+                                .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(dryerTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 71, Short.MAX_VALUE)
+                                    .addComponent(dryerLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(calcPageLayout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(tvTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(tvLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(2, 2, 2)
+                                        .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(kettleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(kettleTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(waterHLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(calcPageLayout.createSequentialGroup()
+                                                .addGap(6, 6, 6)
+                                                .addComponent(dryerTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(dryerTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(appLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(washingMLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(calcPageLayout.createSequentialGroup()
+                                                .addGap(16, 16, 16)
+                                                .addComponent(dryerTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(dryerTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(freezerLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(calcPageLayout.createSequentialGroup()
+                                        .addGap(23, 23, 23)
+                                        .addComponent(mCompLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel4))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, calcPageLayout.createSequentialGroup()
+                                .addComponent(jLabel8)
+                                .addGap(312, 312, 312))
+                            .addGroup(calcPageLayout.createSequentialGroup()
+                                .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(costPerHourLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(calcPageLayout.createSequentialGroup()
+                                        .addGap(67, 67, 67)
+                                        .addComponent(costPerHourTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(installationsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(calcPageLayout.createSequentialGroup()
+                                        .addGap(52, 52, 52)
+                                        .addComponent(installationTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel2))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(mProLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(calcPageLayout.createSequentialGroup()
+                                        .addGap(52, 52, 52)
+                                        .addComponent(mProTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                    .addGroup(calcPageLayout.createSequentialGroup()
+                        .addGap(35, 35, 35)
+                        .addComponent(jLabel10)))
                 .addContainerGap(220, Short.MAX_VALUE))
+            .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(calcPageLayout.createSequentialGroup()
+                    .addGap(47, 47, 47)
+                    .addComponent(jLabel11)
+                    .addContainerGap(372, Short.MAX_VALUE)))
+            .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(calcPageLayout.createSequentialGroup()
+                    .addGap(49, 49, 49)
+                    .addComponent(jLabel12)
+                    .addContainerGap(695, Short.MAX_VALUE)))
         );
         calcPageLayout.setVerticalGroup(
             calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(calcPageLayout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21)
+                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -652,24 +746,58 @@ public class EcowiseGUI extends javax.swing.JFrame {
                                 .addComponent(tvLabel))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(dryerTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(18, 18, 18)
-                .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
-                    .addComponent(mCompLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE))
+                    .addGroup(calcPageLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(mCompLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 7, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(calcPageLayout.createSequentialGroup()
-                        .addComponent(freezerLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(dryerTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(22, 22, 22)
+                        .addComponent(totalEmissionsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(calcPageLayout.createSequentialGroup()
-                        .addComponent(washingMLabel1)
+                        .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(kmDrivenLabel)
+                            .addComponent(gasCompLabel))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(dryerTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(182, Short.MAX_VALUE))
+                        .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(kmDrivenTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(gasCompTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(59, 59, 59)
+                .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(calcPageLayout.createSequentialGroup()
+                        .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(installationsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(costPerHourLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(installationTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(costPerHourTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(calcPageLayout.createSequentialGroup()
+                        .addComponent(mProLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(mProTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(28, 28, 28)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(55, Short.MAX_VALUE))
+            .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, calcPageLayout.createSequentialGroup()
+                    .addContainerGap(275, Short.MAX_VALUE)
+                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(158, 158, 158)))
+            .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, calcPageLayout.createSequentialGroup()
+                    .addContainerGap(378, Short.MAX_VALUE)
+                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(55, 55, 55)))
         );
 
         mainPanel.add(calcPage, "3");
@@ -716,8 +844,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(bannerPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -796,13 +923,25 @@ public class EcowiseGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_dryerTextField6ActionPerformed
 
-    private void dryerTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dryerTextField7ActionPerformed
+    private void kmDrivenTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kmDrivenTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_dryerTextField7ActionPerformed
+    }//GEN-LAST:event_kmDrivenTextFieldActionPerformed
 
-    private void dryerTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dryerTextField8ActionPerformed
+    private void gasCompTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gasCompTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_dryerTextField8ActionPerformed
+    }//GEN-LAST:event_gasCompTextFieldActionPerformed
+
+    private void costPerHourTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_costPerHourTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_costPerHourTextFieldActionPerformed
+
+    private void installationTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_installationTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_installationTextFieldActionPerformed
+
+    private void mProTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mProTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mProTextFieldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -848,36 +987,48 @@ public class EcowiseGUI extends javax.swing.JFrame {
     private javax.swing.JPanel calcPanel;
     private javax.swing.JLabel calcTxt;
     private javax.swing.JLabel cartBtn;
+    private javax.swing.JLabel costPerHourLabel;
+    private javax.swing.JTextField costPerHourTextField;
     private javax.swing.JLabel dryerLabel;
     private javax.swing.JTextField dryerTextField;
     private javax.swing.JTextField dryerTextField2;
     private javax.swing.JTextField dryerTextField4;
     private javax.swing.JTextField dryerTextField5;
     private javax.swing.JTextField dryerTextField6;
-    private javax.swing.JTextField dryerTextField7;
-    private javax.swing.JTextField dryerTextField8;
     private javax.swing.JButton exitBtn;
     private javax.swing.JLabel freezerLabel;
-    private javax.swing.JLabel freezerLabel1;
     private javax.swing.JLabel gameLbl;
     private javax.swing.JPanel gamePage;
     private javax.swing.JPanel gamePanel;
     private javax.swing.JLabel gameTxt;
+    private javax.swing.JLabel gasCompLabel;
+    private javax.swing.JTextField gasCompTextField;
     private javax.swing.JLabel homeLbl;
     private javax.swing.JPanel homePage;
     private javax.swing.JPanel homePanel;
     private javax.swing.JLabel homeTxt;
+    private javax.swing.JTextField installationTextField;
+    private javax.swing.JLabel installationsLabel;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel kettleLabel;
     private javax.swing.JTextField kettleTextField;
+    private javax.swing.JLabel kmDrivenLabel;
+    private javax.swing.JTextField kmDrivenTextField;
     private javax.swing.JLabel logoLbl;
-    private javax.swing.JLabel mCompLabel;
+    private javax.swing.JLabel mCompLabel1;
+    private javax.swing.JLabel mProLabel;
+    private javax.swing.JTextField mProTextField;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JLabel product1;
     private javax.swing.JButton product1Btn;
@@ -910,10 +1061,10 @@ public class EcowiseGUI extends javax.swing.JFrame {
     private javax.swing.JLabel shopTxt;
     private javax.swing.JPanel sidebarMenu;
     private javax.swing.JSeparator sidebarSeperator;
+    private javax.swing.JLabel totalEmissionsLabel;
     private javax.swing.JLabel tvLabel;
     private javax.swing.JTextField tvTextField;
     private javax.swing.JLabel washingMLabel;
-    private javax.swing.JLabel washingMLabel1;
     private javax.swing.JLabel waterHLabel;
     // End of variables declaration//GEN-END:variables
 }
