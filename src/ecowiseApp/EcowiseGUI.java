@@ -364,7 +364,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
             .addGroup(homePageLayout.createSequentialGroup()
                 .addGap(38, 38, 38)
                 .addComponent(jLabel6)
-                .addContainerGap(414, Short.MAX_VALUE))
+                .addContainerGap(420, Short.MAX_VALUE))
         );
 
         mainPanel.add(homePage, "1");
@@ -531,7 +531,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
         });
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel2.setText("You will save");
+        jLabel2.setText("per year");
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel3.setText("You use");
@@ -641,9 +641,9 @@ public class EcowiseGUI extends javax.swing.JFrame {
                                 .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(calcPageLayout.createSequentialGroup()
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(tvTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(tvLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(tvLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 69, Short.MAX_VALUE)
+                                            .addComponent(tvTextField))
                                         .addGap(2, 2, 2)
                                         .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                             .addComponent(kettleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -758,9 +758,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(calcPageLayout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addComponent(totalEmissionsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(totalEmissionsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(calcPageLayout.createSequentialGroup()
                         .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(kmDrivenLabel)
@@ -790,12 +788,12 @@ public class EcowiseGUI extends javax.swing.JFrame {
                 .addContainerGap(55, Short.MAX_VALUE))
             .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, calcPageLayout.createSequentialGroup()
-                    .addContainerGap(275, Short.MAX_VALUE)
+                    .addContainerGap(281, Short.MAX_VALUE)
                     .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(158, 158, 158)))
             .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, calcPageLayout.createSequentialGroup()
-                    .addContainerGap(378, Short.MAX_VALUE)
+                    .addContainerGap(384, Short.MAX_VALUE)
                     .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(55, 55, 55)))
         );
@@ -822,7 +820,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
             .addGroup(gamePageLayout.createSequentialGroup()
                 .addGap(38, 38, 38)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(406, Short.MAX_VALUE))
+                .addContainerGap(412, Short.MAX_VALUE))
         );
 
         mainPanel.add(gamePage, "4");
