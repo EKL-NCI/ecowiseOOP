@@ -140,9 +140,9 @@ public class EcowiseGUI extends javax.swing.JFrame {
 
         homeLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/homeBtn.png"))); // NOI18N
 
-        homeTxt.setFont(new java.awt.Font("Lucida Fax", 1, 18)); // NOI18N
+        homeTxt.setFont(new java.awt.Font("Serif", 1, 18)); // NOI18N
         homeTxt.setForeground(new java.awt.Color(30, 30, 30));
-        homeTxt.setText("HOME");
+        homeTxt.setText("Home");
 
         javax.swing.GroupLayout homePanelLayout = new javax.swing.GroupLayout(homePanel);
         homePanel.setLayout(homePanelLayout);
@@ -174,9 +174,9 @@ public class EcowiseGUI extends javax.swing.JFrame {
 
         shopLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/shopBtn.png"))); // NOI18N
 
-        shopTxt.setFont(new java.awt.Font("Lucida Fax", 1, 18)); // NOI18N
+        shopTxt.setFont(new java.awt.Font("Serif", 1, 18)); // NOI18N
         shopTxt.setForeground(new java.awt.Color(30, 30, 30));
-        shopTxt.setText("SHOP");
+        shopTxt.setText("Shop");
 
         javax.swing.GroupLayout shopPanelLayout = new javax.swing.GroupLayout(shopPanel);
         shopPanel.setLayout(shopPanelLayout);
@@ -195,7 +195,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(shopPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(shopTxt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(shopLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE))
+                    .addComponent(shopLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(15, Short.MAX_VALUE))
         );
 
@@ -208,9 +208,9 @@ public class EcowiseGUI extends javax.swing.JFrame {
 
         calcLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/calculatorBtn.png"))); // NOI18N
 
-        calcTxt.setFont(new java.awt.Font("Lucida Fax", 1, 18)); // NOI18N
+        calcTxt.setFont(new java.awt.Font("Serif", 1, 18)); // NOI18N
         calcTxt.setForeground(new java.awt.Color(30, 30, 30));
-        calcTxt.setText("CALCULATOR");
+        calcTxt.setText("Calculator");
 
         javax.swing.GroupLayout calcPanelLayout = new javax.swing.GroupLayout(calcPanel);
         calcPanel.setLayout(calcPanelLayout);
@@ -219,7 +219,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
             .addGroup(calcPanelLayout.createSequentialGroup()
                 .addGap(12, 12, 12)
                 .addComponent(calcLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(calcTxt)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -242,9 +242,9 @@ public class EcowiseGUI extends javax.swing.JFrame {
 
         gameLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/gamesBtn.png"))); // NOI18N
 
-        gameTxt.setFont(new java.awt.Font("Lucida Fax", 1, 18)); // NOI18N
+        gameTxt.setFont(new java.awt.Font("Serif", 1, 18)); // NOI18N
         gameTxt.setForeground(new java.awt.Color(30, 30, 30));
-        gameTxt.setText("GAMES");
+        gameTxt.setText("Games");
 
         javax.swing.GroupLayout gamePanelLayout = new javax.swing.GroupLayout(gamePanel);
         gamePanel.setLayout(gamePanelLayout);

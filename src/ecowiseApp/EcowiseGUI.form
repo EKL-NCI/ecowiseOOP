@@ -141,12 +141,12 @@
             <Component class="javax.swing.JLabel" name="homeTxt">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Fax" size="18" style="1"/>
+                  <Font name="Serif" size="18" style="1"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="1e" green="1e" red="1e" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="HOME"/>
+                <Property name="text" type="java.lang.String" value="Home"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -179,7 +179,7 @@
                       <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="shopTxt" alignment="0" max="32767" attributes="0"/>
-                          <Component id="shopLbl" alignment="0" pref="30" max="32767" attributes="0"/>
+                          <Component id="shopLbl" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace pref="15" max="32767" attributes="0"/>
                   </Group>
@@ -197,12 +197,12 @@
             <Component class="javax.swing.JLabel" name="shopTxt">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Fax" size="18" style="1"/>
+                  <Font name="Serif" size="18" style="1"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="1e" green="1e" red="1e" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="SHOP"/>
+                <Property name="text" type="java.lang.String" value="Shop"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -223,7 +223,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                       <Component id="calcLbl" min="-2" pref="26" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="calcTxt" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -253,12 +253,12 @@
             <Component class="javax.swing.JLabel" name="calcTxt">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Fax" size="18" style="1"/>
+                  <Font name="Serif" size="18" style="1"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="1e" green="1e" red="1e" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="CALCULATOR"/>
+                <Property name="text" type="java.lang.String" value="Calculator"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -309,12 +309,12 @@
             <Component class="javax.swing.JLabel" name="gameTxt">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Fax" size="18" style="1"/>
+                  <Font name="Serif" size="18" style="1"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="1e" green="1e" red="1e" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="GAMES"/>
+                <Property name="text" type="java.lang.String" value="Games"/>
               </Properties>
             </Component>
           </SubComponents>
