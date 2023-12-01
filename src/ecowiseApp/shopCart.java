@@ -7,7 +7,7 @@ package ecowiseApp;
 import java.util.ArrayList;
 /**
  *
- * @author erink
+ * @author Erin Lee
  */
 public class shopCart {
     private product product;
@@ -35,6 +35,20 @@ public class shopCart {
         if(this.quantity > 0){
             this.quantity--;
         }
+    }
+    
+    // method to calculate total of cart
+    private void calTotal(){
+        
+    }
+    
+    //add + remove items from cart
+    public void addCart(){
+        
+    }
+    
+    public void remCart(){
+        
     }
     
 }

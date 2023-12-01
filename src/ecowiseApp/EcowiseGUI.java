@@ -57,7 +57,9 @@ public class EcowiseGUI extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         mainPanel = new javax.swing.JPanel();
         homePage = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
+        homeLogoLbl = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        homeImg = new javax.swing.JLabel();
         shopPage = new javax.swing.JPanel();
         cartBtn = new javax.swing.JLabel();
         shopTitle = new javax.swing.JLabel();
@@ -123,6 +125,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         gamePage = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
+        fullCartPage = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -347,24 +350,39 @@ public class EcowiseGUI extends javax.swing.JFrame {
         homePage.setBackground(new java.awt.Color(255, 255, 255));
         homePage.setMinimumSize(new java.awt.Dimension(849, 468));
 
-        jLabel6.setForeground(new java.awt.Color(50, 50, 50));
-        jLabel6.setText("Home");
+        homeLogoLbl.setBackground(new java.awt.Color(212, 232, 193));
+        homeLogoLbl.setForeground(new java.awt.Color(212, 232, 193));
+        homeLogoLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo.png"))); // NOI18N
+        homeLogoLbl.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, java.awt.Color.darkGray, java.awt.Color.lightGray));
+
+        jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
+
+        homeImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/productFiller.png"))); // NOI18N
 
         javax.swing.GroupLayout homePageLayout = new javax.swing.GroupLayout(homePage);
         homePage.setLayout(homePageLayout);
         homePageLayout.setHorizontalGroup(
             homePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(homePageLayout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addComponent(jLabel6)
-                .addContainerGap(777, Short.MAX_VALUE))
+                .addGap(182, 182, 182)
+                .addComponent(homeLogoLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(homeImg, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         homePageLayout.setVerticalGroup(
             homePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(homePageLayout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addComponent(jLabel6)
-                .addContainerGap(420, Short.MAX_VALUE))
+                .addGroup(homePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSeparator1)
+                    .addGroup(homePageLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(homeLogoLbl)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(homeImg, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 476, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         mainPanel.add(homePage, "1");
@@ -825,6 +843,26 @@ public class EcowiseGUI extends javax.swing.JFrame {
 
         mainPanel.add(gamePage, "4");
 
+        fullCartPage.setBackground(new java.awt.Color(255, 255, 255));
+        fullCartPage.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                fullCartPageMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout fullCartPageLayout = new javax.swing.GroupLayout(fullCartPage);
+        fullCartPage.setLayout(fullCartPageLayout);
+        fullCartPageLayout.setHorizontalGroup(
+            fullCartPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 849, Short.MAX_VALUE)
+        );
+        fullCartPageLayout.setVerticalGroup(
+            fullCartPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 482, Short.MAX_VALUE)
+        );
+
+        mainPanel.add(fullCartPage, "card6");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -941,6 +979,16 @@ public class EcowiseGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_mProTextFieldActionPerformed
 
+    private void fullCartPageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fullCartPageMouseClicked
+        setColor(shopPanel);
+        resetColor(homePanel);
+        resetColor(gamePanel);
+        resetColor(calcPanel);
+        
+        CardLayout card = (CardLayout)mainPanel.getLayout();
+        card.show(mainPanel, "5");
+    }//GEN-LAST:event_fullCartPageMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -995,13 +1043,16 @@ public class EcowiseGUI extends javax.swing.JFrame {
     private javax.swing.JTextField dryerTextField6;
     private javax.swing.JButton exitBtn;
     private javax.swing.JLabel freezerLabel;
+    private javax.swing.JPanel fullCartPage;
     private javax.swing.JLabel gameLbl;
     private javax.swing.JPanel gamePage;
     private javax.swing.JPanel gamePanel;
     private javax.swing.JLabel gameTxt;
     private javax.swing.JLabel gasCompLabel;
     private javax.swing.JTextField gasCompTextField;
+    private javax.swing.JLabel homeImg;
     private javax.swing.JLabel homeLbl;
+    private javax.swing.JLabel homeLogoLbl;
     private javax.swing.JPanel homePage;
     private javax.swing.JPanel homePanel;
     private javax.swing.JLabel homeTxt;
@@ -1015,10 +1066,10 @@ public class EcowiseGUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel kettleLabel;
     private javax.swing.JTextField kettleTextField;
     private javax.swing.JLabel kmDrivenLabel;
