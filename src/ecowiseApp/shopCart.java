@@ -9,7 +9,7 @@ import java.util.ArrayList;
  *
  * @author Erin Lee
  */
-public class shopCart {
+public class shopCart extends shop{
     private product product;
     private int quantity;
     

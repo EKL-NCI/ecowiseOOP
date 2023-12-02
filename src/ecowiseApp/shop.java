@@ -10,7 +10,7 @@ import java.util.ArrayList;
  *
  * @author Erin Lee
  */
-public class shop {
+public class shop extends product{
     private ArrayList <product> products;
     
         public shop(){
