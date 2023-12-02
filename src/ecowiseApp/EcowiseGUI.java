@@ -125,7 +125,27 @@ public class EcowiseGUI extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         gamePage = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        fullCartPage = new javax.swing.JPanel();
+        cartPage = new javax.swing.JPanel();
+        detailsLbl = new javax.swing.JLabel();
+        dNameLbl = new javax.swing.JLabel();
+        dNameTxt = new javax.swing.JTextField();
+        dPhoneLbl = new javax.swing.JLabel();
+        dPhoneTxt = new javax.swing.JTextField();
+        dAddressLbl = new javax.swing.JLabel();
+        dAddressTxt = new javax.swing.JTextField();
+        dCityLbl = new javax.swing.JLabel();
+        dCityTxt = new javax.swing.JTextField();
+        dCountyLbl = new javax.swing.JLabel();
+        dCountyTxt = new javax.swing.JTextField();
+        cardDetailsLbl = new javax.swing.JLabel();
+        cNameLbl = new javax.swing.JLabel();
+        cNameTxt = new javax.swing.JTextField();
+        cCardnoLbl = new javax.swing.JLabel();
+        cCardnoTxt = new javax.swing.JTextField();
+        cExpiryLbl = new javax.swing.JLabel();
+        cExpiryTxt = new javax.swing.JTextField();
+        cCvvLbl = new javax.swing.JLabel();
+        cCvvTxt = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -394,6 +414,11 @@ public class EcowiseGUI extends javax.swing.JFrame {
         shopPage.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         cartBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/basketBtn.png"))); // NOI18N
+        cartBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cartBtnMouseClicked(evt);
+            }
+        });
         shopPage.add(cartBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 14, -1, -1));
 
         shopTitle.setFont(new java.awt.Font("Lucida Fax", 1, 18)); // NOI18N
@@ -844,25 +869,218 @@ public class EcowiseGUI extends javax.swing.JFrame {
 
         mainPanel.add(gamePage, "4");
 
-        fullCartPage.setBackground(new java.awt.Color(255, 255, 255));
-        fullCartPage.addMouseListener(new java.awt.event.MouseAdapter() {
+        cartPage.setBackground(new java.awt.Color(255, 255, 255));
+        cartPage.setForeground(new java.awt.Color(50, 50, 50));
+        cartPage.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                fullCartPageMouseClicked(evt);
+                cartPageMouseClicked(evt);
             }
         });
 
-        javax.swing.GroupLayout fullCartPageLayout = new javax.swing.GroupLayout(fullCartPage);
-        fullCartPage.setLayout(fullCartPageLayout);
-        fullCartPageLayout.setHorizontalGroup(
-            fullCartPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 849, Short.MAX_VALUE)
+        detailsLbl.setBackground(new java.awt.Color(255, 255, 255));
+        detailsLbl.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        detailsLbl.setForeground(new java.awt.Color(50, 50, 50));
+        detailsLbl.setText("Enter your Details:");
+
+        dNameLbl.setBackground(new java.awt.Color(255, 255, 255));
+        dNameLbl.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        dNameLbl.setForeground(new java.awt.Color(50, 50, 50));
+        dNameLbl.setText("Name: ");
+
+        dNameTxt.setBackground(new java.awt.Color(255, 255, 255));
+        dNameTxt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        dNameTxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dNameTxtActionPerformed(evt);
+            }
+        });
+
+        dPhoneLbl.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        dPhoneLbl.setForeground(new java.awt.Color(50, 50, 50));
+        dPhoneLbl.setText("Phone No. :");
+
+        dPhoneTxt.setBackground(new java.awt.Color(255, 255, 255));
+        dPhoneTxt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        dAddressLbl.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        dAddressLbl.setForeground(new java.awt.Color(50, 50, 50));
+        dAddressLbl.setText("Address:");
+
+        dAddressTxt.setBackground(new java.awt.Color(255, 255, 255));
+        dAddressTxt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        dCityLbl.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        dCityLbl.setForeground(new java.awt.Color(50, 50, 50));
+        dCityLbl.setText("City/Town:");
+
+        dCityTxt.setBackground(new java.awt.Color(255, 255, 255));
+        dCityTxt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        dCityTxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dCityTxtActionPerformed(evt);
+            }
+        });
+
+        dCountyLbl.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        dCountyLbl.setForeground(new java.awt.Color(50, 50, 50));
+        dCountyLbl.setText("County:");
+
+        dCountyTxt.setBackground(new java.awt.Color(255, 255, 255));
+        dCountyTxt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        dCountyTxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dCountyTxtActionPerformed(evt);
+            }
+        });
+
+        cardDetailsLbl.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        cardDetailsLbl.setForeground(new java.awt.Color(50, 50, 50));
+        cardDetailsLbl.setText("Card Details:");
+
+        cNameLbl.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        cNameLbl.setForeground(new java.awt.Color(50, 50, 50));
+        cNameLbl.setText("Name:");
+
+        cNameTxt.setBackground(new java.awt.Color(255, 255, 255));
+        cNameTxt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        cNameTxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cNameTxtActionPerformed(evt);
+            }
+        });
+
+        cCardnoLbl.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        cCardnoLbl.setForeground(new java.awt.Color(50, 50, 50));
+        cCardnoLbl.setText("Card No. :");
+
+        cCardnoTxt.setBackground(new java.awt.Color(255, 255, 255));
+        cCardnoTxt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        cCardnoTxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cCardnoTxtActionPerformed(evt);
+            }
+        });
+
+        cExpiryLbl.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        cExpiryLbl.setForeground(new java.awt.Color(50, 50, 50));
+        cExpiryLbl.setText("Expiry:");
+
+        cExpiryTxt.setBackground(new java.awt.Color(255, 255, 255));
+        cExpiryTxt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        cExpiryTxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cExpiryTxtActionPerformed(evt);
+            }
+        });
+
+        cCvvLbl.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        cCvvLbl.setForeground(new java.awt.Color(50, 50, 50));
+        cCvvLbl.setText("CVV:");
+
+        cCvvTxt.setBackground(new java.awt.Color(255, 255, 255));
+        cCvvTxt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        cCvvTxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cCvvTxtActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout cartPageLayout = new javax.swing.GroupLayout(cartPage);
+        cartPage.setLayout(cartPageLayout);
+        cartPageLayout.setHorizontalGroup(
+            cartPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cartPageLayout.createSequentialGroup()
+                .addGap(507, 507, 507)
+                .addGroup(cartPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(cartPageLayout.createSequentialGroup()
+                        .addComponent(cCvvLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cCvvTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(cartPageLayout.createSequentialGroup()
+                        .addComponent(cExpiryLbl)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cExpiryTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(cartPageLayout.createSequentialGroup()
+                        .addComponent(cNameLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cNameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(cartPageLayout.createSequentialGroup()
+                        .addComponent(dCityLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(dCityTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(detailsLbl)
+                    .addGroup(cartPageLayout.createSequentialGroup()
+                        .addComponent(dNameLbl)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(dNameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(cartPageLayout.createSequentialGroup()
+                        .addComponent(dPhoneLbl)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(dPhoneTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(cartPageLayout.createSequentialGroup()
+                        .addComponent(dAddressLbl)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(dAddressTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(cartPageLayout.createSequentialGroup()
+                        .addComponent(dCountyLbl)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(dCountyTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cardDetailsLbl)
+                    .addGroup(cartPageLayout.createSequentialGroup()
+                        .addComponent(cCardnoLbl)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cCardnoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
-        fullCartPageLayout.setVerticalGroup(
-            fullCartPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 482, Short.MAX_VALUE)
+        cartPageLayout.setVerticalGroup(
+            cartPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cartPageLayout.createSequentialGroup()
+                .addGap(68, 68, 68)
+                .addComponent(detailsLbl)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(cartPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(dNameLbl)
+                    .addComponent(dNameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(cartPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(dPhoneLbl)
+                    .addComponent(dPhoneTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(cartPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(dAddressLbl)
+                    .addComponent(dAddressTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(cartPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(dCityLbl)
+                    .addComponent(dCityTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(cartPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(dCountyLbl)
+                    .addComponent(dCountyTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(cardDetailsLbl)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(cartPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cNameLbl)
+                    .addComponent(cNameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(cartPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cCardnoLbl)
+                    .addComponent(cCardnoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(cartPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cExpiryLbl)
+                    .addComponent(cExpiryTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(cartPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cCvvLbl)
+                    .addComponent(cCvvTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(102, Short.MAX_VALUE))
         );
 
-        mainPanel.add(fullCartPage, "card6");
+        dPhoneLbl.getAccessibleContext().setAccessibleName("phoneLbl");
+
+        mainPanel.add(cartPage, "5");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -980,7 +1198,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_mProTextFieldActionPerformed
 
-    private void fullCartPageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fullCartPageMouseClicked
+    private void cartPageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cartPageMouseClicked
         setColor(shopPanel);
         resetColor(homePanel);
         resetColor(gamePanel);
@@ -988,7 +1206,40 @@ public class EcowiseGUI extends javax.swing.JFrame {
         
         CardLayout card = (CardLayout)mainPanel.getLayout();
         card.show(mainPanel, "5");
-    }//GEN-LAST:event_fullCartPageMouseClicked
+    }//GEN-LAST:event_cartPageMouseClicked
+
+    private void cartBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cartBtnMouseClicked
+        CardLayout card = (CardLayout)mainPanel.getLayout();
+        card.show(mainPanel, "5");
+    }//GEN-LAST:event_cartBtnMouseClicked
+
+    private void dCityTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dCityTxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dCityTxtActionPerformed
+
+    private void dCountyTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dCountyTxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dCountyTxtActionPerformed
+
+    private void dNameTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dNameTxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dNameTxtActionPerformed
+
+    private void cNameTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cNameTxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cNameTxtActionPerformed
+
+    private void cCardnoTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cCardnoTxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cCardnoTxtActionPerformed
+
+    private void cExpiryTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cExpiryTxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cExpiryTxtActionPerformed
+
+    private void cCvvTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cCvvTxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cCvvTxtActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1029,13 +1280,34 @@ public class EcowiseGUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel appLabel;
     private javax.swing.JPanel bannerPanel;
+    private javax.swing.JLabel cCardnoLbl;
+    private javax.swing.JTextField cCardnoTxt;
+    private javax.swing.JLabel cCvvLbl;
+    private javax.swing.JTextField cCvvTxt;
+    private javax.swing.JLabel cExpiryLbl;
+    private javax.swing.JTextField cExpiryTxt;
+    private javax.swing.JLabel cNameLbl;
+    private javax.swing.JTextField cNameTxt;
     private javax.swing.JLabel calcLbl;
     private javax.swing.JPanel calcPage;
     private javax.swing.JPanel calcPanel;
     private javax.swing.JLabel calcTxt;
+    private javax.swing.JLabel cardDetailsLbl;
     private javax.swing.JLabel cartBtn;
+    private javax.swing.JPanel cartPage;
     private javax.swing.JLabel costPerHourLabel;
     private javax.swing.JTextField costPerHourTextField;
+    private javax.swing.JLabel dAddressLbl;
+    private javax.swing.JTextField dAddressTxt;
+    private javax.swing.JLabel dCityLbl;
+    private javax.swing.JTextField dCityTxt;
+    private javax.swing.JLabel dCountyLbl;
+    private javax.swing.JTextField dCountyTxt;
+    private javax.swing.JLabel dNameLbl;
+    private javax.swing.JTextField dNameTxt;
+    private javax.swing.JLabel dPhoneLbl;
+    private javax.swing.JTextField dPhoneTxt;
+    private javax.swing.JLabel detailsLbl;
     private javax.swing.JLabel dryerLabel;
     private javax.swing.JTextField dryerTextField;
     private javax.swing.JTextField dryerTextField2;
@@ -1044,7 +1316,6 @@ public class EcowiseGUI extends javax.swing.JFrame {
     private javax.swing.JTextField dryerTextField6;
     private javax.swing.JButton exitBtn;
     private javax.swing.JLabel freezerLabel;
-    private javax.swing.JPanel fullCartPage;
     private javax.swing.JLabel gameLbl;
     private javax.swing.JPanel gamePage;
     private javax.swing.JPanel gamePanel;
