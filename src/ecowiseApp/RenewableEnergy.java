@@ -9,9 +9,9 @@ package ecowiseApp;
  * @author Paul P
  */
 public class RenewableEnergy extends Calculator{
-    private int costPerHour, installCost, monthlyProduction /*,payBackPeriod*/;
+    private double costPerHour, installCost, monthlyProduction /*,payBackPeriod*/;
     
-    public RenewableEnergy(int costPerHour, int installCost, int monthlyProduction, /*int payBackPeriod,*/ int dryer, int tv, int kettle, int waterHeater, int appliances, int washingMachine, int freezer, int mComp){
+    public RenewableEnergy(double costPerHour, double installCost, double monthlyProduction, /*double payBackPeriod,*/ double dryer, double tv, double kettle, double waterHeater, double appliances, double washingMachine, double freezer, double mComp){
         super(dryer, tv, kettle, waterHeater, appliances, washingMachine, freezer, mComp);
         this.costPerHour = costPerHour;
         this.installCost = installCost;
@@ -27,42 +27,42 @@ public class RenewableEnergy extends Calculator{
         //payBackPeriod = 0;
     }
 
-    public int getCostPerHour() {
+    public double getCostPerHour() {
         return costPerHour;
     }
     
-    public void setCostPerHour(int costPerHour) {
+    public void setCostPerHour(double costPerHour) {
         this.costPerHour = costPerHour;
     }
     
-    public int getInstallCost() {
+    public double getInstallCost() {
         return installCost;
     }
 
-    public void setInstallCost(int installCost) {
+    public void setInstallCost(double installCost) {
         this.installCost = installCost;
     }
     
-    public int getMonthlyProduction() {
+    public double getMonthlyProduction() {
         return monthlyProduction;
     }
 
-    public void setMonthlyProduction(int monthlyProduction) {
+    public void setMonthlyProduction(double monthlyProduction) {
         this.monthlyProduction = monthlyProduction;
     }
     
     /*
-    public int getPayBackPeriod() {
+    public double getPayBackPeriod() {
         return payBackPeriod;
     }
 
-    public void setPayBackPeriod(int payBackPeriod) {
+    public void setPayBackPeriod(double payBackPeriod) {
         this.payBackPeriod = payBackPeriod;
     }
     */
     
     @Override
-    public int getmComp(){
+    public double getmComp(){
         return installCost/((super.getmComp()-monthlyProduction)*costPerHour);
     }
 }
