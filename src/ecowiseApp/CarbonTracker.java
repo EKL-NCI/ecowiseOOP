@@ -9,9 +9,9 @@ package ecowiseApp;
  * @author Paul P
  */
 public class CarbonTracker extends Calculator{
-    private int /*yearComp,*/ gasComp, kmDriven, totalEmissions;
+    private double /*yearComp,*/ gasComp, kmDriven, totalEmissions;
 
-    public CarbonTracker(/*int yearComp,*/ int gasComp, int kmDriven, int totalEmissions, int dryer, int tv, int kettle, int waterHeater, int appliances, int washingMachine, int freezer, int mComp) {
+    public CarbonTracker(/*double yearComp,*/ double gasComp, double kmDriven, double totalEmissions, double dryer, double tv, double kettle, double waterHeater, double appliances, double washingMachine, double freezer, double mComp) {
         super(dryer, tv, kettle, waterHeater, appliances, washingMachine, freezer, mComp);      
         //this.yearComp = yearComp;
         this.gasComp = gasComp;
@@ -27,41 +27,41 @@ public class CarbonTracker extends Calculator{
     }
     
     /*
-    public int getYearComp() {
+    public double getYearComp() {
         return yearComp;
     }
 
-    public void setYearComp(int yearComp) {
+    public void setYearComp(double yearComp) {
         this.yearComp = yearComp;
     }
     */
 
-    public int getGasComp() {
+    public double getGasComp() {
         return gasComp;
     }
 
-    public void setGasComp(int gasComp) {
+    public void setGasComp(double gasComp) {
         this.gasComp = gasComp;
     }
 
-    public int getKmDriven() {
+    public double getKmDriven() {
         return kmDriven;
     }
 
-    public void setKmDriven(int kmDriven) {
+    public void setKmDriven(double kmDriven) {
         this.kmDriven = kmDriven;
     }
 
-    public int getTotalEmissions() {
+    public double getTotalEmissions() {
         return totalEmissions;
     }
 
-    public void setTotalEmissions(int totalEmissions) {
+    public void setTotalEmissions(double totalEmissions) {
         this.totalEmissions = totalEmissions;
     }
     
     @Override
-    public int getmComp(){
+    public double getmComp(){
         return ((super.getmComp()*12)*1)+(gasComp*2);    
     }
     

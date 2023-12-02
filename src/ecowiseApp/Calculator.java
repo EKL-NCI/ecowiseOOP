@@ -9,7 +9,7 @@ package ecowiseApp;
  * @author erink
  */
 public class Calculator {
-    private int dryer, tv, kettle, waterHeater, appliances, washingMachine, freezer, mComp;
+    private double dryer, tv, kettle, waterHeater, appliances, washingMachine, freezer, mComp;
     
     public Calculator(){
         dryer = 0;
@@ -23,7 +23,7 @@ public class Calculator {
         
     }
     
-    public Calculator(int dryer, int tv, int kettle, int waterHeater, int appliances, int washingMachine, int freezer, int mComp){
+    public Calculator(double dryer, double tv, double kettle, double waterHeater, double appliances, double washingMachine, double freezer, double mComp){
         this.dryer = dryer;
         this.tv = tv;
         this.kettle = kettle;
@@ -35,68 +35,68 @@ public class Calculator {
 
     }
 
-    public int getDryer() {
+    public double getDryer() {
         return dryer;
     }
 
-    public void setDryer(int dryer) {
+    public void setDryer(double dryer) {
         this.dryer = dryer;
     }
 
-    public int getTv() {
+    public double getTv() {
         return tv;
     }
 
-    public void setTv(int tv) {
+    public void setTv(double tv) {
         this.tv = tv;
     }
 
-    public int getKettle() {
+    public double getKettle() {
         return kettle;
     }
     
-    public void setKettle(int kettle) {
+    public void setKettle(double kettle) {
         this.kettle = kettle;
     }
 
-    public int getAppliances() {
+    public double getAppliances() {
         return appliances;
     }
     
-    public void setAppliances(int appliances) {
+    public void setAppliances(double appliances) {
         this.appliances = appliances;
     }    
     
-    public int getWashingMachine() {
+    public double getWashingMachine() {
         return washingMachine;
     }
     
-    public void setWashingMachine(int washingMachine) {
+    public void setWashingMachine(double washingMachine) {
         this.washingMachine = washingMachine;
     }  
 
-    public int getWaterHeater() {
+    public double getWaterHeater() {
         return waterHeater;
     }
 
-    public void setWaterHeater(int waterHeater) {
+    public void setWaterHeater(double waterHeater) {
         this.waterHeater = waterHeater;
     }
     
-    public int getFreezer() {
+    public double getFreezer() {
         return freezer;
     }
     
-    public void setFreezer(int freezer) {
+    public void setFreezer(double freezer) {
         this.freezer = freezer;
     }
     
-    public int getmComp(){
+    public double getmComp(){
       return (dryer + tv + kettle + waterHeater + appliances + washingMachine + freezer) * 30;
     }
     
     /*
-    public int getmComp() {
+    public double getmComp() {
         return mComp;
     }
     */
