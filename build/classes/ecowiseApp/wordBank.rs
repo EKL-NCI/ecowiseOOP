@@ -1,0 +1,2 @@
+ecowiseApp.wordBank
+ecowiseApp.wordAndDef
