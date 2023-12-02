@@ -29,10 +29,16 @@ class wordAndDef {
     }
 }
     public class wordBank{
-        public static void main(String[] args) {
+        
         // TODO code application logic here
         
-            ArrayList<wordAndDef> wordBank = new ArrayList<>();
+            private ArrayList<wordAndDef> wordBank;
+            
+            public wordBank(){
+                initializeWordBank();
+            }
+            private void initializeWordBank(){
+                wordBank = new ArrayList<>();
                 wordBank.add(new wordAndDef("geothermal", "relating to or produced by the internal heat of the earth."));
                 wordBank.add(new wordAndDef("conservation", "careful and efficient use of energy resources to minimize waste and reduce environmental impact."));
                 wordBank.add(new wordAndDef("environmentalism", "concern about and action aimed at protecting the environment."));
@@ -48,22 +54,28 @@ class wordAndDef {
                 wordBank.add(new wordAndDef("smart-grid", "electricity network that uses digital technologies, sensors and software to better match the supply and demand of electricity in real time while minimizing costs and maintaining the stability and reliability of the network."));
                 wordBank.add(new wordAndDef("microgrid", "a small network of electricity users with a local source of supply that is usually attached to a centralized national grid but is able to function independently."));
                 wordBank.add(new wordAndDef("cogeneration", "the generation of electricity and useful heat jointly, especially the utilization of the steam left over from electricity generation for heating."));
-    
-            Scanner scanner = new Scanner(System.in);
-            System.out.println("Enter a word from the word bank");
-            String userWord = scanner.nextLine();
+            }
             
-            boolean wordFound = false;
-            for(wordAndDef pair : wordBank){
-                if(pair.getWord().equalsIgnoreCase(userWord)){
-                System.out.println("Definition: " + pair.getDefinition());
-                wordFound = true;
-                break;
+            public ArrayList<wordAndDef> getWordBank(){
+                return wordBank;
+            }
+            public void getUserWord(){
+                Scanner scanner = new Scanner(System.in);
+                System.out.println("Enter a word from the word bank");
+                String userWord = scanner.nextLine();
+
+                boolean wordFound = false;
+                for(wordAndDef pair : wordBank){
+                    if(pair.getWord().equalsIgnoreCase(userWord)){
+                    System.out.println("Definition: " + pair.getDefinition());
+                    wordFound = true;
+                    break;
+                    }
                 }
-            }
-            
-            if (!wordFound){
-                System.out.println("Word not found in the word bank");
-            }
+
+                if (!wordFound){
+                    System.out.println("Word not found in the word bank");
+                }
     }
+    
 }
