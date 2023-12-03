@@ -34,6 +34,8 @@ public class customer {
         cardNo = " ";
         expiry = " ";
         cvv = " ";
+        
+
     }
     
     public customer(String name, String phoneNo, String address, String city, String county, String cardName, String cardNo, String expiry, String cvv) {

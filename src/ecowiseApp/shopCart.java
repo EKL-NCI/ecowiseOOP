@@ -9,17 +9,21 @@ import java.util.ArrayList;
  *
  * @author Erin Lee
  */
-public class shopCart extends shop{
-    private product product;
-    private int quantity;
+public class shopCart extends product{
+    public int quantity;
     
-    public shopCart(product product, int quantity){
-        this.product = product;
+    public shopCart(String name, String productId, double price, int quantity){
+        super(name, productId, price);
         this.quantity = quantity;
     }
+    
+    public shopCart(){
+        super();
+        quantity = 0;
+    }
 
-    public product getProduct() {
-        return product;
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     public int getQuantity() {

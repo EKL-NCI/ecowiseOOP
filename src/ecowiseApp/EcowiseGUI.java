@@ -14,14 +14,16 @@ import javax.swing.JPanel;
  * @author Erin Lee
  */
 public class EcowiseGUI extends javax.swing.JFrame {
+    public ArrayList <product> product;
     public ArrayList <customer> customers;
-    public ArrayList <shopCart> cart;
 
     /**
      * Creates new form shopFrame
      */
     public EcowiseGUI() {
         initComponents();
+        product = new ArrayList<>();
+        customers = new ArrayList<>();
     }
     
     public void setColor(JPanel panel){
@@ -90,8 +92,12 @@ public class EcowiseGUI extends javax.swing.JFrame {
         product5Btn = new javax.swing.JButton();
         product6Btn = new javax.swing.JButton();
         product7Btn = new javax.swing.JButton();
-        donateBtn = new javax.swing.JLabel();
-        jSeparator2 = new javax.swing.JSeparator();
+        donateBtn1 = new javax.swing.JLabel();
+        shopSep = new javax.swing.JSeparator();
+        donateBtn2 = new javax.swing.JLabel();
+        cartLbl = new javax.swing.JLabel();
+        donateLbl2 = new javax.swing.JLabel();
+        donateLbl1 = new javax.swing.JLabel();
         calcPage = new javax.swing.JPanel();
         dryerLabel = new javax.swing.JLabel();
         dryerTextField = new javax.swing.JTextField();
@@ -153,7 +159,10 @@ public class EcowiseGUI extends javax.swing.JFrame {
         cCvvTxt = new javax.swing.JTextField();
         confirmBtn = new javax.swing.JButton();
         myCartLbl = new javax.swing.JLabel();
-        jSeparator1 = new javax.swing.JSeparator();
+        cartSep = new javax.swing.JSeparator();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        cartText = new javax.swing.JTextArea();
+        loadCartBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -434,92 +443,157 @@ public class EcowiseGUI extends javax.swing.JFrame {
         shopTitle.setText("Shop");
         shopPage.add(shopTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 50, 20));
 
-        product2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/productFiller.png"))); // NOI18N
-        shopPage.add(product2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 70, -1, -1));
+        product2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/airFryer002.png"))); // NOI18N
+        shopPage.add(product2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 40, -1, -1));
 
-        product1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/productFiller.png"))); // NOI18N
-        shopPage.add(product1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, -1, -1));
+        product1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/slowcooker001.png"))); // NOI18N
+        shopPage.add(product1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, -1, -1));
 
-        product4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/productFiller.png"))); // NOI18N
-        shopPage.add(product4, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 70, -1, -1));
+        product4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/microwave004.png"))); // NOI18N
+        shopPage.add(product4, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 40, -1, -1));
 
-        product3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/productFiller.png"))); // NOI18N
-        shopPage.add(product3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 70, -1, -1));
+        product3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/microwave003.png"))); // NOI18N
+        shopPage.add(product3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 40, -1, -1));
 
-        product6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/productFiller.png"))); // NOI18N
+        product6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/toaster006.png"))); // NOI18N
         shopPage.add(product6, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 270, -1, -1));
 
-        product5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/productFiller.png"))); // NOI18N
+        product5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/kettle005.png"))); // NOI18N
         shopPage.add(product5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, -1, -1));
 
-        product8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/productFiller.png"))); // NOI18N
+        product8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dishwasher008.png"))); // NOI18N
         shopPage.add(product8, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 270, -1, -1));
 
-        product7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/productFiller.png"))); // NOI18N
+        product7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fridge007.png"))); // NOI18N
         shopPage.add(product7, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 270, -1, -1));
 
         product8Desc.setForeground(new java.awt.Color(50, 50, 50));
-        product8Desc.setText("Name + Price");
-        shopPage.add(product8Desc, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 370, 80, 30));
+        product8Desc.setText("iQ300 Freestanding Dishwasher");
+        shopPage.add(product8Desc, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 370, 170, 30));
 
         product1Desc.setForeground(new java.awt.Color(50, 50, 50));
-        product1Desc.setText("Name + Price");
-        shopPage.add(product1Desc, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, 80, 30));
+        product1Desc.setText("Easy Time Slow Cooker");
+        shopPage.add(product1Desc, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 130, 30));
 
         product2Desc.setForeground(new java.awt.Color(50, 50, 50));
-        product2Desc.setText("Name + Price");
-        shopPage.add(product2Desc, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 170, 80, 30));
+        product2Desc.setText("Pro 4.7L Air Fryer");
+        shopPage.add(product2Desc, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 140, 110, 30));
 
         product3Desc.setForeground(new java.awt.Color(50, 50, 50));
-        product3Desc.setText("Name + Price");
-        shopPage.add(product3Desc, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 170, 80, 30));
+        product3Desc.setText("Combination Microwave MWH 338 SX");
+        shopPage.add(product3Desc, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 140, 210, 30));
 
         product4Desc.setForeground(new java.awt.Color(50, 50, 50));
-        product4Desc.setText("Name + Price");
-        shopPage.add(product4Desc, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 170, 80, 30));
+        product4Desc.setText("Microwave RHMD714G");
+        shopPage.add(product4Desc, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 140, 130, 30));
 
         product5Desc.setForeground(new java.awt.Color(50, 50, 50));
-        product5Desc.setText("Name + Price");
-        shopPage.add(product5Desc, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 370, 80, 30));
+        product5Desc.setText("Enfinigy Kettle Pro");
+        shopPage.add(product5Desc, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, 110, 30));
 
         product6Desc.setForeground(new java.awt.Color(50, 50, 50));
-        product6Desc.setText("Name + Price");
-        shopPage.add(product6Desc, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 370, 80, 30));
+        product6Desc.setText("VTT981 Edge 2 Slice Toaster");
+        shopPage.add(product6Desc, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 370, 150, 30));
 
         product7Desc.setForeground(new java.awt.Color(50, 50, 50));
-        product7Desc.setText("Name + Price");
-        shopPage.add(product7Desc, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 370, 80, 30));
+        product7Desc.setText("50/50 Frost Free Fridge Freezer");
+        shopPage.add(product7Desc, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 370, 160, 30));
 
         product8Btn.setText("Add to Cart");
-        shopPage.add(product8Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 400, -1, -1));
+        product8Btn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                product8BtnMouseClicked(evt);
+            }
+        });
+        shopPage.add(product8Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 420, -1, -1));
 
         product1Btn.setText("Add to Cart");
+        product1Btn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                product1BtnMouseClicked(evt);
+            }
+        });
         shopPage.add(product1Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, -1, -1));
 
         product2Btn.setText("Add to Cart");
+        product2Btn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                product2BtnMouseClicked(evt);
+            }
+        });
         shopPage.add(product2Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 200, -1, -1));
 
         product3Btn.setText("Add to Cart");
+        product3Btn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                product3BtnMouseClicked(evt);
+            }
+        });
         shopPage.add(product3Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 200, -1, -1));
 
         product4Btn.setText("Add to Cart");
+        product4Btn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                product4BtnMouseClicked(evt);
+            }
+        });
         shopPage.add(product4Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 200, -1, -1));
 
         product5Btn.setText("Add to Cart");
-        shopPage.add(product5Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 400, -1, -1));
+        product5Btn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                product5BtnMouseClicked(evt);
+            }
+        });
+        shopPage.add(product5Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 420, -1, -1));
 
         product6Btn.setText("Add to Cart");
-        shopPage.add(product6Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 400, -1, -1));
+        product6Btn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                product6BtnMouseClicked(evt);
+            }
+        });
+        shopPage.add(product6Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 420, -1, -1));
 
         product7Btn.setText("Add to Cart");
-        shopPage.add(product7Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 400, -1, -1));
+        product7Btn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                product7BtnMouseClicked(evt);
+            }
+        });
+        shopPage.add(product7Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 420, -1, -1));
 
-        donateBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Donate.png"))); // NOI18N
-        shopPage.add(donateBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 160, 60, 50));
+        donateBtn1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Donate.png"))); // NOI18N
+        donateBtn1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                donateBtn1MouseClicked(evt);
+            }
+        });
+        shopPage.add(donateBtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 350, 60, 50));
 
-        jSeparator2.setForeground(new java.awt.Color(50, 50, 50));
-        jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        shopPage.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(723, 0, -1, 470));
+        shopSep.setForeground(new java.awt.Color(50, 50, 50));
+        shopSep.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        shopPage.add(shopSep, new org.netbeans.lib.awtextra.AbsoluteConstraints(723, 0, -1, 470));
+
+        donateBtn2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Donate.png"))); // NOI18N
+        donateBtn2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                donateBtn2MouseClicked(evt);
+            }
+        });
+        shopPage.add(donateBtn2, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 230, 60, 50));
+
+        cartLbl.setForeground(new java.awt.Color(50, 50, 50));
+        cartLbl.setText("My Cart");
+        shopPage.add(cartLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 110, -1, -1));
+
+        donateLbl2.setForeground(new java.awt.Color(50, 50, 50));
+        donateLbl2.setText("Donate 5");
+        shopPage.add(donateLbl2, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 410, -1, -1));
+
+        donateLbl1.setForeground(new java.awt.Color(50, 50, 50));
+        donateLbl1.setText("Donate 5");
+        shopPage.add(donateLbl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 290, -1, -1));
 
         mainPanel.add(shopPage, "2");
 
@@ -762,12 +836,12 @@ public class EcowiseGUI extends javax.swing.JFrame {
                 .addGroup(calcPageLayout.createSequentialGroup()
                     .addGap(47, 47, 47)
                     .addComponent(jLabel11)
-                    .addContainerGap(372, Short.MAX_VALUE)))
+                    .addContainerGap(382, Short.MAX_VALUE)))
             .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(calcPageLayout.createSequentialGroup()
                     .addGap(49, 49, 49)
                     .addComponent(jLabel12)
-                    .addContainerGap(695, Short.MAX_VALUE)))
+                    .addContainerGap(699, Short.MAX_VALUE)))
         );
         calcPageLayout.setVerticalGroup(
             calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1011,18 +1085,37 @@ public class EcowiseGUI extends javax.swing.JFrame {
         myCartLbl.setForeground(new java.awt.Color(50, 50, 50));
         myCartLbl.setText("My Cart");
 
-        jSeparator1.setForeground(new java.awt.Color(50, 50, 50));
-        jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        cartSep.setForeground(new java.awt.Color(50, 50, 50));
+        cartSep.setOrientation(javax.swing.SwingConstants.VERTICAL);
+
+        cartText.setBackground(new java.awt.Color(212, 232, 193));
+        cartText.setColumns(20);
+        cartText.setRows(5);
+        jScrollPane1.setViewportView(cartText);
+
+        loadCartBtn.setText("Load Cart");
+        loadCartBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                loadCartBtnMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout cartPageLayout = new javax.swing.GroupLayout(cartPage);
         cartPage.setLayout(cartPageLayout);
         cartPageLayout.setHorizontalGroup(
             cartPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(cartPageLayout.createSequentialGroup()
-                .addGap(195, 195, 195)
-                .addComponent(myCartLbl)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 214, Short.MAX_VALUE)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(cartPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(cartPageLayout.createSequentialGroup()
+                        .addGap(35, 35, 35)
+                        .addComponent(loadCartBtn)
+                        .addGap(81, 81, 81)
+                        .addComponent(myCartLbl))
+                    .addGroup(cartPageLayout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 448, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, Short.MAX_VALUE)
+                .addComponent(cartSep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(cartPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(cartPageLayout.createSequentialGroup()
@@ -1111,7 +1204,13 @@ public class EcowiseGUI extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cartPageLayout.createSequentialGroup()
                         .addComponent(confirmBtn)
                         .addGap(19, 19, 19))))
-            .addComponent(jSeparator1)
+            .addComponent(cartSep)
+            .addGroup(cartPageLayout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addComponent(loadCartBtn)
+                .addGap(1, 1, 1)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         dPhoneLbl.getAccessibleContext().setAccessibleName("phoneLbl");
@@ -1293,6 +1392,103 @@ public class EcowiseGUI extends javax.swing.JFrame {
             customers.add(c);
     }//GEN-LAST:event_confirmBtnActionPerformed
 
+    private void donateBtn2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_donateBtn2MouseClicked
+        // TODO add your handling code here:
+        product p = new product();
+            p.setName("Donate");
+            p.setPrice(5.00);
+            p.setProductId("DN001");
+            product.add(p);
+    }//GEN-LAST:event_donateBtn2MouseClicked
+
+    private void donateBtn1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_donateBtn1MouseClicked
+        // TODO add your handling code here:
+        product p = new product();
+            p.setName("Donate");
+            p.setPrice(10.00);
+            p.setProductId("DN002");
+            product.add(p);
+    }//GEN-LAST:event_donateBtn1MouseClicked
+
+    private void product1BtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_product1BtnMouseClicked
+        // TODO add your handling code here:
+        product p = new product();
+            p.setName("Easy Time Slow Cooker");
+            p.setPrice(49.99);
+            p.setProductId("AP001");
+            product.add(p);
+    }//GEN-LAST:event_product1BtnMouseClicked
+
+    private void product2BtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_product2BtnMouseClicked
+        // TODO add your handling code here:
+        product p = new product();
+            p.setName("Pro 4.7L Air Fryer");
+            p.setPrice(99.99);
+            p.setProductId("AP002");
+            product.add(p);
+    }//GEN-LAST:event_product2BtnMouseClicked
+
+    private void product3BtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_product3BtnMouseClicked
+        // TODO add your handling code here:
+        product p = new product();
+            p.setName("Combination Microwave MWH 338 SX");
+            p.setPrice(329.90);
+            p.setProductId("AP003");
+            product.add(p);
+    }//GEN-LAST:event_product3BtnMouseClicked
+
+    private void product4BtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_product4BtnMouseClicked
+        // TODO add your handling code here:
+        product p = new product();
+            p.setName("Microwave RHMD714G");
+            p.setPrice(99.99);
+            p.setProductId("AP004");
+            product.add(p);
+    }//GEN-LAST:event_product4BtnMouseClicked
+
+    private void product5BtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_product5BtnMouseClicked
+        // TODO add your handling code here:
+        product p = new product();
+            p.setName("Enfinigy Kettle Pro");
+            p.setPrice(129.00);
+            p.setProductId("AP005");
+            product.add(p);
+    }//GEN-LAST:event_product5BtnMouseClicked
+
+    private void product6BtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_product6BtnMouseClicked
+        // TODO add your handling code here:
+        product p = new product();
+            p.setName("VTT981 Edge 2 Slice Toaster");
+            p.setPrice(40.00);
+            p.setProductId("AP006");
+            product.add(p);
+    }//GEN-LAST:event_product6BtnMouseClicked
+
+    private void product7BtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_product7BtnMouseClicked
+        // TODO add your handling code here:
+        product p = new product();
+            p.setName("50/50 Frost Free Fridge Freezer");
+            p.setPrice(500.00);
+            p.setProductId("AP007");
+            product.add(p);
+    }//GEN-LAST:event_product7BtnMouseClicked
+
+    private void product8BtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_product8BtnMouseClicked
+        // TODO add your handling code here:
+        product p = new product();
+            p.setName("iQ300 Freestanding Dishwasher");
+            p.setPrice(770.00);
+            p.setProductId("AP008");
+            product.add(p);
+    }//GEN-LAST:event_product8BtnMouseClicked
+
+    private void loadCartBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loadCartBtnMouseClicked
+        // TODO add your handling code here:
+        for(product p:product){
+            cartText.setText(p.toString());
+        }
+    }//GEN-LAST:event_loadCartBtnMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1346,7 +1542,10 @@ public class EcowiseGUI extends javax.swing.JFrame {
     private javax.swing.JLabel calcTxt;
     private javax.swing.JLabel cardDetailsLbl;
     private javax.swing.JLabel cartBtn;
+    private javax.swing.JLabel cartLbl;
     private javax.swing.JPanel cartPage;
+    private javax.swing.JSeparator cartSep;
+    private javax.swing.JTextArea cartText;
     private javax.swing.JButton confirmBtn;
     private javax.swing.JLabel costPerHourLabel;
     private javax.swing.JTextField costPerHourTextField;
@@ -1361,7 +1560,10 @@ public class EcowiseGUI extends javax.swing.JFrame {
     private javax.swing.JLabel dPhoneLbl;
     private javax.swing.JTextField dPhoneTxt;
     private javax.swing.JLabel detailsLbl;
-    private javax.swing.JLabel donateBtn;
+    private javax.swing.JLabel donateBtn1;
+    private javax.swing.JLabel donateBtn2;
+    private javax.swing.JLabel donateLbl1;
+    private javax.swing.JLabel donateLbl2;
     private javax.swing.JLabel dryerLabel;
     private javax.swing.JTextField dryerTextField;
     private javax.swing.JTextField dryerTextField2;
@@ -1396,12 +1598,12 @@ public class EcowiseGUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel kettleLabel;
     private javax.swing.JTextField kettleTextField;
     private javax.swing.JLabel kmDrivenLabel;
     private javax.swing.JTextField kmDrivenTextField;
+    private javax.swing.JButton loadCartBtn;
     private javax.swing.JLabel logoLbl;
     private javax.swing.JLabel mCompLabel1;
     private javax.swing.JLabel mProLabel;
@@ -1435,6 +1637,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
     private javax.swing.JLabel shopLbl;
     private javax.swing.JPanel shopPage;
     private javax.swing.JPanel shopPanel;
+    private javax.swing.JSeparator shopSep;
     private javax.swing.JLabel shopTitle;
     private javax.swing.JLabel shopTxt;
     private javax.swing.JPanel sidebarMenu;
