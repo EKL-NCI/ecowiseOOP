@@ -58,7 +58,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
         mainPanel = new javax.swing.JPanel();
         homePage = new javax.swing.JPanel();
         homeLogoLbl = new javax.swing.JLabel();
-        jSeparator1 = new javax.swing.JSeparator();
+        homeImgSep = new javax.swing.JSeparator();
         homeImg = new javax.swing.JLabel();
         shopPage = new javax.swing.JPanel();
         cartBtn = new javax.swing.JLabel();
@@ -376,7 +376,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
         homeLogoLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo.png"))); // NOI18N
         homeLogoLbl.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, java.awt.Color.darkGray, java.awt.Color.lightGray));
 
-        jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        homeImgSep.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
         homeImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/homePageSide.jpg"))); // NOI18N
 
@@ -388,7 +388,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
                 .addGap(182, 182, 182)
                 .addComponent(homeLogoLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 205, Short.MAX_VALUE)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(homeImgSep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(homeImg, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -396,7 +396,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
             homePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(homePageLayout.createSequentialGroup()
                 .addGroup(homePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSeparator1)
+                    .addComponent(homeImgSep)
                     .addGroup(homePageLayout.createSequentialGroup()
                         .addGroup(homePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(homePageLayout.createSequentialGroup()
@@ -1330,6 +1330,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
     private javax.swing.JLabel gasCompLabel;
     private javax.swing.JTextField gasCompTextField;
     private javax.swing.JLabel homeImg;
+    private javax.swing.JSeparator homeImgSep;
     private javax.swing.JLabel homeLbl;
     private javax.swing.JLabel homeLogoLbl;
     private javax.swing.JPanel homePage;
@@ -1348,7 +1349,6 @@ public class EcowiseGUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel kettleLabel;
     private javax.swing.JTextField kettleTextField;
     private javax.swing.JLabel kmDrivenLabel;

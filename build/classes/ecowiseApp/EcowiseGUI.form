@@ -434,7 +434,7 @@
                       <EmptySpace min="-2" pref="182" max="-2" attributes="0"/>
                       <Component id="homeLogoLbl" min="-2" pref="267" max="-2" attributes="0"/>
                       <EmptySpace pref="205" max="32767" attributes="0"/>
-                      <Component id="jSeparator1" min="-2" max="-2" attributes="0"/>
+                      <Component id="homeImgSep" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="homeImg" min="-2" pref="186" max="-2" attributes="0"/>
                   </Group>
@@ -444,7 +444,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jSeparator1" max="32767" attributes="0"/>
+                          <Component id="homeImgSep" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
@@ -483,7 +483,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JSeparator" name="jSeparator1">
+            <Component class="javax.swing.JSeparator" name="homeImgSep">
               <Properties>
                 <Property name="orientation" type="int" value="1"/>
               </Properties>
