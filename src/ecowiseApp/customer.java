@@ -12,8 +12,6 @@ import java.util.ArrayList;
  */
 public class customer {
     
-    private ArrayList <customer> customers;
-    
     private String name;
     private String phoneNo;
     private String address;
@@ -36,8 +34,6 @@ public class customer {
         cardNo = " ";
         expiry = " ";
         cvv = " ";
-        
-        customers = new ArrayList<>();
     }
     
     public customer(String name, String phoneNo, String address, String city, String county, String cardName, String cardNo, String expiry, String cvv) {
