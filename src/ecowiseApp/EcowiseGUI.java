@@ -9,6 +9,9 @@ import java.awt.Color;
 import java.util.ArrayList;
 import javax.swing.JPanel;
 
+//taken from https://mkyong.com/java/how-to-round-double-float-value-to-2-decimal-points-in-java/
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 /**
  *
  * @author Erin Lee
@@ -16,7 +19,9 @@ import javax.swing.JPanel;
 public class EcowiseGUI extends javax.swing.JFrame {
     public ArrayList <product> product;
     public ArrayList <customer> customers;
-
+    
+    //taken from https://mkyong.com/java/how-to-round-double-float-value-to-2-decimal-points-in-java/
+    private static final DecimalFormat df = new DecimalFormat("0.00");
     /**
      * Creates new form shopFrame
      */
