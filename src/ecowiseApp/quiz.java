@@ -25,7 +25,7 @@ public class quiz{
         String definition = randWord.getDefinition();
         
         
-        Scanner scanner = new Scanner(System.in);
+        
         
         //Display random definition to user
         JOptionPane.showMessageDialog(null,("The definition of the word is: " +definition +" What is this word?"));
@@ -38,14 +38,17 @@ public class quiz{
         if(ans.equals(correct)){
             JOptionPane.showMessageDialog(null,("Nicely done! That's absolutely correct"));
         }else{
-            JOptionPane.showMessageDialog(null,("You guessed incorrectly, remember that spelling matters! The correct word is: " +ans));
+            JOptionPane.showMessageDialog(null,("You guessed incorrectly, remember that spelling matters! The correct word is: " +randWord.toString()));
         }
     }
     
+    //function to get random word from word bank
     private wordAndDef getRandWord(){
         Random random = new Random();
         int randIndex = random.nextInt(dictionary.getWordBank().size());
         return dictionary.getWordBank().get(randIndex);
+    
         
     }
 }
+    

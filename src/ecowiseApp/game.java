@@ -15,12 +15,8 @@ public class game{
     
     private wordBank dictionary;
     private  int lives = 5;
-    //private ArrayList<wordAndDef> wordBank;
     
-//    public game(ArrayList<wordAndDef> wordBank){
-//        this.wordBank = wordBank;
-//        this.lives = lives;
-//    }
+    
     public game(wordBank dictionary){
         this.dictionary = dictionary;
     }
@@ -33,10 +29,10 @@ public class game{
         //Make the secret word appear with underscores
         StringBuffer secretWord = new StringBuffer(wordGuess.length());
         for (int i = 0; i < wordGuess.length(); i++){
-            secretWord.append("_ ");
+            secretWord.append("_");
         }
         
-        Scanner scanner = new Scanner(System.in);
+        
         
         while (lives > 0 && secretWord.indexOf("_") != -1){
             //Displaying the current state of the word
@@ -56,7 +52,7 @@ public class game{
                 }
             }
             
-            //lose a life is character is not contained in word
+            //lose a life if character is not contained in word
             if(!correct){
                 lives--;
                 JOptionPane.showMessageDialog(null,("Incorrect guess, you have " +lives + "lives remaining"));
