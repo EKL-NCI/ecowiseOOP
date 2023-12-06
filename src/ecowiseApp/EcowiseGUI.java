@@ -1193,6 +1193,21 @@ public class EcowiseGUI extends javax.swing.JFrame {
         
         CardLayout card = (CardLayout)mainPanel.getLayout();
         card.show(mainPanel, "3");
+        
+        gasCompLbl.setVisible(false);
+        questionCTLbl.setVisible(false);
+        questionRELbl.setVisible(false);
+        costHourLbl.setVisible(false);
+        mCompCTLbl.setVisible(false);
+        mCompRELbl.setVisible(false);
+        renewableSystemLbl.setVisible(false);
+        
+        gasCompTxtField.setVisible(false);
+        costHourTxtField.setVisible(false);
+        ctButton.setVisible(false);
+        reButton.setVisible(false);
+        seRButton.setVisible(false);
+        windRButton.setVisible(false);
     }//GEN-LAST:event_calcPanelMouseClicked
 
     private void gamePanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_gamePanelMouseClicked
