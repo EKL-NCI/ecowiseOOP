@@ -6,17 +6,19 @@ package ecowiseApp;
 
 /**
  *
- * @author Paul P
+ * @author paul paus
  */
+import java.util.ArrayList;
 public class RenewableEnergy extends Calculator{
-    private double costPerHour, installCost, monthlyProduction /*,payBackPeriod*/;
+    private double costPerHour, installCost, monthlyProduction;
+    private ArrayList<Object> renewableSystems;
     
-    public RenewableEnergy(double costPerHour, double installCost, double monthlyProduction, /*double payBackPeriod,*/ double dryer, double tv, double kettle, double waterHeater, double appliances, double washingMachine, double freezer, double mComp){
+    public RenewableEnergy(double costPerHour, double installCost, double monthlyProduction, double dryer, double tv, double kettle, double waterHeater, double appliances, double washingMachine, double freezer, double mComp){
         super(dryer, tv, kettle, waterHeater, appliances, washingMachine, freezer, mComp);
         this.costPerHour = costPerHour;
         this.installCost = installCost;
         this.monthlyProduction = monthlyProduction;
-        //this.payBackPeriod = payBackPeriod;
+        this.renewableSystems = new ArrayList<>();
         }
     
     public RenewableEnergy(){
@@ -24,7 +26,6 @@ public class RenewableEnergy extends Calculator{
         costPerHour = 0;
         installCost = 0; 
         monthlyProduction = 0;
-        //payBackPeriod = 0;
     }
 
     public double getCostPerHour() {
@@ -51,18 +52,8 @@ public class RenewableEnergy extends Calculator{
         this.monthlyProduction = monthlyProduction;
     }
     
-    /*
-    public double getPayBackPeriod() {
-        return payBackPeriod;
-    }
-
-    public void setPayBackPeriod(double payBackPeriod) {
-        this.payBackPeriod = payBackPeriod;
-    }
-    */
-    
     @Override
     public double getmComp(){
-        return installCost/((super.getmComp()-monthlyProduction)*costPerHour);
+        return installCost/((monthlyProduction-super.getmComp())*costPerHour);
     }
 }

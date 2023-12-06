@@ -6,7 +6,7 @@ package ecowiseApp;
 
 /**
  *
- * @author erink
+ * @author paul paus
  */
 public class Calculator {
     private double dryer, tv, kettle, waterHeater, appliances, washingMachine, freezer, mComp;
@@ -93,11 +93,6 @@ public class Calculator {
     
     public double getmComp(){
       return (dryer + tv + kettle + waterHeater + appliances + washingMachine + freezer) * 30;
-    }
+    } 
     
-    /*
-    public double getmComp() {
-        return mComp;
-    }
-    */
 }

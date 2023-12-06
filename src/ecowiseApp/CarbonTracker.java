@@ -6,35 +6,19 @@ package ecowiseApp;
 
 /**
  *
- * @author Paul P
+ * @author paul paus
  */
 public class CarbonTracker extends Calculator{
-    private double /*yearComp,*/ gasComp, kmDriven, totalEmissions;
+    private double gasComp;
 
-    public CarbonTracker(/*double yearComp,*/ double gasComp, double kmDriven, double totalEmissions, double dryer, double tv, double kettle, double waterHeater, double appliances, double washingMachine, double freezer, double mComp) {
-        super(dryer, tv, kettle, waterHeater, appliances, washingMachine, freezer, mComp);      
-        //this.yearComp = yearComp;
+    public CarbonTracker(double gasComp, double dryer, double tv, double kettle, double waterHeater, double appliances, double washingMachine, double freezer, double mComp) {
+        super(dryer, tv, kettle, waterHeater, appliances, washingMachine, freezer, mComp);
         this.gasComp = gasComp;
-        this.kmDriven = kmDriven;
-        this.totalEmissions = totalEmissions;
     }
     
     public CarbonTracker() {
-        //yearComp = 0;
         gasComp = 0;
-        kmDriven = 0;
-        totalEmissions = 0;
     }
-    
-    /*
-    public double getYearComp() {
-        return yearComp;
-    }
-
-    public void setYearComp(double yearComp) {
-        this.yearComp = yearComp;
-    }
-    */
 
     public double getGasComp() {
         return gasComp;
@@ -43,26 +27,10 @@ public class CarbonTracker extends Calculator{
     public void setGasComp(double gasComp) {
         this.gasComp = gasComp;
     }
-
-    public double getKmDriven() {
-        return kmDriven;
-    }
-
-    public void setKmDriven(double kmDriven) {
-        this.kmDriven = kmDriven;
-    }
-
-    public double getTotalEmissions() {
-        return totalEmissions;
-    }
-
-    public void setTotalEmissions(double totalEmissions) {
-        this.totalEmissions = totalEmissions;
-    }
     
     @Override
     public double getmComp(){
-        return ((super.getmComp()*12)*1)+(gasComp*2);    
+        return ((super.getmComp() * 0.4) + (gasComp * 2.31));    
     }
     
 }
