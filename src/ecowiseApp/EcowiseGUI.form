@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.9" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Component class="javax.swing.ButtonGroup" name="radioGroup">
+    </Component>
+  </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -1204,6 +1208,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Wind Energy"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="windRButtonActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="gasCompLbl">
               <Properties>
@@ -1439,10 +1446,7 @@
                                           <Component id="dCityTxt" min="-2" pref="231" max="-2" attributes="0"/>
                                           <Component id="dCountyLbl" min="-2" max="-2" attributes="0"/>
                                           <Component id="dCountyTxt" min="-2" pref="255" max="-2" attributes="0"/>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="cCardnoTxt" min="-2" pref="170" max="-2" attributes="0"/>
-                                              <EmptySpace min="113" pref="113" max="-2" attributes="0"/>
-                                          </Group>
+                                          <Component id="cCardnoTxt" alignment="0" min="-2" pref="170" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>

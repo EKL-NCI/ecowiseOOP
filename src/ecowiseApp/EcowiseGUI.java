@@ -47,6 +47,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        radioGroup = new javax.swing.ButtonGroup();
         sidebarMenu = new javax.swing.JPanel();
         homePanel = new javax.swing.JPanel();
         homeLbl = new javax.swing.JLabel();
@@ -674,6 +675,11 @@ public class EcowiseGUI extends javax.swing.JFrame {
         questionCTLbl.setText("How much Carbon Dioxide does your household emit per Month?");
 
         windRButton.setText("Wind Energy");
+        windRButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                windRButtonActionPerformed(evt);
+            }
+        });
 
         gasCompLbl.setText("Gasoline Consumption:");
 
@@ -1095,9 +1101,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
                                     .addComponent(dCityTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(dCountyLbl)
                                     .addComponent(dCountyTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(cartPageLayout.createSequentialGroup()
-                                        .addComponent(cCardnoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(113, 113, 113)))))
+                                    .addComponent(cCardnoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addContainerGap(51, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cartPageLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1487,6 +1491,14 @@ public class EcowiseGUI extends javax.swing.JFrame {
 
     private void seRButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seRButtonActionPerformed
         // TODO add your handling code here:
+        radioGroup.add(seRButton);
+        seRButton.setText("Solar Energy");
+        seRButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                seRButtonActionPerformed(evt);
+            }
+        });
     }//GEN-LAST:event_seRButtonActionPerformed
 
     private void clearButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clearButtonMouseClicked
@@ -1581,6 +1593,18 @@ public class EcowiseGUI extends javax.swing.JFrame {
         CardLayout card = (CardLayout)mainPanel.getLayout();
         card.show(mainPanel, "2");
     }//GEN-LAST:event_backBtnMouseClicked
+
+    private void windRButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_windRButtonActionPerformed
+        // TODO add your handling code here:
+        radioGroup.add(windRButton);
+        windRButton.setText("Wind Energy");
+        windRButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                windRButtonActionPerformed(evt);
+            }
+        }); 
+    }//GEN-LAST:event_windRButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1721,6 +1745,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
     private javax.swing.JLabel questionCTLbl;
     private javax.swing.JLabel questionCalcLbl;
     private javax.swing.JLabel questionRELbl;
+    private javax.swing.ButtonGroup radioGroup;
     private javax.swing.JButton reButton;
     private javax.swing.JLabel renewableSystemLbl;
     private javax.swing.JRadioButton seRButton;
