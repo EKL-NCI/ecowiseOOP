@@ -420,6 +420,9 @@
             <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[849, 468]"/>
             </Property>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[849, 468]"/>
+            </Property>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
@@ -433,7 +436,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="182" max="-2" attributes="0"/>
                       <Component id="homeLogoLbl" min="-2" pref="267" max="-2" attributes="0"/>
-                      <EmptySpace pref="205" max="32767" attributes="0"/>
+                      <EmptySpace pref="317" max="32767" attributes="0"/>
                       <Component id="homeImgSep" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="homeImg" min="-2" pref="186" max="-2" attributes="0"/>
@@ -946,6 +949,9 @@
             <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[849, 468]"/>
             </Property>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[849, 468]"/>
+            </Property>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
@@ -1035,7 +1041,7 @@
                           </Group>
                           <Component id="calcTitle" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="89" max="32767" attributes="0"/>
+                      <EmptySpace pref="191" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1119,7 +1125,7 @@
                               <Component id="mCompLbl" min="-2" pref="17" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="49" max="32767" attributes="0"/>
+                      <EmptySpace pref="59" max="32767" attributes="0"/>
                       <Component id="clearButton" min="-2" pref="39" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                   </Group>
@@ -1304,6 +1310,9 @@
             <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[849, 468]"/>
             </Property>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[849, 468]"/>
+            </Property>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
@@ -1317,7 +1326,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                       <Component id="jLabel5" min="-2" pref="46" max="-2" attributes="0"/>
-                      <EmptySpace pref="761" max="32767" attributes="0"/>
+                      <EmptySpace pref="873" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1326,7 +1335,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                       <Component id="jLabel5" min="-2" pref="24" max="-2" attributes="0"/>
-                      <EmptySpace pref="427" max="32767" attributes="0"/>
+                      <EmptySpace pref="453" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1350,6 +1359,12 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="32" green="32" red="32" type="rgb"/>
             </Property>
+            <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[849, 468]"/>
+            </Property>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[849, 468]"/>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="cartPageMouseClicked"/>
@@ -1366,83 +1381,89 @@
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                                      <Component id="loadCartBtn" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="backBtn" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
+                              <Component id="backBtn" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="129" max="-2" attributes="0"/>
                               <Component id="myCartLbl" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                              <Component id="jScrollPane1" min="-2" pref="448" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jScrollPane1" min="-2" pref="448" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jLabel2" min="-2" pref="37" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="cartTotalTxt" min="-2" pref="75" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
                           </Group>
                       </Group>
-                      <EmptySpace type="separate" pref="22" max="32767" attributes="0"/>
+                      <EmptySpace pref="10" max="32767" attributes="0"/>
                       <Component id="cartSep" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
+                          <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="cNameLbl" alignment="0" min="-2" pref="43" max="-2" attributes="0"/>
-                                  <Component id="cCardnoLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="cNameTxt" min="-2" pref="172" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
+                                      <Component id="detailsLbl" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="cNameLbl" alignment="0" min="-2" pref="43" max="-2" attributes="0"/>
+                                                  <Component id="cCardnoLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="cNameTxt" min="-2" pref="172" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="1" attributes="0">
+                                                  <Component id="cExpiryLbl" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="cCvvLbl" min="-2" pref="37" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="cExpiryTxt" min="-2" pref="86" max="-2" attributes="0"/>
+                                                  <Component id="cCvvTxt" min="-2" pref="88" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                          <Component id="cardDetailsLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="dAddressLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="dNameLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="dNameTxt" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="dPhoneLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="dPhoneTxt" alignment="0" min="-2" pref="309" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Component id="dAddressTxt" alignment="0" min="-2" pref="251" max="-2" attributes="0"/>
+                                          <Component id="dCityLbl" min="-2" pref="72" max="-2" attributes="0"/>
+                                          <Component id="dCityTxt" min="-2" pref="231" max="-2" attributes="0"/>
+                                          <Component id="dCountyLbl" min="-2" max="-2" attributes="0"/>
+                                          <Component id="dCountyTxt" min="-2" pref="255" max="-2" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="cCardnoTxt" min="-2" pref="170" max="-2" attributes="0"/>
+                                              <EmptySpace min="113" pref="113" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                  </Group>
                               </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="cExpiryLbl" min="-2" max="-2" attributes="0"/>
-                                  <Component id="cCvvLbl" min="-2" pref="37" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="cExpiryTxt" min="-2" pref="86" max="-2" attributes="0"/>
-                                  <Component id="cCvvTxt" min="-2" pref="88" max="-2" attributes="0"/>
-                              </Group>
+                              <EmptySpace pref="51" max="32767" attributes="0"/>
                           </Group>
-                          <Component id="cardDetailsLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="dAddressLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="detailsLbl" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="dNameLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="dNameTxt" alignment="0" pref="309" max="32767" attributes="0"/>
-                              <Component id="dPhoneLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="dPhoneTxt" alignment="0" max="32767" attributes="0"/>
-                          </Group>
-                          <Component id="dAddressTxt" alignment="0" min="-2" pref="251" max="-2" attributes="0"/>
-                          <Component id="dCityLbl" min="-2" pref="72" max="-2" attributes="0"/>
-                          <Component id="dCityTxt" min="-2" pref="231" max="-2" attributes="0"/>
-                          <Component id="dCountyLbl" min="-2" max="-2" attributes="0"/>
-                          <Component id="dCountyTxt" min="-2" pref="255" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="cCardnoTxt" min="-2" pref="170" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace max="32767" attributes="0"/>
                               <Component id="confirmBtn" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="28" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                              <Component id="myCartLbl" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                              <Component id="detailsLbl" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                  <Component id="cartSep" alignment="0" max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="detailsLbl" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="dNameLbl" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="dNameTxt" min="-2" max="-2" attributes="0"/>
@@ -1456,7 +1477,7 @@
                       <Component id="dAddressTxt" min="-2" pref="20" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="dCityLbl" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="24" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Component id="dCityTxt" min="-2" pref="20" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="dCountyLbl" min="-2" max="-2" attributes="0"/>
@@ -1473,32 +1494,36 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="cNameTxt" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="cCardnoLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cCvvLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cCvvTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="cCardnoTxt" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                      <Component id="confirmBtn" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="cCardnoLbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="cCvvLbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="cCvvTxt" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="cCardnoTxt" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                              <Component id="backBtn" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="confirmBtn" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="myCartLbl" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                  </Group>
-                  <Component id="cartSep" alignment="0" max="32767" attributes="0"/>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
-                      <Component id="backBtn" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="loadCartBtn" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
-                      <Component id="jScrollPane1" min="-2" pref="381" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" min="-2" pref="338" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="cartTotalTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1781,15 +1806,6 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JButton" name="loadCartBtn">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Load Cart"/>
-              </Properties>
-              <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="loadCartBtnMouseClicked"/>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="loadCartBtnActionPerformed"/>
-              </Events>
-            </Component>
             <Component class="javax.swing.JLabel" name="backBtn">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -1799,6 +1815,24 @@
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="backBtnMouseClicked"/>
               </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="cartTotalTxt">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="dd" green="dd" red="dd" type="rgb"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="32" green="32" red="32" type="rgb"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel2">
+              <Properties>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="32" green="32" red="32" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Total:"/>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>

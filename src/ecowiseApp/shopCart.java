@@ -43,7 +43,7 @@ public class shopCart extends product{
     }
     
     // method to calculate total of cart
-    private void calTotal(){
+    public void calTotal(){
         
     }
     
