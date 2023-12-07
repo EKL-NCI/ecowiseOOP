@@ -8,6 +8,7 @@ import java.awt.CardLayout;
 import java.awt.Color;
 import java.util.ArrayList;
 import javax.swing.JPanel;
+import java.text.DecimalFormat;
 
     
     //taken from https://mkyong.com/java/how-to-round-double-float-value-to-2-decimal-points-in-java/
@@ -26,7 +27,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
     private wordBank wordBankInstance;
     private game game;
     private quiz quiz;
-
+    DecimalFormat df = new DecimalFormat("#.##");
 
     /**
      * Creates new form shopFrame
