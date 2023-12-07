@@ -101,8 +101,8 @@ public class EcowiseGUI extends javax.swing.JFrame {
         shopSep = new javax.swing.JSeparator();
         donateBtn2 = new javax.swing.JLabel();
         cartLbl = new javax.swing.JLabel();
-        donateLbl2 = new javax.swing.JLabel();
-        donateLbl1 = new javax.swing.JLabel();
+        donate1Btn = new javax.swing.JButton();
+        donate2Btn = new javax.swing.JButton();
         calcPage = new javax.swing.JPanel();
         gasCompTxtField = new javax.swing.JTextField();
         costHourTxtField = new javax.swing.JTextField();
@@ -589,13 +589,21 @@ public class EcowiseGUI extends javax.swing.JFrame {
         cartLbl.setText("My Cart");
         shopPage.add(cartLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 110, -1, -1));
 
-        donateLbl2.setForeground(new java.awt.Color(50, 50, 50));
-        donateLbl2.setText("Donate 5");
-        shopPage.add(donateLbl2, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 410, -1, -1));
+        donate1Btn.setText("Donate 5");
+        donate1Btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                donate1BtnActionPerformed(evt);
+            }
+        });
+        shopPage.add(donate1Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 290, -1, -1));
 
-        donateLbl1.setForeground(new java.awt.Color(50, 50, 50));
-        donateLbl1.setText("Donate 5");
-        shopPage.add(donateLbl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 290, -1, -1));
+        donate2Btn.setText("Donate 10");
+        donate2Btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                donate2BtnActionPerformed(evt);
+            }
+        });
+        shopPage.add(donate2Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 410, -1, -1));
 
         mainPanel.add(shopPage, "2");
 
@@ -1019,6 +1027,11 @@ public class EcowiseGUI extends javax.swing.JFrame {
                 loadCartBtnMouseClicked(evt);
             }
         });
+        loadCartBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loadCartBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout cartPageLayout = new javax.swing.GroupLayout(cartPage);
         cartPage.setLayout(cartPageLayout);
@@ -1371,9 +1384,13 @@ public class EcowiseGUI extends javax.swing.JFrame {
 
     private void loadCartBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loadCartBtnMouseClicked
         // TODO add your handling code here:
-        for(product p:product){
-            cartText.setText(p.toString());
+        cartText.setEditable(false);
+        StringBuilder cartContent = new StringBuilder();
+
+        for (product p : product) {
+            cartContent.append(p.toString()).append("\n");
         }
+            cartText.setText(cartContent.toString());
     }//GEN-LAST:event_loadCartBtnMouseClicked
 
     private void gasCompTxtFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gasCompTxtFieldActionPerformed
@@ -1519,6 +1536,28 @@ public class EcowiseGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_freezerTxtFieldActionPerformed
 
+    private void loadCartBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loadCartBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_loadCartBtnActionPerformed
+
+    private void donate2BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_donate2BtnActionPerformed
+        // TODO add your handling code here:
+        product p = new product();
+            p.setName("Donate");
+            p.setPrice(10.00);
+            p.setProductId("DN002");
+            product.add(p);
+    }//GEN-LAST:event_donate2BtnActionPerformed
+
+    private void donate1BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_donate1BtnActionPerformed
+        // TODO add your handling code here:
+        product p = new product();
+            p.setName("Donate");
+            p.setPrice(5.00);
+            p.setProductId("DN001");
+            product.add(p);
+    }//GEN-LAST:event_donate1BtnActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1595,10 +1634,10 @@ public class EcowiseGUI extends javax.swing.JFrame {
     private javax.swing.JLabel dPhoneLbl;
     private javax.swing.JTextField dPhoneTxt;
     private javax.swing.JLabel detailsLbl;
+    private javax.swing.JButton donate1Btn;
+    private javax.swing.JButton donate2Btn;
     private javax.swing.JLabel donateBtn1;
     private javax.swing.JLabel donateBtn2;
-    private javax.swing.JLabel donateLbl1;
-    private javax.swing.JLabel donateLbl2;
     private javax.swing.JLabel dryerLbl;
     private javax.swing.JTextField dryerTxtField;
     private javax.swing.JButton exitBtn;

@@ -11,6 +11,7 @@ import java.util.ArrayList;
  */
 public class shopCart extends product{
     public int quantity;
+    public double totalPrice;
     
     public shopCart(String name, String productId, double price, int quantity){
         super(name, productId, price);
