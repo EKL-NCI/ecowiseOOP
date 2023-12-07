@@ -165,6 +165,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         cartText = new javax.swing.JTextArea();
         loadCartBtn = new javax.swing.JButton();
+        backBtn = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -1033,6 +1034,13 @@ public class EcowiseGUI extends javax.swing.JFrame {
             }
         });
 
+        backBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/backArrow.png"))); // NOI18N
+        backBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                backBtnMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout cartPageLayout = new javax.swing.GroupLayout(cartPage);
         cartPage.setLayout(cartPageLayout);
         cartPageLayout.setHorizontalGroup(
@@ -1040,14 +1048,17 @@ public class EcowiseGUI extends javax.swing.JFrame {
             .addGroup(cartPageLayout.createSequentialGroup()
                 .addGroup(cartPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(cartPageLayout.createSequentialGroup()
-                        .addGap(35, 35, 35)
-                        .addComponent(loadCartBtn)
+                        .addGroup(cartPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(cartPageLayout.createSequentialGroup()
+                                .addGap(35, 35, 35)
+                                .addComponent(loadCartBtn))
+                            .addComponent(backBtn))
                         .addGap(81, 81, 81)
                         .addComponent(myCartLbl))
                     .addGroup(cartPageLayout.createSequentialGroup()
                         .addGap(27, 27, 27)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 448, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, Short.MAX_VALUE)
+                .addGap(18, 22, Short.MAX_VALUE)
                 .addComponent(cartSep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(cartPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1083,7 +1094,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
                         .addComponent(cCardnoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(37, 37, 37)
                         .addComponent(confirmBtn)))
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
         cartPageLayout.setVerticalGroup(
             cartPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1109,7 +1120,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
                 .addComponent(dAddressTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(dCityLbl)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
                 .addComponent(dCityTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(dCountyLbl)
@@ -1139,7 +1150,9 @@ public class EcowiseGUI extends javax.swing.JFrame {
                         .addGap(19, 19, 19))))
             .addComponent(cartSep)
             .addGroup(cartPageLayout.createSequentialGroup()
-                .addGap(38, 38, 38)
+                .addGap(4, 4, 4)
+                .addComponent(backBtn)
+                .addGap(18, 18, 18)
                 .addComponent(loadCartBtn)
                 .addGap(1, 1, 1)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1558,6 +1571,12 @@ public class EcowiseGUI extends javax.swing.JFrame {
             product.add(p);
     }//GEN-LAST:event_donate1BtnActionPerformed
 
+    private void backBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backBtnMouseClicked
+        // TODO add your handling code here:
+        CardLayout card = (CardLayout)mainPanel.getLayout();
+        card.show(mainPanel, "2");
+    }//GEN-LAST:event_backBtnMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1597,6 +1616,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel appliancesLbl;
     private javax.swing.JTextField appliancesTxtField;
+    private javax.swing.JLabel backBtn;
     private javax.swing.JPanel bannerPanel;
     private javax.swing.JLabel cCardnoLbl;
     private javax.swing.JTextField cCardnoTxt;
