@@ -19,6 +19,9 @@ import java.text.DecimalFormat;
 public class EcowiseGUI extends javax.swing.JFrame {
     public ArrayList <product> product;
     public ArrayList <customer> customers;
+    private wordBank wordBankInstance;
+    private game game;
+    private quiz quiz;
     
     //taken from https://mkyong.com/java/how-to-round-double-float-value-to-2-decimal-points-in-java/
     private static final DecimalFormat df = new DecimalFormat("0.00");
@@ -29,6 +32,9 @@ public class EcowiseGUI extends javax.swing.JFrame {
         initComponents();
         product = new ArrayList<>();
         customers = new ArrayList<>();
+        this.wordBankInstance = new wordBank();
+        this.game = new game(wordBankInstance);
+        this.quiz = new quiz(wordBankInstance);
     }
     
     public void setColor(JPanel panel){
@@ -138,7 +144,20 @@ public class EcowiseGUI extends javax.swing.JFrame {
         televisionLbl = new javax.swing.JLabel();
         kettleLbl = new javax.swing.JLabel();
         gamePage = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
+        gamePage1 = new javax.swing.JPanel();
+        gameQuizSeparator = new javax.swing.JSeparator();
+        guessLbl = new javax.swing.JLabel();
+        quizLbl = new javax.swing.JLabel();
+        gameScroll = new javax.swing.JScrollPane();
+        gameTxtArea = new javax.swing.JTextArea();
+        quizScroll = new javax.swing.JScrollPane();
+        quizTxtArea = new javax.swing.JTextArea();
+        redControllerImg = new javax.swing.JLabel();
+        greyControllerImg = new javax.swing.JLabel();
+        greenQuestionImg = new javax.swing.JLabel();
+        arcadeMachineImg = new javax.swing.JLabel();
+        startGameBtn = new javax.swing.JButton();
+        startQuizBtn = new javax.swing.JButton();
         cartPage = new javax.swing.JPanel();
         detailsLbl = new javax.swing.JLabel();
         dNameLbl = new javax.swing.JLabel();
@@ -168,6 +187,11 @@ public class EcowiseGUI extends javax.swing.JFrame {
         backBtn = new javax.swing.JLabel();
         cartTotalTxt = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
+        wordBankPage = new javax.swing.JPanel();
+        wordBankLbl = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        arrayListTxtArea = new javax.swing.JTextArea();
+        gamesBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -884,27 +908,156 @@ public class EcowiseGUI extends javax.swing.JFrame {
         gamePage.setMinimumSize(new java.awt.Dimension(849, 468));
         gamePage.setPreferredSize(new java.awt.Dimension(849, 468));
 
-        jLabel5.setForeground(new java.awt.Color(50, 50, 50));
-        jLabel5.setText("Game");
+        gamePage1.setBackground(new java.awt.Color(204, 255, 255));
+        gamePage1.setMinimumSize(new java.awt.Dimension(849, 468));
+        gamePage1.setPreferredSize(new java.awt.Dimension(849, 474));
+
+        gameQuizSeparator.setOrientation(javax.swing.SwingConstants.VERTICAL);
+
+        guessLbl.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
+        guessLbl.setForeground(new java.awt.Color(0, 0, 0));
+        guessLbl.setText("Guessing Game");
+
+        quizLbl.setBackground(new java.awt.Color(255, 255, 255));
+        quizLbl.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
+        quizLbl.setForeground(new java.awt.Color(0, 0, 0));
+        quizLbl.setText("Definition Quiz");
+
+        gameTxtArea.setBackground(new java.awt.Color(204, 204, 255));
+        gameTxtArea.setColumns(20);
+        gameTxtArea.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        gameTxtArea.setForeground(new java.awt.Color(0, 0, 0));
+        gameTxtArea.setRows(5);
+        gameTxtArea.setText("Welcome to the Sustainable Energy word\nguessing game! Your objective is to guess\nthe hidden word one letter at a time. You\nhave 5 lives, and for each wrong letter you\ninput, you will lose a life. \nHint: The word is from the word bank on \nthe previous page!");
+        gameScroll.setViewportView(gameTxtArea);
+
+        quizTxtArea.setBackground(new java.awt.Color(204, 204, 255));
+        quizTxtArea.setColumns(20);
+        quizTxtArea.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        quizTxtArea.setForeground(new java.awt.Color(0, 0, 0));
+        quizTxtArea.setRows(5);
+        quizTxtArea.setText("Welcome to the Sustainable Energy word \ndefinition quiz! You will be given the \ndefinition of a random word from our word \nbank, and you need to be able to figure out\nwhich word the definition describes. I hope\nyou studied!\nAlso, spelling matters! Good luck!");
+        quizScroll.setViewportView(quizTxtArea);
+
+        redControllerImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/redController.png"))); // NOI18N
+
+        greyControllerImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/greyController.png"))); // NOI18N
+
+        greenQuestionImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/greenQuestion.png"))); // NOI18N
+
+        arcadeMachineImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/arcadeMachine.png"))); // NOI18N
+
+        startGameBtn.setText("Start Game");
+        startGameBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                startGameBtnActionPerformed(evt);
+            }
+        });
+
+        startQuizBtn.setText("Start Quiz");
+        startQuizBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                startQuizBtnActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout gamePage1Layout = new javax.swing.GroupLayout(gamePage1);
+        gamePage1.setLayout(gamePage1Layout);
+        gamePage1Layout.setHorizontalGroup(
+            gamePage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(gamePage1Layout.createSequentialGroup()
+                .addGroup(gamePage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(gamePage1Layout.createSequentialGroup()
+                        .addGroup(gamePage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gamePage1Layout.createSequentialGroup()
+                                .addGap(253, 253, 253)
+                                .addComponent(greyControllerImg)
+                                .addGap(12, 12, 12))
+                            .addGroup(gamePage1Layout.createSequentialGroup()
+                                .addGroup(gamePage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(gamePage1Layout.createSequentialGroup()
+                                        .addGap(131, 131, 131)
+                                        .addComponent(guessLbl))
+                                    .addGroup(gamePage1Layout.createSequentialGroup()
+                                        .addGap(154, 154, 154)
+                                        .addComponent(startGameBtn))
+                                    .addGroup(gamePage1Layout.createSequentialGroup()
+                                        .addGap(38, 38, 38)
+                                        .addComponent(gameScroll, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(41, 41, 41)))
+                        .addComponent(gameQuizSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(redControllerImg))
+                .addGroup(gamePage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(gamePage1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(greenQuestionImg)
+                        .addGap(20, 20, 20))
+                    .addGroup(gamePage1Layout.createSequentialGroup()
+                        .addGroup(gamePage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(gamePage1Layout.createSequentialGroup()
+                                .addGap(151, 151, 151)
+                                .addComponent(quizLbl))
+                            .addGroup(gamePage1Layout.createSequentialGroup()
+                                .addGap(45, 45, 45)
+                                .addComponent(quizScroll, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(gamePage1Layout.createSequentialGroup()
+                                .addGap(4, 4, 4)
+                                .addComponent(arcadeMachineImg)
+                                .addGap(64, 64, 64)
+                                .addComponent(startQuizBtn)))
+                        .addGap(0, 65, Short.MAX_VALUE))))
+        );
+        gamePage1Layout.setVerticalGroup(
+            gamePage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gamePage1Layout.createSequentialGroup()
+                .addGroup(gamePage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(gameQuizSeparator, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(gamePage1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(gamePage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(gamePage1Layout.createSequentialGroup()
+                                .addGroup(gamePage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(gamePage1Layout.createSequentialGroup()
+                                        .addComponent(redControllerImg)
+                                        .addGap(28, 28, 28))
+                                    .addComponent(guessLbl, javax.swing.GroupLayout.Alignment.TRAILING))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(gameScroll, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(startGameBtn)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(greyControllerImg))
+                            .addGroup(gamePage1Layout.createSequentialGroup()
+                                .addComponent(greenQuestionImg)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(quizLbl)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(quizScroll, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(startQuizBtn))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gamePage1Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(arcadeMachineImg)))))
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout gamePageLayout = new javax.swing.GroupLayout(gamePage);
         gamePage.setLayout(gamePageLayout);
         gamePageLayout.setHorizontalGroup(
             gamePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(gamePageLayout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(873, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gamePageLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(gamePage1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         gamePageLayout.setVerticalGroup(
             gamePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(gamePageLayout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(453, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gamePageLayout.createSequentialGroup()
+                .addComponent(gamePage1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        mainPanel.add(gamePage, "4");
+        mainPanel.add(gamePage, "6");
 
         cartPage.setBackground(new java.awt.Color(255, 255, 255));
         cartPage.setForeground(new java.awt.Color(50, 50, 50));
@@ -1174,6 +1327,55 @@ public class EcowiseGUI extends javax.swing.JFrame {
 
         mainPanel.add(cartPage, "5");
 
+        wordBankPage.setBackground(new java.awt.Color(204, 255, 204));
+
+        wordBankLbl.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
+        wordBankLbl.setForeground(new java.awt.Color(0, 0, 0));
+        wordBankLbl.setText("Sustainable Energy Word Bank");
+
+        arrayListTxtArea.setBackground(new java.awt.Color(204, 204, 255));
+        arrayListTxtArea.setColumns(20);
+        arrayListTxtArea.setRows(5);
+        jScrollPane2.setViewportView(arrayListTxtArea);
+
+        gamesBtn.setText("Take me to the Games!");
+        gamesBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gamesBtnActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout wordBankPageLayout = new javax.swing.GroupLayout(wordBankPage);
+        wordBankPage.setLayout(wordBankPageLayout);
+        wordBankPageLayout.setHorizontalGroup(
+            wordBankPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(wordBankPageLayout.createSequentialGroup()
+                .addGap(45, 45, 45)
+                .addGroup(wordBankPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(wordBankPageLayout.createSequentialGroup()
+                        .addComponent(wordBankLbl)
+                        .addGap(122, 122, 122)
+                        .addComponent(gamesBtn))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 785, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(19, Short.MAX_VALUE))
+        );
+        wordBankPageLayout.setVerticalGroup(
+            wordBankPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(wordBankPageLayout.createSequentialGroup()
+                .addGroup(wordBankPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(wordBankPageLayout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addComponent(wordBankLbl))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, wordBankPageLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(gamesBtn)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        mainPanel.add(wordBankPage, "4");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -1255,6 +1457,9 @@ public class EcowiseGUI extends javax.swing.JFrame {
         
         CardLayout card = (CardLayout)mainPanel.getLayout();
         card.show(mainPanel, "4");
+        
+        String wordBankText = wordBankInstance.getWordBankAsString();
+        arrayListTxtArea.setText(wordBankText);
     }//GEN-LAST:event_gamePanelMouseClicked
 
     private void cartPageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cartPageMouseClicked
@@ -1606,6 +1811,19 @@ public class EcowiseGUI extends javax.swing.JFrame {
         }); 
     }//GEN-LAST:event_windRButtonActionPerformed
 
+    private void gamesBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gamesBtnActionPerformed
+        CardLayout card = (CardLayout)mainPanel.getLayout();
+        card.show(mainPanel, "6");
+    }//GEN-LAST:event_gamesBtnActionPerformed
+
+    private void startGameBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startGameBtnActionPerformed
+        game.playGame();
+    }//GEN-LAST:event_startGameBtnActionPerformed
+
+    private void startQuizBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startQuizBtnActionPerformed
+        quiz.startQuiz();
+    }//GEN-LAST:event_startQuizBtnActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1645,6 +1863,8 @@ public class EcowiseGUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel appliancesLbl;
     private javax.swing.JTextField appliancesTxtField;
+    private javax.swing.JLabel arcadeMachineImg;
+    private javax.swing.JTextArea arrayListTxtArea;
     private javax.swing.JLabel backBtn;
     private javax.swing.JPanel bannerPanel;
     private javax.swing.JLabel cCardnoLbl;
@@ -1695,10 +1915,18 @@ public class EcowiseGUI extends javax.swing.JFrame {
     private javax.swing.JTextField freezerTxtField;
     private javax.swing.JLabel gameLbl;
     private javax.swing.JPanel gamePage;
+    private javax.swing.JPanel gamePage1;
     private javax.swing.JPanel gamePanel;
+    private javax.swing.JSeparator gameQuizSeparator;
+    private javax.swing.JScrollPane gameScroll;
     private javax.swing.JLabel gameTxt;
+    private javax.swing.JTextArea gameTxtArea;
+    private javax.swing.JButton gamesBtn;
     private javax.swing.JLabel gasCompLbl;
     private javax.swing.JTextField gasCompTxtField;
+    private javax.swing.JLabel greenQuestionImg;
+    private javax.swing.JLabel greyControllerImg;
+    private javax.swing.JLabel guessLbl;
     private javax.swing.JLabel homeImg;
     private javax.swing.JSeparator homeImgSep;
     private javax.swing.JLabel homeLbl;
@@ -1708,8 +1936,8 @@ public class EcowiseGUI extends javax.swing.JFrame {
     private javax.swing.JLabel homeTxt;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel kettleLbl;
     private javax.swing.JTextField kettleTxtField;
     private javax.swing.JLabel logoLbl;
@@ -1745,8 +1973,12 @@ public class EcowiseGUI extends javax.swing.JFrame {
     private javax.swing.JLabel questionCTLbl;
     private javax.swing.JLabel questionCalcLbl;
     private javax.swing.JLabel questionRELbl;
+    private javax.swing.JLabel quizLbl;
+    private javax.swing.JScrollPane quizScroll;
+    private javax.swing.JTextArea quizTxtArea;
     private javax.swing.ButtonGroup radioGroup;
     private javax.swing.JButton reButton;
+    private javax.swing.JLabel redControllerImg;
     private javax.swing.JLabel renewableSystemLbl;
     private javax.swing.JRadioButton seRButton;
     private javax.swing.JLabel shopLbl;
@@ -1757,6 +1989,8 @@ public class EcowiseGUI extends javax.swing.JFrame {
     private javax.swing.JLabel shopTxt;
     private javax.swing.JPanel sidebarMenu;
     private javax.swing.JSeparator sidebarSeperator;
+    private javax.swing.JButton startGameBtn;
+    private javax.swing.JButton startQuizBtn;
     private javax.swing.JLabel televisionLbl;
     private javax.swing.JTextField televisionTxtField;
     private javax.swing.JTextField washingMachineTxtField;
@@ -1764,5 +1998,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
     private javax.swing.JLabel waterHeaterLbl;
     private javax.swing.JTextField waterHeaterTxtField;
     private javax.swing.JRadioButton windRButton;
+    private javax.swing.JLabel wordBankLbl;
+    private javax.swing.JPanel wordBankPage;
     // End of variables declaration//GEN-END:variables
 }
