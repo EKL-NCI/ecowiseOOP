@@ -47,6 +47,6 @@ public class product {
         
     @Override
     public String toString(){
-        return  name + "   EUR  " + price ;
+        return  name + "   EUR:  " + price + " Product Code: "+ productId;
     }
 }

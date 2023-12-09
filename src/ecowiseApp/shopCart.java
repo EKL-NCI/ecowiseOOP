@@ -5,6 +5,7 @@
 package ecowiseApp;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Erin Lee
@@ -12,6 +13,8 @@ import java.util.ArrayList;
 public class shopCart extends product{
     public int quantity;
     public double totalPrice;
+    
+    EcowiseGUI ecowise = new EcowiseGUI();
     
     public shopCart(String name, String productId, double price, int quantity){
         super(name, productId, price);
@@ -43,17 +46,30 @@ public class shopCart extends product{
     }
     
     // method to calculate total of cart
-    public void calTotal(){
+    public double calTotal(ArrayList <product> products){
+        for(product p : products){
+            totalPrice += p.getPrice();
+        }
         
+        return totalPrice;
     }
     
     //add + remove items from cart
-    public void addCart(){
-        
-    }
     
-    public void remCart(){
-        
+    public void remCart(ArrayList <product> products){
+       if(products.isEmpty()){
+            JOptionPane.showMessageDialog(null,"Sorry, there are no items to delete");
+        }
+        else{
+            String searchTerm = JOptionPane.showInputDialog(null, "Enter the ID you wish to delete:");
+
+            for(product p:products){
+                if(p.getProductId().equalsIgnoreCase(searchTerm)){
+                    products.remove(p);
+                    JOptionPane.showMessageDialog(null,p.toString()+" has been deleted.");
+                }
+            }
+        }
     }
     
 }
