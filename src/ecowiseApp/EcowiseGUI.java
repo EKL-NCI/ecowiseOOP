@@ -637,7 +637,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
 
         mainPanel.add(shopPage, "2");
 
-        calcPage.setBackground(new java.awt.Color(255, 255, 255));
+        calcPage.setBackground(new java.awt.Color(212, 232, 193));
         calcPage.setMinimumSize(new java.awt.Dimension(849, 468));
         calcPage.setPreferredSize(new java.awt.Dimension(849, 468));
 
@@ -917,18 +917,15 @@ public class EcowiseGUI extends javax.swing.JFrame {
         gameQuizSeparator.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
         guessLbl.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
-        guessLbl.setForeground(new java.awt.Color(0, 0, 0));
         guessLbl.setText("Guessing Game");
 
         quizLbl.setBackground(new java.awt.Color(255, 255, 255));
         quizLbl.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
-        quizLbl.setForeground(new java.awt.Color(0, 0, 0));
         quizLbl.setText("Definition Quiz");
 
         gameTxtArea.setBackground(new java.awt.Color(204, 204, 255));
         gameTxtArea.setColumns(20);
         gameTxtArea.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
-        gameTxtArea.setForeground(new java.awt.Color(0, 0, 0));
         gameTxtArea.setRows(5);
         gameTxtArea.setText("Welcome to the Sustainable Energy word\nguessing game! Your objective is to guess\nthe hidden word one letter at a time. You\nhave 5 lives, and for each wrong letter you\ninput, you will lose a life. \nHint: The word is from the word bank on \nthe previous page!");
         gameScroll.setViewportView(gameTxtArea);
@@ -936,7 +933,6 @@ public class EcowiseGUI extends javax.swing.JFrame {
         quizTxtArea.setBackground(new java.awt.Color(204, 204, 255));
         quizTxtArea.setColumns(20);
         quizTxtArea.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
-        quizTxtArea.setForeground(new java.awt.Color(0, 0, 0));
         quizTxtArea.setRows(5);
         quizTxtArea.setText("Welcome to the Sustainable Energy word \ndefinition quiz! You will be given the \ndefinition of a random word from our word \nbank, and you need to be able to figure out\nwhich word the definition describes. I hope\nyou studied!\nAlso, spelling matters! Good luck!");
         quizScroll.setViewportView(quizTxtArea);
@@ -1343,7 +1339,6 @@ public class EcowiseGUI extends javax.swing.JFrame {
         wordBankPage.setBackground(new java.awt.Color(204, 255, 204));
 
         wordBankLbl.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
-        wordBankLbl.setForeground(new java.awt.Color(0, 0, 0));
         wordBankLbl.setText("Sustainable Energy Word Bank");
 
         arrayListTxtArea.setBackground(new java.awt.Color(204, 204, 255));
@@ -1648,30 +1643,44 @@ public class EcowiseGUI extends javax.swing.JFrame {
     private void calcButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calcButtonActionPerformed
         // TODO add your handling code here:
         Calculator calc = new Calculator();
-        calc.setDryer(Double.parseDouble(dryerTxtField.getText()));
-        calc.setTv(Double.parseDouble(televisionTxtField.getText()));
-        calc.setKettle(Double.parseDouble(kettleTxtField.getText()));
-        calc.setWaterHeater(Double.parseDouble(waterHeaterTxtField.getText()));
-        calc.setAppliances(Double.parseDouble(appliancesTxtField.getText()));
-        calc.setWashingMachine(Double.parseDouble(washingMachineTxtField.getText()));
-        calc.setFreezer(Double.parseDouble(freezerTxtField.getText()));
 
-        mCompLbl.setText("You use " +  df.format(calc.getmComp()) + " kilo Watts per month!");
+        if (dryerTxtField.getText().isEmpty() ||
+            televisionTxtField.getText().isEmpty() ||
+            kettleTxtField.getText().isEmpty() ||
+            waterHeaterTxtField.getText().isEmpty() ||
+            appliancesTxtField.getText().isEmpty() ||
+            washingMachineTxtField.getText().isEmpty() ||
+            freezerTxtField.getText().isEmpty()) {
 
-        gasCompLbl.setVisible(true);
-        questionCTLbl.setVisible(true);
-        questionRELbl.setVisible(true);
-        costHourLbl.setVisible(true);
-        mCompCTLbl.setVisible(true);
-        mCompRELbl.setVisible(true);
-        renewableSystemLbl.setVisible(true);
 
-        gasCompTxtField.setVisible(true);
-        costHourTxtField.setVisible(true);
-        ctButton.setVisible(true);
-        reButton.setVisible(true);
-        seRButton.setVisible(true);
-        windRButton.setVisible(true);
+            mCompLbl.setText("Please fill every input!");
+
+        } else {
+            calc.setDryer(Double.parseDouble(dryerTxtField.getText()));
+            calc.setTv(Double.parseDouble(televisionTxtField.getText()));
+            calc.setKettle(Double.parseDouble(kettleTxtField.getText()));
+            calc.setWaterHeater(Double.parseDouble(waterHeaterTxtField.getText()));
+            calc.setAppliances(Double.parseDouble(appliancesTxtField.getText()));
+            calc.setWashingMachine(Double.parseDouble(washingMachineTxtField.getText()));
+            calc.setFreezer(Double.parseDouble(freezerTxtField.getText()));
+
+            mCompLbl.setText("You use " +  df.format(calc.getmComp()) + " kilo Watts per month!");
+
+            gasCompLbl.setVisible(true);
+            questionCTLbl.setVisible(true);
+            questionRELbl.setVisible(true);
+            costHourLbl.setVisible(true);
+            mCompCTLbl.setVisible(true);
+            mCompRELbl.setVisible(true);
+            renewableSystemLbl.setVisible(true);
+
+            gasCompTxtField.setVisible(true);
+            costHourTxtField.setVisible(true);
+            ctButton.setVisible(true);
+            reButton.setVisible(true);
+            seRButton.setVisible(true);
+            windRButton.setVisible(true);
+        }
     }//GEN-LAST:event_calcButtonActionPerformed
 
     private void ctButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ctButtonMouseClicked
@@ -1681,9 +1690,12 @@ public class EcowiseGUI extends javax.swing.JFrame {
     private void ctButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ctButtonActionPerformed
         // TODO add your handling code here:
         CarbonTracker ct = new CarbonTracker();
-        ct.setGasComp(Double.parseDouble(gasCompTxtField.getText()));
-
+        if(gasCompTxtField.getText().isEmpty()){
+        mCompCTLbl.setText("Please fill every input!");
+        }else{
+        ct.setGasComp(Double.parseDouble(gasCompTxtField.getText()));    
         mCompCTLbl.setText("Your household emits " + df.format(ct.getmComp())+ " kgCO2 per month");
+        }
     }//GEN-LAST:event_ctButtonActionPerformed
 
     private void reButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reButtonMouseClicked
@@ -1693,18 +1705,23 @@ public class EcowiseGUI extends javax.swing.JFrame {
     private void reButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reButtonActionPerformed
         // TODO add your handling code here:
         RenewableEnergy re = new RenewableEnergy();
-        re.setCostPerHour(Double.parseDouble(costHourTxtField.getText()));
+        
+        if(costHourTxtField.getText().isEmpty()){
+            mCompRELbl.setText("Please fill every input!");
+        }else{
+            re.setCostPerHour(Double.parseDouble(costHourTxtField.getText()));
+        
+            if(seRButton.isSelected()){
+                re.setInstallCost(12000);
+                re.setMonthlyProduction(60);
+            }
+            else if(windRButton.isSelected()){
+                re.setInstallCost(24000);
+                re.setMonthlyProduction(300);
+            }
 
-        if(seRButton.isSelected()){
-            re.setInstallCost(12000);
-            re.setMonthlyProduction(60);
+            mCompRELbl.setText("Your house hold will save €" + df.format(re.getmComp())+ " every month!");
         }
-        else if(windRButton.isSelected()){
-            re.setInstallCost(24000);
-            re.setMonthlyProduction(300);
-        }
-
-        mCompRELbl.setText("Your house hold will save €" + df.format(re.getmComp())+ " every month!");
     }//GEN-LAST:event_reButtonActionPerformed
 
     private void seRButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seRButtonActionPerformed
