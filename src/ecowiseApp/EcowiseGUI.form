@@ -1637,16 +1637,7 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabel2" min="-2" pref="37" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-<<<<<<< Updated upstream
                                       <Component id="cartTotalTxt" min="-2" pref="75" max="-2" attributes="0"/>
-=======
-                                      <Component id="totalValLbl" min="-2" pref="69" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="removeItmBtn" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="clearCartBtn" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
->>>>>>> Stashed changes
                                   </Group>
                               </Group>
                           </Group>
@@ -1773,12 +1764,6 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="cartTotalTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-<<<<<<< Updated upstream
-=======
-                          <Component id="clearCartBtn" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="totalValLbl" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
-                          <Component id="removeItmBtn" alignment="3" min="-2" max="-2" attributes="0"/>
->>>>>>> Stashed changes
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -2177,21 +2162,7 @@
                 <Property name="text" type="java.lang.String" value="Take me to the Games!"/>
               </Properties>
               <Events>
-<<<<<<< Updated upstream
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="gamesBtnActionPerformed"/>
-=======
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="clearCartBtnActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JLabel" name="totalValLbl">
-            </Component>
-            <Component class="javax.swing.JButton" name="removeItmBtn">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Remove Item"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="removeItmBtnActionPerformed"/>
->>>>>>> Stashed changes
               </Events>
             </Component>
           </SubComponents>

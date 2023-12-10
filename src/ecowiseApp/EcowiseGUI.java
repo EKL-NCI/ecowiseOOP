@@ -23,8 +23,6 @@ public class EcowiseGUI extends javax.swing.JFrame {
     private game game;
     private quiz quiz;
     
-    
-    
     //taken from https://mkyong.com/java/how-to-round-double-float-value-to-2-decimal-points-in-java/
     private static final DecimalFormat df = new DecimalFormat("0.00");
     /**
@@ -189,17 +187,11 @@ public class EcowiseGUI extends javax.swing.JFrame {
         backBtn = new javax.swing.JLabel();
         cartTotalTxt = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-<<<<<<< Updated upstream
         wordBankPage = new javax.swing.JPanel();
         wordBankLbl = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         arrayListTxtArea = new javax.swing.JTextArea();
         gamesBtn = new javax.swing.JButton();
-=======
-        clearCartBtn = new javax.swing.JButton();
-        totalValLbl = new javax.swing.JLabel();
-        removeItmBtn = new javax.swing.JButton();
->>>>>>> Stashed changes
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -1208,23 +1200,6 @@ public class EcowiseGUI extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(50, 50, 50));
         jLabel2.setText("Total:");
 
-<<<<<<< Updated upstream
-=======
-        clearCartBtn.setText("Clear Cart");
-        clearCartBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                clearCartBtnActionPerformed(evt);
-            }
-        });
-
-        removeItmBtn.setText("Remove Item");
-        removeItmBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                removeItmBtnActionPerformed(evt);
-            }
-        });
-
->>>>>>> Stashed changes
         javax.swing.GroupLayout cartPageLayout = new javax.swing.GroupLayout(cartPage);
         cartPage.setLayout(cartPageLayout);
         cartPageLayout.setHorizontalGroup(
@@ -1242,16 +1217,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
                             .addGroup(cartPageLayout.createSequentialGroup()
                                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-<<<<<<< Updated upstream
                                 .addComponent(cartTotalTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-=======
-                                .addComponent(totalValLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(removeItmBtn)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(clearCartBtn)
-                                .addGap(8, 8, 8)))))
->>>>>>> Stashed changes
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
                 .addComponent(cartSep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(cartPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1352,15 +1318,8 @@ public class EcowiseGUI extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(cartPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-<<<<<<< Updated upstream
                     .addComponent(cartTotalTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
-=======
-                    .addComponent(jLabel2)
-                    .addComponent(clearCartBtn)
-                    .addComponent(totalValLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(removeItmBtn))
->>>>>>> Stashed changes
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -1852,7 +1811,6 @@ public class EcowiseGUI extends javax.swing.JFrame {
         }); 
     }//GEN-LAST:event_windRButtonActionPerformed
 
-<<<<<<< Updated upstream
     private void gamesBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gamesBtnActionPerformed
         CardLayout card = (CardLayout)mainPanel.getLayout();
         card.show(mainPanel, "6");
@@ -1865,29 +1823,6 @@ public class EcowiseGUI extends javax.swing.JFrame {
     private void startQuizBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startQuizBtnActionPerformed
         quiz.startQuiz();
     }//GEN-LAST:event_startQuizBtnActionPerformed
-=======
-    private void removeItmBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeItmBtnActionPerformed
-        // TODO add your handling code here:
-        if(products.isEmpty()){
-            JOptionPane.showMessageDialog(null,"Sorry, there are no items to delete");
-        }
-        else{
-            String searchTerm = JOptionPane.showInputDialog(null, "Enter the ID you wish to delete:");
-
-            for(product p:products){
-                if(p.getProductId().equalsIgnoreCase(searchTerm)){
-                    products.remove(p);
-                    JOptionPane.showMessageDialog(null,p.getDetail()+" has been deleted.");
-                }
-                if(products.isEmpty()){
-                JOptionPane.showMessageDialog(null,"Your Cart is now Empty.");
-                }
-                
-                //cartText.update(cartContent.toString());
-            }
-        }
-    }//GEN-LAST:event_removeItmBtnActionPerformed
->>>>>>> Stashed changes
 
     /**
      * @param args the command line arguments
@@ -2043,11 +1978,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
     private javax.swing.JTextArea quizTxtArea;
     private javax.swing.ButtonGroup radioGroup;
     private javax.swing.JButton reButton;
-<<<<<<< Updated upstream
     private javax.swing.JLabel redControllerImg;
-=======
-    private javax.swing.JButton removeItmBtn;
->>>>>>> Stashed changes
     private javax.swing.JLabel renewableSystemLbl;
     private javax.swing.JRadioButton seRButton;
     private javax.swing.JLabel shopLbl;
