@@ -8,7 +8,6 @@ import java.awt.CardLayout;
 import java.awt.Color;
 import java.util.ArrayList;
 import javax.swing.JPanel;
-import javax.swing.JOptionPane;
 
 //taken from https://mkyong.com/java/how-to-round-double-float-value-to-2-decimal-points-in-java/
 import java.math.RoundingMode;
@@ -18,8 +17,11 @@ import java.text.DecimalFormat;
  * @author Erin Lee
  */
 public class EcowiseGUI extends javax.swing.JFrame {
-    public ArrayList <product> products;
+    public ArrayList <product> product;
     public ArrayList <customer> customers;
+    private wordBank wordBankInstance;
+    private game game;
+    private quiz quiz;
     
     //taken from https://mkyong.com/java/how-to-round-double-float-value-to-2-decimal-points-in-java/
     private static final DecimalFormat df = new DecimalFormat("0.00");
@@ -28,8 +30,11 @@ public class EcowiseGUI extends javax.swing.JFrame {
      */
     public EcowiseGUI() {
         initComponents();
-        products = new ArrayList<>();
+        product = new ArrayList<>();
         customers = new ArrayList<>();
+        this.wordBankInstance = new wordBank();
+        this.game = new game(wordBankInstance);
+        this.quiz = new quiz(wordBankInstance);
     }
     
     public void setColor(JPanel panel){
@@ -48,6 +53,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        radioGroup = new javax.swing.ButtonGroup();
         sidebarMenu = new javax.swing.JPanel();
         homePanel = new javax.swing.JPanel();
         homeLbl = new javax.swing.JLabel();
@@ -104,14 +110,6 @@ public class EcowiseGUI extends javax.swing.JFrame {
         cartLbl = new javax.swing.JLabel();
         donate1Btn = new javax.swing.JButton();
         donate2Btn = new javax.swing.JButton();
-        product1PriceLbl = new javax.swing.JLabel();
-        product8PriceLbl = new javax.swing.JLabel();
-        product2PriceLbl1 = new javax.swing.JLabel();
-        product3PriceLbl1 = new javax.swing.JLabel();
-        product4PriceLbl1 = new javax.swing.JLabel();
-        product5PriceLbl1 = new javax.swing.JLabel();
-        product6PriceLbl1 = new javax.swing.JLabel();
-        product7PriceLbl1 = new javax.swing.JLabel();
         calcPage = new javax.swing.JPanel();
         gasCompTxtField = new javax.swing.JTextField();
         costHourTxtField = new javax.swing.JTextField();
@@ -146,7 +144,20 @@ public class EcowiseGUI extends javax.swing.JFrame {
         televisionLbl = new javax.swing.JLabel();
         kettleLbl = new javax.swing.JLabel();
         gamePage = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
+        gamePage1 = new javax.swing.JPanel();
+        gameQuizSeparator = new javax.swing.JSeparator();
+        guessLbl = new javax.swing.JLabel();
+        quizLbl = new javax.swing.JLabel();
+        gameScroll = new javax.swing.JScrollPane();
+        gameTxtArea = new javax.swing.JTextArea();
+        quizScroll = new javax.swing.JScrollPane();
+        quizTxtArea = new javax.swing.JTextArea();
+        redControllerImg = new javax.swing.JLabel();
+        greyControllerImg = new javax.swing.JLabel();
+        greenQuestionImg = new javax.swing.JLabel();
+        arcadeMachineImg = new javax.swing.JLabel();
+        startGameBtn = new javax.swing.JButton();
+        startQuizBtn = new javax.swing.JButton();
         cartPage = new javax.swing.JPanel();
         detailsLbl = new javax.swing.JLabel();
         dNameLbl = new javax.swing.JLabel();
@@ -171,14 +182,16 @@ public class EcowiseGUI extends javax.swing.JFrame {
         confirmBtn = new javax.swing.JButton();
         myCartLbl = new javax.swing.JLabel();
         cartSep = new javax.swing.JSeparator();
-        cartTxtScroll = new javax.swing.JScrollPane();
+        jScrollPane1 = new javax.swing.JScrollPane();
         cartText = new javax.swing.JTextArea();
         backBtn = new javax.swing.JLabel();
+        cartTotalTxt = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        clearCartBtn = new javax.swing.JButton();
-        totalValLbl = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        refreshCartBtn = new javax.swing.JButton();
+        wordBankPage = new javax.swing.JPanel();
+        wordBankLbl = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        arrayListTxtArea = new javax.swing.JTextArea();
+        gamesBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -420,7 +433,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
             .addGroup(homePageLayout.createSequentialGroup()
                 .addGap(182, 182, 182)
                 .addComponent(homeLogoLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 205, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 317, Short.MAX_VALUE)
                 .addComponent(homeImgSep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(homeImg, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -473,10 +486,10 @@ public class EcowiseGUI extends javax.swing.JFrame {
         shopPage.add(product3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 40, -1, -1));
 
         product6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/toaster006.png"))); // NOI18N
-        shopPage.add(product6, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 270, -1, -1));
+        shopPage.add(product6, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 270, -1, -1));
 
         product5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/kettle005.png"))); // NOI18N
-        shopPage.add(product5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 270, -1, -1));
+        shopPage.add(product5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, -1, -1));
 
         product8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dishwasher008.png"))); // NOI18N
         shopPage.add(product8, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 270, -1, -1));
@@ -506,7 +519,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
 
         product5Desc.setForeground(new java.awt.Color(50, 50, 50));
         product5Desc.setText("Enfinigy Kettle Pro");
-        shopPage.add(product5Desc, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 370, 110, 30));
+        shopPage.add(product5Desc, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, 110, 30));
 
         product6Desc.setForeground(new java.awt.Color(50, 50, 50));
         product6Desc.setText("VTT981 Edge 2 Slice Toaster");
@@ -522,7 +535,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
                 product8BtnMouseClicked(evt);
             }
         });
-        shopPage.add(product8Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 420, -1, -1));
+        shopPage.add(product8Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 420, -1, -1));
 
         product1Btn.setText("Add to Cart");
         product1Btn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -530,7 +543,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
                 product1BtnMouseClicked(evt);
             }
         });
-        shopPage.add(product1Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, -1, -1));
+        shopPage.add(product1Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, -1, -1));
 
         product2Btn.setText("Add to Cart");
         product2Btn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -538,7 +551,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
                 product2BtnMouseClicked(evt);
             }
         });
-        shopPage.add(product2Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 190, -1, -1));
+        shopPage.add(product2Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 200, -1, -1));
 
         product3Btn.setText("Add to Cart");
         product3Btn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -546,7 +559,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
                 product3BtnMouseClicked(evt);
             }
         });
-        shopPage.add(product3Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 190, -1, -1));
+        shopPage.add(product3Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 200, -1, -1));
 
         product4Btn.setText("Add to Cart");
         product4Btn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -554,7 +567,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
                 product4BtnMouseClicked(evt);
             }
         });
-        shopPage.add(product4Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 190, -1, -1));
+        shopPage.add(product4Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 200, -1, -1));
 
         product5Btn.setText("Add to Cart");
         product5Btn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -562,7 +575,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
                 product5BtnMouseClicked(evt);
             }
         });
-        shopPage.add(product5Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 420, -1, -1));
+        shopPage.add(product5Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 420, -1, -1));
 
         product6Btn.setText("Add to Cart");
         product6Btn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -570,7 +583,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
                 product6BtnMouseClicked(evt);
             }
         });
-        shopPage.add(product6Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 420, -1, -1));
+        shopPage.add(product6Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 420, -1, -1));
 
         product7Btn.setText("Add to Cart");
         product7Btn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -578,7 +591,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
                 product7BtnMouseClicked(evt);
             }
         });
-        shopPage.add(product7Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 420, -1, -1));
+        shopPage.add(product7Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 420, -1, -1));
 
         donateBtn1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Donate.png"))); // NOI18N
         donateBtn1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -619,38 +632,6 @@ public class EcowiseGUI extends javax.swing.JFrame {
             }
         });
         shopPage.add(donate2Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 410, -1, -1));
-
-        product1PriceLbl.setForeground(new java.awt.Color(50, 50, 50));
-        product1PriceLbl.setText("49.99");
-        shopPage.add(product1PriceLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, -1, -1));
-
-        product8PriceLbl.setForeground(new java.awt.Color(50, 50, 50));
-        product8PriceLbl.setText("770.00");
-        shopPage.add(product8PriceLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 400, -1, -1));
-
-        product2PriceLbl1.setForeground(new java.awt.Color(50, 50, 50));
-        product2PriceLbl1.setText("99.99");
-        shopPage.add(product2PriceLbl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 170, -1, -1));
-
-        product3PriceLbl1.setForeground(new java.awt.Color(50, 50, 50));
-        product3PriceLbl1.setText("329.90");
-        shopPage.add(product3PriceLbl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 170, -1, -1));
-
-        product4PriceLbl1.setForeground(new java.awt.Color(50, 50, 50));
-        product4PriceLbl1.setText("99.99");
-        shopPage.add(product4PriceLbl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 170, -1, -1));
-
-        product5PriceLbl1.setForeground(new java.awt.Color(50, 50, 50));
-        product5PriceLbl1.setText("129.00");
-        shopPage.add(product5PriceLbl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 400, -1, -1));
-
-        product6PriceLbl1.setForeground(new java.awt.Color(50, 50, 50));
-        product6PriceLbl1.setText("40.00");
-        shopPage.add(product6PriceLbl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 400, -1, -1));
-
-        product7PriceLbl1.setForeground(new java.awt.Color(50, 50, 50));
-        product7PriceLbl1.setText("500.00");
-        shopPage.add(product7PriceLbl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 400, -1, -1));
 
         mainPanel.add(shopPage, "2");
 
@@ -718,6 +699,11 @@ public class EcowiseGUI extends javax.swing.JFrame {
         questionCTLbl.setText("How much Carbon Dioxide does your household emit per Month?");
 
         windRButton.setText("Wind Energy");
+        windRButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                windRButtonActionPerformed(evt);
+            }
+        });
 
         gasCompLbl.setText("Gasoline Consumption:");
 
@@ -842,7 +828,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(questionCTLbl))))
                     .addComponent(calcTitle))
-                .addContainerGap(79, Short.MAX_VALUE))
+                .addContainerGap(191, Short.MAX_VALUE))
         );
         calcPageLayout.setVerticalGroup(
             calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -911,7 +897,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
                         .addComponent(calcButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(mCompLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
                 .addComponent(clearButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(19, 19, 19))
         );
@@ -922,27 +908,156 @@ public class EcowiseGUI extends javax.swing.JFrame {
         gamePage.setMinimumSize(new java.awt.Dimension(849, 468));
         gamePage.setPreferredSize(new java.awt.Dimension(849, 468));
 
-        jLabel5.setForeground(new java.awt.Color(50, 50, 50));
-        jLabel5.setText("Game");
+        gamePage1.setBackground(new java.awt.Color(204, 255, 255));
+        gamePage1.setMinimumSize(new java.awt.Dimension(849, 468));
+        gamePage1.setPreferredSize(new java.awt.Dimension(849, 474));
+
+        gameQuizSeparator.setOrientation(javax.swing.SwingConstants.VERTICAL);
+
+        guessLbl.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
+        guessLbl.setForeground(new java.awt.Color(0, 0, 0));
+        guessLbl.setText("Guessing Game");
+
+        quizLbl.setBackground(new java.awt.Color(255, 255, 255));
+        quizLbl.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
+        quizLbl.setForeground(new java.awt.Color(0, 0, 0));
+        quizLbl.setText("Definition Quiz");
+
+        gameTxtArea.setBackground(new java.awt.Color(204, 204, 255));
+        gameTxtArea.setColumns(20);
+        gameTxtArea.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        gameTxtArea.setForeground(new java.awt.Color(0, 0, 0));
+        gameTxtArea.setRows(5);
+        gameTxtArea.setText("Welcome to the Sustainable Energy word\nguessing game! Your objective is to guess\nthe hidden word one letter at a time. You\nhave 5 lives, and for each wrong letter you\ninput, you will lose a life. \nHint: The word is from the word bank on \nthe previous page!");
+        gameScroll.setViewportView(gameTxtArea);
+
+        quizTxtArea.setBackground(new java.awt.Color(204, 204, 255));
+        quizTxtArea.setColumns(20);
+        quizTxtArea.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        quizTxtArea.setForeground(new java.awt.Color(0, 0, 0));
+        quizTxtArea.setRows(5);
+        quizTxtArea.setText("Welcome to the Sustainable Energy word \ndefinition quiz! You will be given the \ndefinition of a random word from our word \nbank, and you need to be able to figure out\nwhich word the definition describes. I hope\nyou studied!\nAlso, spelling matters! Good luck!");
+        quizScroll.setViewportView(quizTxtArea);
+
+        redControllerImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/redController.png"))); // NOI18N
+
+        greyControllerImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/greyController.png"))); // NOI18N
+
+        greenQuestionImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/greenQuestion.png"))); // NOI18N
+
+        arcadeMachineImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/arcadeMachine.png"))); // NOI18N
+
+        startGameBtn.setText("Start Game");
+        startGameBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                startGameBtnActionPerformed(evt);
+            }
+        });
+
+        startQuizBtn.setText("Start Quiz");
+        startQuizBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                startQuizBtnActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout gamePage1Layout = new javax.swing.GroupLayout(gamePage1);
+        gamePage1.setLayout(gamePage1Layout);
+        gamePage1Layout.setHorizontalGroup(
+            gamePage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(gamePage1Layout.createSequentialGroup()
+                .addGroup(gamePage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(gamePage1Layout.createSequentialGroup()
+                        .addGroup(gamePage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gamePage1Layout.createSequentialGroup()
+                                .addGap(253, 253, 253)
+                                .addComponent(greyControllerImg)
+                                .addGap(12, 12, 12))
+                            .addGroup(gamePage1Layout.createSequentialGroup()
+                                .addGroup(gamePage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(gamePage1Layout.createSequentialGroup()
+                                        .addGap(131, 131, 131)
+                                        .addComponent(guessLbl))
+                                    .addGroup(gamePage1Layout.createSequentialGroup()
+                                        .addGap(154, 154, 154)
+                                        .addComponent(startGameBtn))
+                                    .addGroup(gamePage1Layout.createSequentialGroup()
+                                        .addGap(38, 38, 38)
+                                        .addComponent(gameScroll, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(41, 41, 41)))
+                        .addComponent(gameQuizSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(redControllerImg))
+                .addGroup(gamePage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(gamePage1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(greenQuestionImg)
+                        .addGap(20, 20, 20))
+                    .addGroup(gamePage1Layout.createSequentialGroup()
+                        .addGroup(gamePage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(gamePage1Layout.createSequentialGroup()
+                                .addGap(151, 151, 151)
+                                .addComponent(quizLbl))
+                            .addGroup(gamePage1Layout.createSequentialGroup()
+                                .addGap(45, 45, 45)
+                                .addComponent(quizScroll, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(gamePage1Layout.createSequentialGroup()
+                                .addGap(4, 4, 4)
+                                .addComponent(arcadeMachineImg)
+                                .addGap(64, 64, 64)
+                                .addComponent(startQuizBtn)))
+                        .addGap(0, 65, Short.MAX_VALUE))))
+        );
+        gamePage1Layout.setVerticalGroup(
+            gamePage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gamePage1Layout.createSequentialGroup()
+                .addGroup(gamePage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(gameQuizSeparator, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(gamePage1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(gamePage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(gamePage1Layout.createSequentialGroup()
+                                .addGroup(gamePage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(gamePage1Layout.createSequentialGroup()
+                                        .addComponent(redControllerImg)
+                                        .addGap(28, 28, 28))
+                                    .addComponent(guessLbl, javax.swing.GroupLayout.Alignment.TRAILING))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(gameScroll, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(startGameBtn)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(greyControllerImg))
+                            .addGroup(gamePage1Layout.createSequentialGroup()
+                                .addComponent(greenQuestionImg)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(quizLbl)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(quizScroll, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(startQuizBtn))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gamePage1Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(arcadeMachineImg)))))
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout gamePageLayout = new javax.swing.GroupLayout(gamePage);
         gamePage.setLayout(gamePageLayout);
         gamePageLayout.setHorizontalGroup(
             gamePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(gamePageLayout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(761, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gamePageLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(gamePage1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         gamePageLayout.setVerticalGroup(
             gamePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(gamePageLayout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(406, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gamePageLayout.createSequentialGroup()
+                .addComponent(gamePage1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        mainPanel.add(gamePage, "4");
+        mainPanel.add(gamePage, "6");
 
         cartPage.setBackground(new java.awt.Color(255, 255, 255));
         cartPage.setForeground(new java.awt.Color(50, 50, 50));
@@ -1070,7 +1185,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
         cartText.setBackground(new java.awt.Color(212, 232, 193));
         cartText.setColumns(20);
         cartText.setRows(5);
-        cartTxtScroll.setViewportView(cartText);
+        jScrollPane1.setViewportView(cartText);
 
         backBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/backArrow.png"))); // NOI18N
         backBtn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1079,24 +1194,11 @@ public class EcowiseGUI extends javax.swing.JFrame {
             }
         });
 
+        cartTotalTxt.setBackground(new java.awt.Color(221, 221, 221));
+        cartTotalTxt.setForeground(new java.awt.Color(50, 50, 50));
+
         jLabel2.setForeground(new java.awt.Color(50, 50, 50));
         jLabel2.setText("Total:");
-
-        clearCartBtn.setText("Clear Cart");
-        clearCartBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                clearCartBtnActionPerformed(evt);
-            }
-        });
-
-        jButton1.setText("jButton1");
-
-        refreshCartBtn.setText("Refresh");
-        refreshCartBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                refreshCartBtnActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout cartPageLayout = new javax.swing.GroupLayout(cartPage);
         cartPage.setLayout(cartPageLayout);
@@ -1107,22 +1209,15 @@ public class EcowiseGUI extends javax.swing.JFrame {
                     .addGroup(cartPageLayout.createSequentialGroup()
                         .addComponent(backBtn)
                         .addGap(129, 129, 129)
-                        .addComponent(myCartLbl)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(refreshCartBtn))
+                        .addComponent(myCartLbl))
                     .addGroup(cartPageLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(cartPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(cartTxtScroll, javax.swing.GroupLayout.PREFERRED_SIZE, 448, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(cartPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 448, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(cartPageLayout.createSequentialGroup()
                                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(totalValLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(clearCartBtn)
-                                .addGap(8, 8, 8)))))
+                                .addComponent(cartTotalTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
                 .addComponent(cartSep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(cartPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1140,11 +1235,13 @@ public class EcowiseGUI extends javax.swing.JFrame {
                                             .addComponent(cCardnoLbl)
                                             .addComponent(cNameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(cartPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(cExpiryLbl)
+                                            .addComponent(cCvvLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(cartPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(cartPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                .addComponent(cExpiryLbl)
-                                                .addComponent(cCvvLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addComponent(cExpiryTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addComponent(cExpiryTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(cCvvTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                     .addComponent(cardDetailsLbl)
                                     .addGroup(cartPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(dAddressLbl)
@@ -1157,15 +1254,12 @@ public class EcowiseGUI extends javax.swing.JFrame {
                                     .addComponent(dCityTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(dCountyLbl)
                                     .addComponent(dCountyTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(cartPageLayout.createSequentialGroup()
-                                        .addComponent(cCardnoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(cCvvTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addContainerGap(55, Short.MAX_VALUE))
+                                    .addComponent(cCardnoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addContainerGap(51, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cartPageLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(confirmBtn)
-                        .addGap(17, 17, 17))))
+                        .addGap(81, 81, 81))))
         );
         cartPageLayout.setVerticalGroup(
             cartPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1198,22 +1292,20 @@ public class EcowiseGUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(cartPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cNameLbl)
-                    .addComponent(cExpiryLbl))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(cartPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cNameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cExpiryLbl)
                     .addComponent(cExpiryTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cNameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(cartPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cCardnoLbl)
-                    .addComponent(cCvvLbl))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(cartPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cCardnoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cCvvLbl)
                     .addComponent(cCvvTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(3, 3, 3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cCardnoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(1, 1, 1)
                 .addComponent(confirmBtn)
-                .addGap(39, 39, 39))
+                .addGap(41, 41, 41))
             .addGroup(cartPageLayout.createSequentialGroup()
                 .addGroup(cartPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(cartPageLayout.createSequentialGroup()
@@ -1221,23 +1313,68 @@ public class EcowiseGUI extends javax.swing.JFrame {
                         .addComponent(backBtn))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cartPageLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(cartPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(myCartLbl)
-                            .addComponent(refreshCartBtn))))
+                        .addComponent(myCartLbl)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(cartTxtScroll, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(cartPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(clearCartBtn)
-                    .addComponent(totalValLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
+                    .addComponent(cartTotalTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         dPhoneLbl.getAccessibleContext().setAccessibleName("phoneLbl");
 
         mainPanel.add(cartPage, "5");
+
+        wordBankPage.setBackground(new java.awt.Color(204, 255, 204));
+
+        wordBankLbl.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
+        wordBankLbl.setForeground(new java.awt.Color(0, 0, 0));
+        wordBankLbl.setText("Sustainable Energy Word Bank");
+
+        arrayListTxtArea.setBackground(new java.awt.Color(204, 204, 255));
+        arrayListTxtArea.setColumns(20);
+        arrayListTxtArea.setRows(5);
+        jScrollPane2.setViewportView(arrayListTxtArea);
+
+        gamesBtn.setText("Take me to the Games!");
+        gamesBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gamesBtnActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout wordBankPageLayout = new javax.swing.GroupLayout(wordBankPage);
+        wordBankPage.setLayout(wordBankPageLayout);
+        wordBankPageLayout.setHorizontalGroup(
+            wordBankPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(wordBankPageLayout.createSequentialGroup()
+                .addGap(45, 45, 45)
+                .addGroup(wordBankPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(wordBankPageLayout.createSequentialGroup()
+                        .addComponent(wordBankLbl)
+                        .addGap(122, 122, 122)
+                        .addComponent(gamesBtn))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 785, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(19, Short.MAX_VALUE))
+        );
+        wordBankPageLayout.setVerticalGroup(
+            wordBankPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(wordBankPageLayout.createSequentialGroup()
+                .addGroup(wordBankPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(wordBankPageLayout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addComponent(wordBankLbl))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, wordBankPageLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(gamesBtn)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        mainPanel.add(wordBankPage, "4");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -1320,6 +1457,9 @@ public class EcowiseGUI extends javax.swing.JFrame {
         
         CardLayout card = (CardLayout)mainPanel.getLayout();
         card.show(mainPanel, "4");
+        
+        String wordBankText = wordBankInstance.getWordBankAsString();
+        arrayListTxtArea.setText(wordBankText);
     }//GEN-LAST:event_gamePanelMouseClicked
 
     private void cartPageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cartPageMouseClicked
@@ -1341,11 +1481,11 @@ public class EcowiseGUI extends javax.swing.JFrame {
         cartText.setEditable(false);
         StringBuilder cartContent = new StringBuilder();
 
-        for (product p : products) {
+        for (product p : product) {
             cartContent.append(p.toString()).append("\n");
         }
             cartText.setText(cartContent.toString());
-            totalValLbl.setText(df.format(myCart.calTotal(products)));
+            /* cartTotalTxt.setText(myCart.calTotal()); */
     }//GEN-LAST:event_cartBtnMouseClicked
 
     private void dCityTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dCityTxtActionPerformed
@@ -1398,7 +1538,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
             p.setName("Donate");
             p.setPrice(5.00);
             p.setProductId("DN001");
-            products.add(p);
+            product.add(p);
             
             /* myCart.incQuantity(); */
     }//GEN-LAST:event_donateBtn2MouseClicked
@@ -1409,7 +1549,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
             p.setName("Donate");
             p.setPrice(10.00);
             p.setProductId("DN002");
-            products.add(p);
+            product.add(p);
     }//GEN-LAST:event_donateBtn1MouseClicked
 
     private void product1BtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_product1BtnMouseClicked
@@ -1418,7 +1558,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
             p.setName("Easy Time Slow Cooker");
             p.setPrice(49.99);
             p.setProductId("AP001");
-            products.add(p);
+            product.add(p);
     }//GEN-LAST:event_product1BtnMouseClicked
 
     private void product2BtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_product2BtnMouseClicked
@@ -1427,7 +1567,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
             p.setName("Pro 4.7L Air Fryer");
             p.setPrice(99.99);
             p.setProductId("AP002");
-            products.add(p);
+            product.add(p);
     }//GEN-LAST:event_product2BtnMouseClicked
 
     private void product3BtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_product3BtnMouseClicked
@@ -1436,7 +1576,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
             p.setName("Combination Microwave MWH 338 SX");
             p.setPrice(329.90);
             p.setProductId("AP003");
-            products.add(p);
+            product.add(p);
     }//GEN-LAST:event_product3BtnMouseClicked
 
     private void product4BtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_product4BtnMouseClicked
@@ -1445,7 +1585,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
             p.setName("Microwave RHMD714G");
             p.setPrice(99.99);
             p.setProductId("AP004");
-            products.add(p);
+            product.add(p);
     }//GEN-LAST:event_product4BtnMouseClicked
 
     private void product5BtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_product5BtnMouseClicked
@@ -1454,7 +1594,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
             p.setName("Enfinigy Kettle Pro");
             p.setPrice(129.00);
             p.setProductId("AP005");
-            products.add(p);
+            product.add(p);
     }//GEN-LAST:event_product5BtnMouseClicked
 
     private void product6BtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_product6BtnMouseClicked
@@ -1463,7 +1603,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
             p.setName("VTT981 Edge 2 Slice Toaster");
             p.setPrice(40.00);
             p.setProductId("AP006");
-            products.add(p);
+            product.add(p);
     }//GEN-LAST:event_product6BtnMouseClicked
 
     private void product7BtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_product7BtnMouseClicked
@@ -1472,7 +1612,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
             p.setName("50/50 Frost Free Fridge Freezer");
             p.setPrice(500.00);
             p.setProductId("AP007");
-            products.add(p);
+            product.add(p);
     }//GEN-LAST:event_product7BtnMouseClicked
 
     private void product8BtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_product8BtnMouseClicked
@@ -1481,7 +1621,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
             p.setName("iQ300 Freestanding Dishwasher");
             p.setPrice(770.00);
             p.setProductId("AP008");
-            products.add(p);
+            product.add(p);
     }//GEN-LAST:event_product8BtnMouseClicked
 
     private void gasCompTxtFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gasCompTxtFieldActionPerformed
@@ -1556,6 +1696,14 @@ public class EcowiseGUI extends javax.swing.JFrame {
 
     private void seRButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seRButtonActionPerformed
         // TODO add your handling code here:
+        radioGroup.add(seRButton);
+        seRButton.setText("Solar Energy");
+        seRButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                seRButtonActionPerformed(evt);
+            }
+        });
     }//GEN-LAST:event_seRButtonActionPerformed
 
     private void clearButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clearButtonMouseClicked
@@ -1633,7 +1781,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
             p.setName("Donate");
             p.setPrice(10.00);
             p.setProductId("DN002");
-            products.add(p);
+            product.add(p);
     }//GEN-LAST:event_donate2BtnActionPerformed
 
     private void donate1BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_donate1BtnActionPerformed
@@ -1642,7 +1790,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
             p.setName("Donate");
             p.setPrice(5.00);
             p.setProductId("DN001");
-            products.add(p);
+            product.add(p);
     }//GEN-LAST:event_donate1BtnActionPerformed
 
     private void backBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backBtnMouseClicked
@@ -1651,16 +1799,30 @@ public class EcowiseGUI extends javax.swing.JFrame {
         card.show(mainPanel, "2");
     }//GEN-LAST:event_backBtnMouseClicked
 
-    private void clearCartBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearCartBtnActionPerformed
+    private void windRButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_windRButtonActionPerformed
         // TODO add your handling code here:
-        
-    }//GEN-LAST:event_clearCartBtnActionPerformed
+        radioGroup.add(windRButton);
+        windRButton.setText("Wind Energy");
+        windRButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                windRButtonActionPerformed(evt);
+            }
+        }); 
+    }//GEN-LAST:event_windRButtonActionPerformed
 
-    private void refreshCartBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshCartBtnActionPerformed
-        // TODO add your handling code here:
+    private void gamesBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gamesBtnActionPerformed
         CardLayout card = (CardLayout)mainPanel.getLayout();
-        card.show(mainPanel, "5");
-    }//GEN-LAST:event_refreshCartBtnActionPerformed
+        card.show(mainPanel, "6");
+    }//GEN-LAST:event_gamesBtnActionPerformed
+
+    private void startGameBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startGameBtnActionPerformed
+        game.playGame();
+    }//GEN-LAST:event_startGameBtnActionPerformed
+
+    private void startQuizBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startQuizBtnActionPerformed
+        quiz.startQuiz();
+    }//GEN-LAST:event_startQuizBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1701,6 +1863,8 @@ public class EcowiseGUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel appliancesLbl;
     private javax.swing.JTextField appliancesTxtField;
+    private javax.swing.JLabel arcadeMachineImg;
+    private javax.swing.JTextArea arrayListTxtArea;
     private javax.swing.JLabel backBtn;
     private javax.swing.JPanel bannerPanel;
     private javax.swing.JLabel cCardnoLbl;
@@ -1723,9 +1887,8 @@ public class EcowiseGUI extends javax.swing.JFrame {
     private javax.swing.JPanel cartPage;
     private javax.swing.JSeparator cartSep;
     private javax.swing.JTextArea cartText;
-    private javax.swing.JScrollPane cartTxtScroll;
+    private javax.swing.JTextField cartTotalTxt;
     private javax.swing.JButton clearButton;
-    private javax.swing.JButton clearCartBtn;
     private javax.swing.JButton confirmBtn;
     private javax.swing.JLabel costHourLbl;
     private javax.swing.JTextField costHourTxtField;
@@ -1752,10 +1915,18 @@ public class EcowiseGUI extends javax.swing.JFrame {
     private javax.swing.JTextField freezerTxtField;
     private javax.swing.JLabel gameLbl;
     private javax.swing.JPanel gamePage;
+    private javax.swing.JPanel gamePage1;
     private javax.swing.JPanel gamePanel;
+    private javax.swing.JSeparator gameQuizSeparator;
+    private javax.swing.JScrollPane gameScroll;
     private javax.swing.JLabel gameTxt;
+    private javax.swing.JTextArea gameTxtArea;
+    private javax.swing.JButton gamesBtn;
     private javax.swing.JLabel gasCompLbl;
     private javax.swing.JTextField gasCompTxtField;
+    private javax.swing.JLabel greenQuestionImg;
+    private javax.swing.JLabel greyControllerImg;
+    private javax.swing.JLabel guessLbl;
     private javax.swing.JLabel homeImg;
     private javax.swing.JSeparator homeImgSep;
     private javax.swing.JLabel homeLbl;
@@ -1763,10 +1934,10 @@ public class EcowiseGUI extends javax.swing.JFrame {
     private javax.swing.JPanel homePage;
     private javax.swing.JPanel homePanel;
     private javax.swing.JLabel homeTxt;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel kettleLbl;
     private javax.swing.JTextField kettleTxtField;
     private javax.swing.JLabel logoLbl;
@@ -1778,40 +1949,36 @@ public class EcowiseGUI extends javax.swing.JFrame {
     private javax.swing.JLabel product1;
     private javax.swing.JButton product1Btn;
     private javax.swing.JLabel product1Desc;
-    private javax.swing.JLabel product1PriceLbl;
     private javax.swing.JLabel product2;
     private javax.swing.JButton product2Btn;
     private javax.swing.JLabel product2Desc;
-    private javax.swing.JLabel product2PriceLbl1;
     private javax.swing.JLabel product3;
     private javax.swing.JButton product3Btn;
     private javax.swing.JLabel product3Desc;
-    private javax.swing.JLabel product3PriceLbl1;
     private javax.swing.JLabel product4;
     private javax.swing.JButton product4Btn;
     private javax.swing.JLabel product4Desc;
-    private javax.swing.JLabel product4PriceLbl1;
     private javax.swing.JLabel product5;
     private javax.swing.JButton product5Btn;
     private javax.swing.JLabel product5Desc;
-    private javax.swing.JLabel product5PriceLbl1;
     private javax.swing.JLabel product6;
     private javax.swing.JButton product6Btn;
     private javax.swing.JLabel product6Desc;
-    private javax.swing.JLabel product6PriceLbl1;
     private javax.swing.JLabel product7;
     private javax.swing.JButton product7Btn;
     private javax.swing.JLabel product7Desc;
-    private javax.swing.JLabel product7PriceLbl1;
     private javax.swing.JLabel product8;
     private javax.swing.JButton product8Btn;
     private javax.swing.JLabel product8Desc;
-    private javax.swing.JLabel product8PriceLbl;
     private javax.swing.JLabel questionCTLbl;
     private javax.swing.JLabel questionCalcLbl;
     private javax.swing.JLabel questionRELbl;
+    private javax.swing.JLabel quizLbl;
+    private javax.swing.JScrollPane quizScroll;
+    private javax.swing.JTextArea quizTxtArea;
+    private javax.swing.ButtonGroup radioGroup;
     private javax.swing.JButton reButton;
-    private javax.swing.JButton refreshCartBtn;
+    private javax.swing.JLabel redControllerImg;
     private javax.swing.JLabel renewableSystemLbl;
     private javax.swing.JRadioButton seRButton;
     private javax.swing.JLabel shopLbl;
@@ -1822,13 +1989,16 @@ public class EcowiseGUI extends javax.swing.JFrame {
     private javax.swing.JLabel shopTxt;
     private javax.swing.JPanel sidebarMenu;
     private javax.swing.JSeparator sidebarSeperator;
+    private javax.swing.JButton startGameBtn;
+    private javax.swing.JButton startQuizBtn;
     private javax.swing.JLabel televisionLbl;
     private javax.swing.JTextField televisionTxtField;
-    private javax.swing.JLabel totalValLbl;
     private javax.swing.JTextField washingMachineTxtField;
     private javax.swing.JLabel washingMachinelbl;
     private javax.swing.JLabel waterHeaterLbl;
     private javax.swing.JTextField waterHeaterTxtField;
     private javax.swing.JRadioButton windRButton;
+    private javax.swing.JLabel wordBankLbl;
+    private javax.swing.JPanel wordBankPage;
     // End of variables declaration//GEN-END:variables
 }
