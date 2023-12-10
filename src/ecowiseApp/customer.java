@@ -12,6 +12,7 @@ import java.util.ArrayList;
  */
 public class customer {
     
+    //customer variables
     private String name;
     private String phoneNo;
     private String address;
@@ -23,6 +24,7 @@ public class customer {
     private String expiry;
     private String cvv;
     
+    //initialise customer variables to be empty
     public customer(){
         name = " ";
         phoneNo = " ";
@@ -38,6 +40,7 @@ public class customer {
 
     }
     
+    //declaring instance variables
     public customer(String name, String phoneNo, String address, String city, String county, String cardName, String cardNo, String expiry, String cvv) {
         this.name = name;
         this.phoneNo = phoneNo;
@@ -51,6 +54,8 @@ public class customer {
         this.cvv = cvv;
     }
 
+    
+    // getters and setters for customer info
     public String getName() {
         return name;
     }
@@ -92,7 +97,7 @@ public class customer {
     }
     
     
-
+    // getters and setters for customer card info
     public String getCardName() {
         return cardName;
     }

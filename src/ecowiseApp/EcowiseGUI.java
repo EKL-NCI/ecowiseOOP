@@ -12,12 +12,13 @@ import javax.swing.JPanel;
 //taken from https://mkyong.com/java/how-to-round-double-float-value-to-2-decimal-points-in-java/
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Erin Lee
  */
 public class EcowiseGUI extends javax.swing.JFrame {
-    public ArrayList <product> product;
+    public ArrayList <product> products;
     public ArrayList <customer> customers;
     private wordBank wordBankInstance;
     private game game;
@@ -30,7 +31,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
      */
     public EcowiseGUI() {
         initComponents();
-        product = new ArrayList<>();
+        products = new ArrayList<>();
         customers = new ArrayList<>();
         this.wordBankInstance = new wordBank();
         this.game = new game(wordBankInstance);
@@ -187,6 +188,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
         backBtn = new javax.swing.JLabel();
         cartTotalTxt = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
+        remItemBtn = new javax.swing.JButton();
         wordBankPage = new javax.swing.JPanel();
         wordBankLbl = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -1200,6 +1202,13 @@ public class EcowiseGUI extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(50, 50, 50));
         jLabel2.setText("Total:");
 
+        remItemBtn.setText("Remove Item");
+        remItemBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                remItemBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout cartPageLayout = new javax.swing.GroupLayout(cartPage);
         cartPage.setLayout(cartPageLayout);
         cartPageLayout.setHorizontalGroup(
@@ -1212,12 +1221,15 @@ public class EcowiseGUI extends javax.swing.JFrame {
                         .addComponent(myCartLbl))
                     .addGroup(cartPageLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(cartPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(cartPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 448, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(cartPageLayout.createSequentialGroup()
                                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cartTotalTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(cartTotalTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(remItemBtn)
+                                .addGap(97, 97, 97)))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
                 .addComponent(cartSep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(cartPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1319,7 +1331,8 @@ public class EcowiseGUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(cartPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cartTotalTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
+                    .addComponent(jLabel2)
+                    .addComponent(remItemBtn))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -1481,7 +1494,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
         cartText.setEditable(false);
         StringBuilder cartContent = new StringBuilder();
 
-        for (product p : product) {
+        for (product p : products) {
             cartContent.append(p.toString()).append("\n");
         }
             cartText.setText(cartContent.toString());
@@ -1538,7 +1551,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
             p.setName("Donate");
             p.setPrice(5.00);
             p.setProductId("DN001");
-            product.add(p);
+            products.add(p);
             
             /* myCart.incQuantity(); */
     }//GEN-LAST:event_donateBtn2MouseClicked
@@ -1549,7 +1562,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
             p.setName("Donate");
             p.setPrice(10.00);
             p.setProductId("DN002");
-            product.add(p);
+            products.add(p);
     }//GEN-LAST:event_donateBtn1MouseClicked
 
     private void product1BtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_product1BtnMouseClicked
@@ -1558,7 +1571,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
             p.setName("Easy Time Slow Cooker");
             p.setPrice(49.99);
             p.setProductId("AP001");
-            product.add(p);
+            products.add(p);
     }//GEN-LAST:event_product1BtnMouseClicked
 
     private void product2BtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_product2BtnMouseClicked
@@ -1567,7 +1580,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
             p.setName("Pro 4.7L Air Fryer");
             p.setPrice(99.99);
             p.setProductId("AP002");
-            product.add(p);
+            products.add(p);
     }//GEN-LAST:event_product2BtnMouseClicked
 
     private void product3BtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_product3BtnMouseClicked
@@ -1576,7 +1589,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
             p.setName("Combination Microwave MWH 338 SX");
             p.setPrice(329.90);
             p.setProductId("AP003");
-            product.add(p);
+            products.add(p);
     }//GEN-LAST:event_product3BtnMouseClicked
 
     private void product4BtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_product4BtnMouseClicked
@@ -1585,7 +1598,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
             p.setName("Microwave RHMD714G");
             p.setPrice(99.99);
             p.setProductId("AP004");
-            product.add(p);
+            products.add(p);
     }//GEN-LAST:event_product4BtnMouseClicked
 
     private void product5BtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_product5BtnMouseClicked
@@ -1594,7 +1607,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
             p.setName("Enfinigy Kettle Pro");
             p.setPrice(129.00);
             p.setProductId("AP005");
-            product.add(p);
+            products.add(p);
     }//GEN-LAST:event_product5BtnMouseClicked
 
     private void product6BtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_product6BtnMouseClicked
@@ -1603,7 +1616,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
             p.setName("VTT981 Edge 2 Slice Toaster");
             p.setPrice(40.00);
             p.setProductId("AP006");
-            product.add(p);
+            products.add(p);
     }//GEN-LAST:event_product6BtnMouseClicked
 
     private void product7BtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_product7BtnMouseClicked
@@ -1612,7 +1625,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
             p.setName("50/50 Frost Free Fridge Freezer");
             p.setPrice(500.00);
             p.setProductId("AP007");
-            product.add(p);
+            products.add(p);
     }//GEN-LAST:event_product7BtnMouseClicked
 
     private void product8BtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_product8BtnMouseClicked
@@ -1621,7 +1634,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
             p.setName("iQ300 Freestanding Dishwasher");
             p.setPrice(770.00);
             p.setProductId("AP008");
-            product.add(p);
+            products.add(p);
     }//GEN-LAST:event_product8BtnMouseClicked
 
     private void gasCompTxtFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gasCompTxtFieldActionPerformed
@@ -1781,7 +1794,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
             p.setName("Donate");
             p.setPrice(10.00);
             p.setProductId("DN002");
-            product.add(p);
+            products.add(p);
     }//GEN-LAST:event_donate2BtnActionPerformed
 
     private void donate1BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_donate1BtnActionPerformed
@@ -1790,7 +1803,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
             p.setName("Donate");
             p.setPrice(5.00);
             p.setProductId("DN001");
-            product.add(p);
+            products.add(p);
     }//GEN-LAST:event_donate1BtnActionPerformed
 
     private void backBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backBtnMouseClicked
@@ -1823,6 +1836,28 @@ public class EcowiseGUI extends javax.swing.JFrame {
     private void startQuizBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startQuizBtnActionPerformed
         quiz.startQuiz();
     }//GEN-LAST:event_startQuizBtnActionPerformed
+
+    private void remItemBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_remItemBtnActionPerformed
+        // TODO add your handling code here:
+        if(products.isEmpty()){
+            JOptionPane.showMessageDialog(null,"Sorry, there are no items to delete");
+        }
+        else{
+            String searchTerm = JOptionPane.showInputDialog(null, "Enter the ID you wish to delete:");
+
+            for(product p:products){
+                if(p.getProductId().equalsIgnoreCase(searchTerm)){
+                    products.remove(p);
+                    JOptionPane.showMessageDialog(null,p.getDetail()+" has been deleted.");
+                }
+                if(products.isEmpty()){
+                JOptionPane.showMessageDialog(null,"Your Cart is now Empty.");
+                }
+                
+                //cartText.update(cartContent.toString());
+            }
+        }
+    }//GEN-LAST:event_remItemBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1979,6 +2014,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
     private javax.swing.ButtonGroup radioGroup;
     private javax.swing.JButton reButton;
     private javax.swing.JLabel redControllerImg;
+    private javax.swing.JButton remItemBtn;
     private javax.swing.JLabel renewableSystemLbl;
     private javax.swing.JRadioButton seRButton;
     private javax.swing.JLabel shopLbl;
