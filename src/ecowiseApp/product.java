@@ -49,8 +49,4 @@ public class product {
     public String toString(){
         return  name + "   EUR:  " + price + " Product Code: "+ productId;
     }
-    
-    public String getDetail(){
-        return  name + " Product Code: "+ productId;
-    }
 }
