@@ -21,7 +21,6 @@ public class EcowiseGUI extends javax.swing.JFrame {
     public ArrayList <product> products;
     public ArrayList <customer> customers;
 
-    public ArrayList <Calculator> calculations;
     private wordBank wordBankInstance;
     private game game;
     private quiz quiz;
