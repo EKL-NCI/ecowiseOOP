@@ -6,6 +6,7 @@ package ecowiseApp;
 
 import java.awt.CardLayout;
 import java.awt.Color;
+import java.awt.HeadlessException;
 import java.util.ArrayList;
 import javax.swing.JPanel;
 import javax.swing.JOptionPane;
@@ -18,11 +19,11 @@ import java.text.DecimalFormat;
  * @author Erin Lee
  */
 public class EcowiseGUI extends javax.swing.JFrame {
-    // Array Lists for Shop - Erin
+// Array Lists for Shop - Erin
     public ArrayList <product> products;
     public ArrayList <customer> customers;
     public ArrayList <Calculator> calculations;
-    // end of array lists for shop
+// end of array lists for shop
     private wordBank wordBankInstance;
     private game game;
     private quiz quiz;
@@ -204,6 +205,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         remItemBtn = new javax.swing.JButton();
         totalBalLbl = new javax.swing.JLabel();
+        clearCrtBtn = new javax.swing.JButton();
         wordBankPage = new javax.swing.JPanel();
         wordBankLbl = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -1267,6 +1269,13 @@ public class EcowiseGUI extends javax.swing.JFrame {
             }
         });
 
+        clearCrtBtn.setText("Clear Cart");
+        clearCrtBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clearCrtBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout cartPageLayout = new javax.swing.GroupLayout(cartPage);
         cartPage.setLayout(cartPageLayout);
         cartPageLayout.setHorizontalGroup(
@@ -1284,10 +1293,12 @@ public class EcowiseGUI extends javax.swing.JFrame {
                             .addGroup(cartPageLayout.createSequentialGroup()
                                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(totalBalLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(totalBalLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(remItemBtn)
-                                .addGap(97, 97, 97)))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(clearCrtBtn)
+                                .addGap(12, 12, 12)))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
                 .addComponent(cartSep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(cartPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1387,11 +1398,11 @@ public class EcowiseGUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(cartPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(totalBalLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(cartPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel2)
-                        .addComponent(remItemBtn)))
+                .addGroup(cartPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(remItemBtn)
+                    .addComponent(clearCrtBtn)
+                    .addComponent(totalBalLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -1476,13 +1487,13 @@ public class EcowiseGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_exitBtnActionPerformed
 
     private void homePanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homePanelMouseClicked
-        // colour changes for side menu, change colour depending on what section you are in - Erin
+    // colour changes for side menu, change colour depending on what section you are in - Erin
         setColor(homePanel);
         resetColor(shopPanel);
         resetColor(gamePanel);
         resetColor(calcPanel);
         
-        // Card Layout used to change sections - https://docs.oracle.com/javase/tutorial/uiswing/layout/card.html https://www.javatpoint.com/CardLayout - Erin
+    // Card Layout used to change sections - https://docs.oracle.com/javase/tutorial/uiswing/layout/card.html https://www.javatpoint.com/CardLayout - Erin
         CardLayout card = (CardLayout)mainPanel.getLayout();
         card.show(mainPanel, "1");
     }//GEN-LAST:event_homePanelMouseClicked
@@ -1549,24 +1560,24 @@ public class EcowiseGUI extends javax.swing.JFrame {
         CardLayout card = (CardLayout)mainPanel.getLayout();
         card.show(mainPanel, "5");
         
-        //create instance of shop cart
+    //create instance of shop cart
         shopCart myCart = new shopCart();
-        
-        // cart text box not editable for user
-        cartText.setEditable(false);
-        
-        //used string builder to display array content - https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html
+    
+    //used string builder to display array content - https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html
         StringBuilder cartContent = new StringBuilder();
+        
+    // cart text box not editable for user
+        cartText.setEditable(false);
 
-        //loops through products and appends them all to display correctly using override toString()
+    //loops through products and appends them all to display correctly using override toString() method in product class
         for (product p : products) {
             cartContent.append(p.toString()).append("\n");
         }
         
-        //setting the cart text box to display the stringbuilder
+        //setting the cart text box to display the stringbuilder output
             cartText.setText(cartContent.toString());
         //setting the totalBalLbl to display the calculated total
-            totalBalLbl.setText(df.format(myCart.calTotal(products)));
+            totalBalLbl.setText(String.valueOf(myCart.calTotal(products)));
     }//GEN-LAST:event_cartBtnMouseClicked
 
     private void dCityTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dCityTxtActionPerformed
@@ -1600,7 +1611,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
     private void confirmBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmBtnActionPerformed
         // TODO add your handling code here:
         
-        // creates new instance of customer and saves to array on checkout
+    // creates new instance of customer and saves to array on checkout
         customer c = new customer();
             c.setName(dNameTxt.getText());
             c.setPhoneNo(dPhoneTxt.getText());
@@ -1951,24 +1962,32 @@ public class EcowiseGUI extends javax.swing.JFrame {
 
     private void remItemBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_remItemBtnActionPerformed
         // TODO add your handling code here:
+        
+    //checks to see if array is empty
         if(products.isEmpty()){
             JOptionPane.showMessageDialog(null,"Sorry, there are no items to delete");
         }
+        
+    // if not empty, the array takes the search term from user input and searches for the corresponding input in the array
         else{
+            //takes search input from user
             String searchTerm = JOptionPane.showInputDialog(null, "Enter the ID you wish to delete:");
 
+        //loops through array and checks against searchTerm
             for(product p:products){
                 if(p.getProductId().equalsIgnoreCase(searchTerm)){
                     products.remove(p);
                     JOptionPane.showMessageDialog(null,p.getDetail()+" has been deleted.");
+                //if not found in loop, gives error
+                   }else{
+                       JOptionPane.showMessageDialog(null, "Incorrect item code, Please try again.");
+                   }
+                //if customer cart is empty display message
+                    if(products.isEmpty()){
+                        JOptionPane.showMessageDialog(null,"Your Cart is now Empty.");
+                        }
                 }
-                if(products.isEmpty()){
-                JOptionPane.showMessageDialog(null,"Your Cart is now Empty.");
-                }
-                
-                //cartText.update(cartContent.toString());
             }
-        }
     }//GEN-LAST:event_remItemBtnActionPerformed
 
     private void printButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_printButtonMouseClicked
@@ -2003,6 +2022,13 @@ public class EcowiseGUI extends javax.swing.JFrame {
         
         */
     }//GEN-LAST:event_printButtonActionPerformed
+
+    private void clearCrtBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearCrtBtnActionPerformed
+        // TODO add your handling code here:
+        products.removeAll(products);
+        
+        
+    }//GEN-LAST:event_clearCrtBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2068,6 +2094,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
     private javax.swing.JSeparator cartSep;
     private javax.swing.JTextArea cartText;
     private javax.swing.JButton clearButton;
+    private javax.swing.JButton clearCrtBtn;
     private javax.swing.JButton confirmBtn;
     private javax.swing.JLabel costHourLbl;
     private javax.swing.JTextField costHourTxtField;
