@@ -20,7 +20,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
 // Array Lists for Shop - Erin
     public ArrayList <product> products;
     public ArrayList <customer> customers;
-
+//Instance Variables for Josh's classes
     private wordBank wordBankInstance;
     private game game;
     private quiz quiz;
@@ -39,6 +39,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
         customers = new ArrayList<>();
         
         calculations = new ArrayList<>();
+        //initializing instances of Josh's classes
         this.wordBankInstance = new wordBank();
         this.game = new game(wordBankInstance);
         this.quiz = new quiz(wordBankInstance);
@@ -2154,11 +2155,11 @@ public class EcowiseGUI extends javax.swing.JFrame {
         CardLayout card = (CardLayout)mainPanel.getLayout();
         card.show(mainPanel, "6");
     }//GEN-LAST:event_gamesBtnActionPerformed
-
+        //call on playGame() function from game class when clicked
     private void startGameBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startGameBtnActionPerformed
         game.playGame();
     }//GEN-LAST:event_startGameBtnActionPerformed
-
+        //call on startQuiz() function from quiz class when clicked
     private void startQuizBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startQuizBtnActionPerformed
         quiz.startQuiz();
     }//GEN-LAST:event_startQuizBtnActionPerformed
