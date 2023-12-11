@@ -1716,45 +1716,49 @@ public class EcowiseGUI extends javax.swing.JFrame {
 
     private void calcButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calcButtonActionPerformed
         // TODO add your handling code here:
-        if (dryerTxtField.getText().isEmpty() ||
-            televisionTxtField.getText().isEmpty() ||
-            kettleTxtField.getText().isEmpty() ||
-            waterHeaterTxtField.getText().isEmpty() ||
-            appliancesTxtField.getText().isEmpty() ||
-            washingMachineTxtField.getText().isEmpty() ||
-            freezerTxtField.getText().isEmpty()) {
+        try{
+                if (dryerTxtField.getText().isEmpty() ||
+                televisionTxtField.getText().isEmpty() ||
+                kettleTxtField.getText().isEmpty() ||
+                waterHeaterTxtField.getText().isEmpty() ||
+                appliancesTxtField.getText().isEmpty() ||
+                washingMachineTxtField.getText().isEmpty() ||
+                freezerTxtField.getText().isEmpty()) {
 
 
-            mCompLbl.setText("Please fill every input!");
+                mCompLbl.setText("Please fill every input!");
 
-        } else {
-            Calculator calc = new Calculator();
-                    
-            calc.setDryer(Double.parseDouble(dryerTxtField.getText()));
-            calc.setTv(Double.parseDouble(televisionTxtField.getText()));
-            calc.setKettle(Double.parseDouble(kettleTxtField.getText()));
-            calc.setWaterHeater(Double.parseDouble(waterHeaterTxtField.getText()));
-            calc.setAppliances(Double.parseDouble(appliancesTxtField.getText()));
-            calc.setWashingMachine(Double.parseDouble(washingMachineTxtField.getText()));
-            calc.setFreezer(Double.parseDouble(freezerTxtField.getText()));
-            
-            calculations.add(calc);
-            mCompLbl.setText("You use " +  df.format(calc.getmComp()) + " kilo Watts per month!");
+            } else {
+                Calculator calc = new Calculator();
 
-            gasCompLbl.setVisible(true);
-            questionCTLbl.setVisible(true);
-            questionRELbl.setVisible(true);
-            costHourLbl.setVisible(true);
-            mCompCTLbl.setVisible(true);
-            mCompRELbl.setVisible(true);
-            renewableSystemLbl.setVisible(true);
+                calc.setDryer(Double.parseDouble(dryerTxtField.getText()));
+                calc.setTv(Double.parseDouble(televisionTxtField.getText()));
+                calc.setKettle(Double.parseDouble(kettleTxtField.getText()));
+                calc.setWaterHeater(Double.parseDouble(waterHeaterTxtField.getText()));
+                calc.setAppliances(Double.parseDouble(appliancesTxtField.getText()));
+                calc.setWashingMachine(Double.parseDouble(washingMachineTxtField.getText()));
+                calc.setFreezer(Double.parseDouble(freezerTxtField.getText()));
 
-            gasCompTxtField.setVisible(true);
-            costHourTxtField.setVisible(true);
-            ctButton.setVisible(true);
-            reButton.setVisible(true);
-            seRButton.setVisible(true);
-            windRButton.setVisible(true);
+                calculations.add(calc);
+                mCompLbl.setText("You use " +  df.format(calc.getmComp()) + " kilo Watts per month!");
+
+                gasCompLbl.setVisible(true);
+                questionCTLbl.setVisible(true);
+                questionRELbl.setVisible(true);
+                costHourLbl.setVisible(true);
+                mCompCTLbl.setVisible(true);
+                mCompRELbl.setVisible(true);
+                renewableSystemLbl.setVisible(true);
+
+                gasCompTxtField.setVisible(true);
+                costHourTxtField.setVisible(true);
+                ctButton.setVisible(true);
+                reButton.setVisible(true);
+                seRButton.setVisible(true);
+                windRButton.setVisible(true);
+            }
+        }catch(NumberFormatException e){
+            mCompLbl.setText("Please input a number!");
         }
     }//GEN-LAST:event_calcButtonActionPerformed
 
@@ -1765,13 +1769,19 @@ public class EcowiseGUI extends javax.swing.JFrame {
     private void ctButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ctButtonActionPerformed
         // TODO add your handling code here:
         CarbonTracker ct = new CarbonTracker();
-        if(gasCompTxtField.getText().isEmpty()){
-        mCompCTLbl.setText("Please fill every input!");
-        }else{
-        ct.setGasComp(Double.parseDouble(gasCompTxtField.getText()));    
-        mCompCTLbl.setText("Your household emits " + df.format(ct.getmComp())+ " kgCO2 per month");
-        calculations.add(ct);
+        
+        try{
+            if(gasCompTxtField.getText().isEmpty()){
+                mCompCTLbl.setText("Please fill every input!");
+            }else{
+                ct.setGasComp(Double.parseDouble(gasCompTxtField.getText()));    
+                mCompCTLbl.setText("Your household emits " + df.format(ct.getmComp())+ " kgCO2 per month");
+                calculations.add(ct);
+            }          
+        }catch(NumberFormatException e){
+            mCompLbl.setText("Please input a number!");
         }
+       
     }//GEN-LAST:event_ctButtonActionPerformed
 
     private void reButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reButtonMouseClicked
@@ -1782,25 +1792,29 @@ public class EcowiseGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         RenewableEnergy re = new RenewableEnergy();
         
-        if(costHourTxtField.getText().isEmpty()){
-            mCompRELbl.setText("Please fill every input!");
-        }else{
-            re.setCostPerHour(Double.parseDouble(costHourTxtField.getText()));
-        
-            if(seRButton.isSelected()){
-                re.setInstallCost(12000);
-                re.setMonthlyProduction(60);
-            }
-            else if(windRButton.isSelected()){
-                re.setInstallCost(24000);
-                re.setMonthlyProduction(300);
-            }else{
-                mCompRELbl.setText("Please select an option!");
-                return;
-            }
+        try{
+            if(costHourTxtField.getText().isEmpty()){
+                    mCompRELbl.setText("Please fill every input!");
+                }else{
+                    re.setCostPerHour(Double.parseDouble(costHourTxtField.getText()));
 
-            mCompRELbl.setText("Your house hold will save €" + df.format(re.getmComp())+ " every month!");
-            calculations.add(re);           
+                    if(seRButton.isSelected()){
+                        re.setInstallCost(12000);
+                        re.setMonthlyProduction(60);
+                    }
+                    else if(windRButton.isSelected()){
+                        re.setInstallCost(24000);
+                        re.setMonthlyProduction(300);
+                    }else{
+                        mCompRELbl.setText("Please select an option!");
+                        return;
+                    }
+
+                    mCompRELbl.setText("Your house hold will save €" + df.format(re.getmComp())+ " every month!");
+                    calculations.add(re);           
+            }
+        }catch(NumberFormatException e){
+            mCompLbl.setText("Please input a number!");
         }
     }//GEN-LAST:event_reButtonActionPerformed
 
