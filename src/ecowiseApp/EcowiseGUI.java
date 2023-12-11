@@ -38,7 +38,9 @@ public class EcowiseGUI extends javax.swing.JFrame {
         products = new ArrayList<>();
         customers = new ArrayList<>();
         
+        //paul
         calculations = new ArrayList<>();
+        
         //initializing instances of Josh's classes
         this.wordBankInstance = new wordBank();
         this.game = new game(wordBankInstance);
@@ -1614,6 +1616,9 @@ public class EcowiseGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_exitBtnActionPerformed
 
     private void homePanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homePanelMouseClicked
+    //complete GUI layout and design done by Erin, this includes the card layout, navigation (for all panels), nav bar changes/detail and the home page.
+    //other group members completed JPanel design depending on their individual section
+    
     // colour changes for side menu, change colour depending on what section you are in - Erin
         setColor(homePanel);
         resetColor(shopPanel);
