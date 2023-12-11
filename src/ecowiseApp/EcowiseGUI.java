@@ -216,11 +216,12 @@ public class EcowiseGUI extends javax.swing.JFrame {
         gamesBtn = new javax.swing.JButton();
         recieptPanel = new javax.swing.JPanel();
         thanksLbl = new javax.swing.JLabel();
-        recieptNoLbl = new javax.swing.JLabel();
+        orderNoLbl = new javax.swing.JLabel();
         recieptTotalLbl = new javax.swing.JLabel();
         recieptTotalTxtLbl = new javax.swing.JLabel();
         recieptScroll = new javax.swing.JScrollPane();
         recieptDisplayTxtArea = new javax.swing.JTextArea();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -450,7 +451,6 @@ public class EcowiseGUI extends javax.swing.JFrame {
 
         homeImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/homePageSide.jpg"))); // NOI18N
 
-        companydescTxt.setBackground(new java.awt.Color(255, 255, 255));
         companydescTxt.setColumns(20);
         companydescTxt.setForeground(new java.awt.Color(50, 50, 50));
         companydescTxt.setRows(5);
@@ -1523,12 +1523,20 @@ public class EcowiseGUI extends javax.swing.JFrame {
         thanksLbl.setForeground(new java.awt.Color(50, 50, 50));
         thanksLbl.setText("Thank you for your Purchase!");
 
-        recieptTotalLbl.setForeground(new java.awt.Color(50, 50, 50));
+        orderNoLbl.setForeground(new java.awt.Color(0, 0, 0));
+        orderNoLbl.setText("Order Number: ");
+
+        recieptTotalLbl.setForeground(new java.awt.Color(0, 0, 0));
         recieptTotalLbl.setText("Total:");
 
+        recieptDisplayTxtArea.setBackground(new java.awt.Color(255, 255, 255));
         recieptDisplayTxtArea.setColumns(20);
+        recieptDisplayTxtArea.setForeground(new java.awt.Color(50, 50, 50));
         recieptDisplayTxtArea.setRows(5);
         recieptScroll.setViewportView(recieptDisplayTxtArea);
+
+        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
 
         javax.swing.GroupLayout recieptPanelLayout = new javax.swing.GroupLayout(recieptPanel);
         recieptPanel.setLayout(recieptPanelLayout);
@@ -1537,19 +1545,20 @@ public class EcowiseGUI extends javax.swing.JFrame {
             .addGroup(recieptPanelLayout.createSequentialGroup()
                 .addGroup(recieptPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(recieptPanelLayout.createSequentialGroup()
-                        .addGap(223, 223, 223)
-                        .addGroup(recieptPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(recieptPanelLayout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(recieptTotalLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(recieptTotalTxtLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(recieptNoLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(229, 229, 229)
+                        .addComponent(recieptTotalLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(recieptTotalTxtLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(recieptPanelLayout.createSequentialGroup()
                         .addGap(186, 186, 186)
                         .addGroup(recieptPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(thanksLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(recieptScroll))))
+                            .addComponent(recieptScroll)))
+                    .addGroup(recieptPanelLayout.createSequentialGroup()
+                        .addGap(219, 219, 219)
+                        .addComponent(orderNoLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(202, Short.MAX_VALUE))
         );
         recieptPanelLayout.setVerticalGroup(
@@ -1565,9 +1574,11 @@ public class EcowiseGUI extends javax.swing.JFrame {
                         .addComponent(recieptTotalLbl)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(recieptTotalTxtLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addComponent(recieptNoLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(recieptPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(orderNoLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31))
         );
 
         mainPanel.add(recieptPanel, "7");
@@ -2405,6 +2416,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
     private javax.swing.JLabel homeTxt;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -2417,6 +2429,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
     private javax.swing.JLabel mCompRELbl;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JLabel myCartLbl;
+    private javax.swing.JLabel orderNoLbl;
     private javax.swing.JButton printButton;
     private javax.swing.JLabel product1;
     private javax.swing.JButton product1Btn;
@@ -2459,7 +2472,6 @@ public class EcowiseGUI extends javax.swing.JFrame {
     private javax.swing.ButtonGroup radioGroup;
     private javax.swing.JButton reButton;
     private javax.swing.JTextArea recieptDisplayTxtArea;
-    private javax.swing.JLabel recieptNoLbl;
     private javax.swing.JPanel recieptPanel;
     private javax.swing.JScrollPane recieptScroll;
     private javax.swing.JLabel recieptTotalLbl;
