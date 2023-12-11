@@ -82,9 +82,11 @@ public class EcowiseGUI extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         mainPanel = new javax.swing.JPanel();
         homePage = new javax.swing.JPanel();
-        homeLogoLbl = new javax.swing.JLabel();
         homeImgSep = new javax.swing.JSeparator();
         homeImg = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        companydescTxt = new javax.swing.JTextArea();
+        logoHomeLbl = new javax.swing.JLabel();
         shopPage = new javax.swing.JPanel();
         cartBtn = new javax.swing.JLabel();
         shopTitle = new javax.swing.JLabel();
@@ -445,38 +447,52 @@ public class EcowiseGUI extends javax.swing.JFrame {
         homePage.setMinimumSize(new java.awt.Dimension(849, 468));
         homePage.setPreferredSize(new java.awt.Dimension(849, 468));
 
-        homeLogoLbl.setBackground(new java.awt.Color(212, 232, 193));
-        homeLogoLbl.setForeground(new java.awt.Color(212, 232, 193));
-        homeLogoLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo.png"))); // NOI18N
-        homeLogoLbl.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, java.awt.Color.darkGray, java.awt.Color.lightGray));
-
         homeImgSep.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
         homeImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/homePageSide.jpg"))); // NOI18N
+
+        companydescTxt.setBackground(new java.awt.Color(255, 255, 255));
+        companydescTxt.setColumns(20);
+        companydescTxt.setForeground(new java.awt.Color(50, 50, 50));
+        companydescTxt.setRows(5);
+        companydescTxt.setText("EcoWise is a cutting-edge platform at the forefront of the sustainable living movement, providing users with a \ncomprehensive solution to make informed choices about their energy consumption. Our app seamlessly integrates \nthree key features: an eco-friendly appliance marketplace, a personalized energy calculator, and engaging educational\ngames on sustainable energy.\n\nEco-Friendly Appliance Marketplace:\nBrowse through a curated selection of energy-efficient appliances from top-rated brands. EcoWise ensures that every\n product on our platform meets stringent energy efficiency standards, helping users make environmentally conscious \nchoices for their homes. From energy-saving refrigerators to eco-friendly lighting solutions, our marketplace offers a \ndiverse range of products to suit every need.\n\nPersonalized Energy Calculator:\nTake control of your energy usage with EcoWise's intuitive energy calculator. Input details about your appliances, usage \npatterns, and lifestyle to receive personalized insights into your energy consumption. The app provides actionable tips \nto optimize energy efficiency, helping users reduce their carbon footprint and save on utility bills.\n\nEducational Games on Sustainable Energy:\nLearning about sustainable energy has never been more enjoyable. EcoWise features interactive and entertaining \ngames designed to educate users of all ages about the importance of renewable energy sources, energy conservation,\nand environmental sustainability. Through gamification, users can grasp complex concepts in an engaging and \nmemorable way, fostering a deeper understanding of the impact of their choices on the planet.\n\nJoin EcoWise and embark on a journey towards a greener, more sustainable future. Empower yourself with knowledge, \nmake eco-conscious purchases, and play your part in building a more environmentally friendly world. Together, we \ncan create a smarter, more energy-efficient tomorrow with EcoWise.\"");
+        jScrollPane3.setViewportView(companydescTxt);
+
+        logoHomeLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo.png"))); // NOI18N
 
         javax.swing.GroupLayout homePageLayout = new javax.swing.GroupLayout(homePage);
         homePage.setLayout(homePageLayout);
         homePageLayout.setHorizontalGroup(
             homePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(homePageLayout.createSequentialGroup()
-                .addGap(182, 182, 182)
-                .addComponent(homeLogoLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 205, Short.MAX_VALUE)
-                .addComponent(homeImgSep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(homePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(homePageLayout.createSequentialGroup()
+                        .addGap(194, 194, 194)
+                        .addComponent(logoHomeLbl)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(homePageLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(homePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(homePageLayout.createSequentialGroup()
+                                .addGap(0, 648, Short.MAX_VALUE)
+                                .addComponent(homeImgSep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane3))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addComponent(homeImg, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         homePageLayout.setVerticalGroup(
             homePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(homePageLayout.createSequentialGroup()
                 .addGroup(homePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(homeImgSep)
                     .addGroup(homePageLayout.createSequentialGroup()
-                        .addGroup(homePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(homePageLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(homeLogoLbl))
-                            .addComponent(homeImg, javax.swing.GroupLayout.PREFERRED_SIZE, 482, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(15, 15, 15)
+                        .addComponent(logoHomeLbl)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(145, 145, 145)
+                        .addComponent(homeImgSep, javax.swing.GroupLayout.DEFAULT_SIZE, 1, Short.MAX_VALUE))
+                    .addGroup(homePageLayout.createSequentialGroup()
+                        .addComponent(homeImg, javax.swing.GroupLayout.PREFERRED_SIZE, 482, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -2073,7 +2089,6 @@ public class EcowiseGUI extends javax.swing.JFrame {
 
         //loops through array and checks against searchTerm
             for(product p:products){
-                
                 if(p.getProductId().equalsIgnoreCase(searchTerm)){
                     products.remove(p);
                     JOptionPane.showMessageDialog(null,p.getDetail()+" has been deleted.");
@@ -2258,6 +2273,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
     private javax.swing.JTextArea cartText;
     private javax.swing.JButton clearButton;
     private javax.swing.JButton clearCrtBtn;
+    private javax.swing.JTextArea companydescTxt;
     private javax.swing.JButton confirmBtn;
     private javax.swing.JLabel costHourLbl;
     private javax.swing.JTextField costHourTxtField;
@@ -2299,7 +2315,6 @@ public class EcowiseGUI extends javax.swing.JFrame {
     private javax.swing.JLabel homeImg;
     private javax.swing.JSeparator homeImgSep;
     private javax.swing.JLabel homeLbl;
-    private javax.swing.JLabel homeLogoLbl;
     private javax.swing.JPanel homePage;
     private javax.swing.JPanel homePanel;
     private javax.swing.JLabel homeTxt;
@@ -2307,8 +2322,10 @@ public class EcowiseGUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JLabel kettleLbl;
     private javax.swing.JTextField kettleTxtField;
+    private javax.swing.JLabel logoHomeLbl;
     private javax.swing.JLabel logoLbl;
     private javax.swing.JLabel mCompCTLbl;
     private javax.swing.JLabel mCompLbl;

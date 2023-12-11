@@ -438,11 +438,24 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="182" max="-2" attributes="0"/>
-                      <Component id="homeLogoLbl" min="-2" pref="267" max="-2" attributes="0"/>
-                      <EmptySpace pref="205" max="32767" attributes="0"/>
-                      <Component id="homeImgSep" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="194" max="-2" attributes="0"/>
+                              <Component id="logoHomeLbl" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="0" pref="648" max="32767" attributes="0"/>
+                                      <Component id="homeImgSep" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="jScrollPane3" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
                       <Component id="homeImg" min="-2" pref="186" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -451,15 +464,16 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="homeImgSep" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="homeLogoLbl" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="homeImg" alignment="0" min="-2" pref="482" max="-2" attributes="0"/>
-                              </Group>
+                              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                              <Component id="logoHomeLbl" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jScrollPane3" min="-2" pref="361" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="145" max="-2" attributes="0"/>
+                              <Component id="homeImgSep" pref="1" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="homeImg" min="-2" pref="482" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
@@ -469,27 +483,6 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="homeLogoLbl">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="c1" green="e8" red="d4" type="rgb"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="c1" green="e8" red="d4" type="rgb"/>
-                </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/images/logo.png"/>
-                </Property>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
-                    <EtchetBorder bevelType="0">
-                      <Color PropertyName="highlight" blue="40" green="40" id="darkGray" palette="1" red="40" type="palette"/>
-                      <Color PropertyName="shadow" blue="c0" green="c0" id="lightGray" palette="1" red="c0" type="palette"/>
-                    </EtchetBorder>
-                  </Border>
-                </Property>
-              </Properties>
-            </Component>
             <Component class="javax.swing.JSeparator" name="homeImgSep">
               <Properties>
                 <Property name="orientation" type="int" value="1"/>
@@ -499,6 +492,35 @@
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/images/homePageSide.jpg"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane3">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTextArea" name="companydescTxt">
+                  <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                    </Property>
+                    <Property name="columns" type="int" value="20"/>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="32" green="32" red="32" type="rgb"/>
+                    </Property>
+                    <Property name="rows" type="int" value="5"/>
+                    <Property name="text" type="java.lang.String" value="EcoWise is a cutting-edge platform at the forefront of the sustainable living movement, providing users with a &#xa;comprehensive solution to make informed choices about their energy consumption. Our app seamlessly integrates &#xa;three key features: an eco-friendly appliance marketplace, a personalized energy calculator, and engaging educational&#xa;games on sustainable energy.&#xa;&#xa;Eco-Friendly Appliance Marketplace:&#xa;Browse through a curated selection of energy-efficient appliances from top-rated brands. EcoWise ensures that every&#xa; product on our platform meets stringent energy efficiency standards, helping users make environmentally conscious &#xa;choices for their homes. From energy-saving refrigerators to eco-friendly lighting solutions, our marketplace offers a &#xa;diverse range of products to suit every need.&#xa;&#xa;Personalized Energy Calculator:&#xa;Take control of your energy usage with EcoWise&apos;s intuitive energy calculator. Input details about your appliances, usage &#xa;patterns, and lifestyle to receive personalized insights into your energy consumption. The app provides actionable tips &#xa;to optimize energy efficiency, helping users reduce their carbon footprint and save on utility bills.&#xa;&#xa;Educational Games on Sustainable Energy:&#xa;Learning about sustainable energy has never been more enjoyable. EcoWise features interactive and entertaining &#xa;games designed to educate users of all ages about the importance of renewable energy sources, energy conservation,&#xa;and environmental sustainability. Through gamification, users can grasp complex concepts in an engaging and &#xa;memorable way, fostering a deeper understanding of the impact of their choices on the planet.&#xa;&#xa;Join EcoWise and embark on a journey towards a greener, more sustainable future. Empower yourself with knowledge, &#xa;make eco-conscious purchases, and play your part in building a more environmentally friendly world. Together, we &#xa;can create a smarter, more energy-efficient tomorrow with EcoWise.&quot;"/>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Component class="javax.swing.JLabel" name="logoHomeLbl">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/images/logo.png"/>
                 </Property>
               </Properties>
             </Component>
