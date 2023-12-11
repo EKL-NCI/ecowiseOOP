@@ -13,6 +13,8 @@ import java.util.Scanner;
  */
 
 //class for both word and definition that will be used in array
+//made both wordAndDef class and wordBank class in the same file for the sake of simplicity, as they are closely related.
+
 class wordAndDef {
     private String word;
     private String definition;
@@ -43,13 +45,13 @@ class wordAndDef {
         
             private ArrayList<wordAndDef> wordBank;
             
-            //constructor to initialize word bank
+            //constructor to initialize word bank 
             
             public wordBank(){
                 initializeWordBank();
             }
             
-            //initialize the word bank with its words and definitions in the ArrayList
+            //initialize the word bank with its words and definitions in the ArrayList - https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html
             private void initializeWordBank(){
                 wordBank = new ArrayList<>();
                 wordBank.add(new wordAndDef("Geothermal", "Relating to or produced by the internal heat of the earth."));
@@ -74,7 +76,7 @@ class wordAndDef {
                 return wordBank;
             }
             
-            //get the word bank as a String to display in the wordBankTextArea in GUI
+            //get the word bank as a String to display in the wordBankTextArea in GUI - https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html
             public String getWordBankAsString(){
                 StringBuilder wordBankText = new StringBuilder();
                 
