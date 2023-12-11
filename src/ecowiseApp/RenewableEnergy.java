@@ -5,22 +5,14 @@
 package ecowiseApp;
 
 /**
- *
+ * Calculates money saved from reverting into sustainable energy, extended from the main class Calculator
  * @author paul paus
  */
-import java.util.ArrayList;
 public class RenewableEnergy extends Calculator{
+    //data variable to take in cost of electricity and mode of renewable energy system
     private double costPerHour, installCost, monthlyProduction;
-    private ArrayList<Object> renewableSystems;
     
-    public RenewableEnergy(double costPerHour, double installCost, double monthlyProduction, double dryer, double tv, double kettle, double waterHeater, double appliances, double washingMachine, double freezer, double mComp){
-        super(dryer, tv, kettle, waterHeater, appliances, washingMachine, freezer, mComp);
-        this.costPerHour = costPerHour;
-        this.installCost = installCost;
-        this.monthlyProduction = monthlyProduction;
-        this.renewableSystems = new ArrayList<>();
-        }
-    
+    //constructors - default    
     public RenewableEnergy(){
         super();
         costPerHour = 0;
@@ -28,6 +20,18 @@ public class RenewableEnergy extends Calculator{
         monthlyProduction = 0;
     }
 
+    //constructors - with parameter 
+    //constructing super from Calculator   
+    public RenewableEnergy(double costPerHour, double installCost, double monthlyProduction, double dryer, double tv, double kettle, double waterHeater, double appliances, double washingMachine, double freezer, double mComp){
+        super(dryer, tv, kettle, waterHeater, appliances, washingMachine, freezer, mComp);
+        this.costPerHour = costPerHour;
+        this.installCost = installCost;
+        this.monthlyProduction = monthlyProduction;
+        }
+    
+    //get methods - one for every output
+    //set methods - one for every input    
+        
     public double getCostPerHour() {
         return costPerHour;
     }
@@ -52,6 +56,7 @@ public class RenewableEnergy extends Calculator{
         this.monthlyProduction = monthlyProduction;
     }
     
+   //computing method in order to calculate saved costs, using method from Calculator with the super    
     @Override
     public double getmComp(){
         return installCost/((monthlyProduction-super.getmComp())*costPerHour);
