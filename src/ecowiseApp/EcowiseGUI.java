@@ -2172,6 +2172,8 @@ public class EcowiseGUI extends javax.swing.JFrame {
 
     private void remItemBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_remItemBtnActionPerformed
         // TODO add your handling code here:
+    //boolean for error if product not found    
+        boolean productFound = false;
         
     //checks to see if array is empty
         if(products.isEmpty()){
@@ -2188,8 +2190,12 @@ public class EcowiseGUI extends javax.swing.JFrame {
                 if(p.getProductId().equalsIgnoreCase(searchTerm)){
                     products.remove(p);
                     JOptionPane.showMessageDialog(null,p.getDetail()+" has been deleted.");
-                //if not found in loop, gives error
-                   }else{
+                    productFound = true;
+                    break;
+                   }
+                   
+            //if not found in loop, gives error 
+                if(!productFound){
                        JOptionPane.showMessageDialog(null, "Incorrect item code, Please try again.");
                    }
                 
