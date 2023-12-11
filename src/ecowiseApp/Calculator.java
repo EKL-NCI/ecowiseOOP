@@ -8,6 +8,7 @@ package ecowiseApp;
  *
  * @author paul paus
  */
+
 public class Calculator {
     private double dryer, tv, kettle, waterHeater, appliances, washingMachine, freezer, mComp;
     
