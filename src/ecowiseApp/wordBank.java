@@ -12,20 +12,21 @@ import java.util.Scanner;
  * @author Josh McGlynn
  */
 
-//class to represent both word and definition that will be used in array
+//class for both word and definition that will be used in array
 class wordAndDef {
     private String word;
     private String definition;
     
+    //constructor to initialise word and definition
     public wordAndDef(String word, String definition) {
         this.word = word;
         this.definition = definition;
     }
-    
+    //getter method for word
     public String getWord(){
         return word;
     }
-    
+    //getter method for definition
     public String getDefinition(){
         return definition;
     }
@@ -35,6 +36,7 @@ class wordAndDef {
         return word;
     }
 }
+    //word bank class
     public class wordBank{
         
         
@@ -76,6 +78,7 @@ class wordAndDef {
             public String getWordBankAsString(){
                 StringBuilder wordBankText = new StringBuilder();
                 
+                //repeats through each word and definition in the word bank to append each into the string builder so that it shows a colon between each word and def, and makes a new line for each also
                 for (wordAndDef pair : wordBank){
                     wordBankText.append(pair.getWord()).append(": ").append(pair.getDefinition()).append("\n");
                 }
