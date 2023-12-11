@@ -452,8 +452,9 @@ public class EcowiseGUI extends javax.swing.JFrame {
 
         homeImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/homePageSide.jpg"))); // NOI18N
 
+        companydescTxt.setBackground(new java.awt.Color(255, 255, 255));
         companydescTxt.setColumns(20);
-        companydescTxt.setForeground(new java.awt.Color(50, 50, 50));
+        companydescTxt.setForeground(new java.awt.Color(0, 0, 0));
         companydescTxt.setRows(5);
         companydescTxt.setText("EcoWise is a cutting-edge platform at the forefront of the sustainable living movement, providing users with a \ncomprehensive solution to make informed choices about their energy consumption. Our app seamlessly integrates \nthree key features: an eco-friendly appliance marketplace, a personalized energy calculator, and engaging educational\ngames on sustainable energy.\n\nEco-Friendly Appliance Marketplace:\nBrowse through a curated selection of energy-efficient appliances from top-rated brands. EcoWise ensures that every\n product on our platform meets stringent energy efficiency standards, helping users make environmentally conscious \nchoices for their homes. From energy-saving refrigerators to eco-friendly lighting solutions, our marketplace offers a \ndiverse range of products to suit every need.\n\nPersonalized Energy Calculator:\nTake control of your energy usage with EcoWise's intuitive energy calculator. Input details about your appliances, usage \npatterns, and lifestyle to receive personalized insights into your energy consumption. The app provides actionable tips \nto optimize energy efficiency, helping users reduce their carbon footprint and save on utility bills.\n\nEducational Games on Sustainable Energy:\nLearning about sustainable energy has never been more enjoyable. EcoWise features interactive and entertaining \ngames designed to educate users of all ages about the importance of renewable energy sources, energy conservation,\nand environmental sustainability. Through gamification, users can grasp complex concepts in an engaging and \nmemorable way, fostering a deeper understanding of the impact of their choices on the planet.\n\nJoin EcoWise and embark on a journey towards a greener, more sustainable future. Empower yourself with knowledge, \nmake eco-conscious purchases, and play your part in building a more environmentally friendly world. Together, we \ncan create a smarter, more energy-efficient tomorrow with EcoWise.\"\n\n(AI generated paragraphs for filler purposes)\n");
         jScrollPane3.setViewportView(companydescTxt);
@@ -519,60 +520,60 @@ public class EcowiseGUI extends javax.swing.JFrame {
         shopPage.add(shopTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 50, 20));
 
         product2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/airFryer002.png"))); // NOI18N
-        shopPage.add(product2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 20, -1, -1));
+        shopPage.add(product2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, -1, -1));
 
         product1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/slowcooker001.png"))); // NOI18N
-        shopPage.add(product1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, -1));
+        shopPage.add(product1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
 
         product4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/microwave004.png"))); // NOI18N
-        shopPage.add(product4, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 20, -1, -1));
+        shopPage.add(product4, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 80, -1, -1));
 
         product3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/microwave003.png"))); // NOI18N
-        shopPage.add(product3, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 20, -1, -1));
+        shopPage.add(product3, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 60, -1, -1));
 
         product6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/toaster006.png"))); // NOI18N
-        shopPage.add(product6, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 250, -1, -1));
+        shopPage.add(product6, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 250, -1, -1));
 
         product5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/kettle005.png"))); // NOI18N
-        shopPage.add(product5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, -1, -1));
+        shopPage.add(product5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, -1, -1));
 
         product8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dishwasher008.png"))); // NOI18N
-        shopPage.add(product8, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 250, -1, -1));
+        shopPage.add(product8, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 250, -1, -1));
 
         product7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fridge007.png"))); // NOI18N
-        shopPage.add(product7, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 250, -1, -1));
+        shopPage.add(product7, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 250, -1, -1));
 
         product8Desc.setForeground(new java.awt.Color(50, 50, 50));
         product8Desc.setText("iQ300 Freestanding Dishwasher");
-        shopPage.add(product8Desc, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 350, 170, 30));
+        shopPage.add(product8Desc, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 350, 170, 30));
 
         product1Desc.setForeground(new java.awt.Color(50, 50, 50));
         product1Desc.setText("Easy Time Slow Cooker");
-        shopPage.add(product1Desc, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 130, 30));
+        shopPage.add(product1Desc, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 130, 30));
 
         product2Desc.setForeground(new java.awt.Color(50, 50, 50));
         product2Desc.setText("Pro 4.7L Air Fryer");
-        shopPage.add(product2Desc, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 110, 30));
+        shopPage.add(product2Desc, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 150, 110, 30));
 
         product3Desc.setForeground(new java.awt.Color(50, 50, 50));
         product3Desc.setText("Combination Microwave MWH 338 SX");
-        shopPage.add(product3Desc, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 120, 210, 30));
+        shopPage.add(product3Desc, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 150, 210, 30));
 
         product4Desc.setForeground(new java.awt.Color(50, 50, 50));
         product4Desc.setText("Microwave RHMD714G");
-        shopPage.add(product4Desc, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 120, 130, 30));
+        shopPage.add(product4Desc, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 150, 130, 30));
 
         product5Desc.setForeground(new java.awt.Color(50, 50, 50));
         product5Desc.setText("Enfinigy Kettle Pro");
-        shopPage.add(product5Desc, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, 110, 30));
+        shopPage.add(product5Desc, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, 110, 30));
 
         product6Desc.setForeground(new java.awt.Color(50, 50, 50));
         product6Desc.setText("VTT981 Edge 2 Slice Toaster");
-        shopPage.add(product6Desc, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 350, 150, 30));
+        shopPage.add(product6Desc, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 350, 150, 30));
 
         product7Desc.setForeground(new java.awt.Color(50, 50, 50));
         product7Desc.setText("50/50 Frost Free Fridge Freezer");
-        shopPage.add(product7Desc, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 350, 180, 30));
+        shopPage.add(product7Desc, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 350, 180, 30));
 
         product8Btn.setText("Add to Cart");
         product8Btn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -580,7 +581,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
                 product8BtnMouseClicked(evt);
             }
         });
-        shopPage.add(product8Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 400, -1, -1));
+        shopPage.add(product8Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 400, -1, -1));
 
         product1Btn.setText("Add to Cart");
         product1Btn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -588,7 +589,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
                 product1BtnMouseClicked(evt);
             }
         });
-        shopPage.add(product1Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, -1, -1));
+        shopPage.add(product1Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, -1, -1));
 
         product2Btn.setText("Add to Cart");
         product2Btn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -596,7 +597,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
                 product2BtnMouseClicked(evt);
             }
         });
-        shopPage.add(product2Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, -1, -1));
+        shopPage.add(product2Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, -1, -1));
 
         product3Btn.setText("Add to Cart");
         product3Btn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -604,7 +605,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
                 product3BtnMouseClicked(evt);
             }
         });
-        shopPage.add(product3Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 170, -1, -1));
+        shopPage.add(product3Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 200, -1, -1));
 
         product4Btn.setText("Add to Cart");
         product4Btn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -612,7 +613,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
                 product4BtnMouseClicked(evt);
             }
         });
-        shopPage.add(product4Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 170, -1, -1));
+        shopPage.add(product4Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 200, -1, -1));
 
         product5Btn.setText("Add to Cart");
         product5Btn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -620,7 +621,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
                 product5BtnMouseClicked(evt);
             }
         });
-        shopPage.add(product5Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 400, -1, -1));
+        shopPage.add(product5Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, -1, -1));
 
         product6Btn.setText("Add to Cart");
         product6Btn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -628,7 +629,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
                 product6BtnMouseClicked(evt);
             }
         });
-        shopPage.add(product6Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 400, -1, -1));
+        shopPage.add(product6Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 400, -1, -1));
 
         product7Btn.setText("Add to Cart");
         product7Btn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -636,7 +637,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
                 product7BtnMouseClicked(evt);
             }
         });
-        shopPage.add(product7Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 400, -1, -1));
+        shopPage.add(product7Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 400, -1, -1));
 
         donateBtn1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Donate.png"))); // NOI18N
         donateBtn1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -680,35 +681,35 @@ public class EcowiseGUI extends javax.swing.JFrame {
 
         product4PriceLbl.setForeground(new java.awt.Color(50, 50, 50));
         product4PriceLbl.setText("99.99");
-        shopPage.add(product4PriceLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 150, -1, -1));
+        shopPage.add(product4PriceLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 180, -1, -1));
 
         product1PriceLbl1.setForeground(new java.awt.Color(50, 50, 50));
         product1PriceLbl1.setText("49.99");
-        shopPage.add(product1PriceLbl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, -1, -1));
+        shopPage.add(product1PriceLbl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, -1, -1));
 
         product2PriceLbl1.setForeground(new java.awt.Color(50, 50, 50));
         product2PriceLbl1.setText("99.99");
-        shopPage.add(product2PriceLbl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 150, -1, -1));
+        shopPage.add(product2PriceLbl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 180, -1, -1));
 
         product8PriceLbl1.setForeground(new java.awt.Color(50, 50, 50));
         product8PriceLbl1.setText("770.00");
-        shopPage.add(product8PriceLbl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 380, -1, -1));
+        shopPage.add(product8PriceLbl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 380, -1, -1));
 
         product3PriceLbl2.setForeground(new java.awt.Color(50, 50, 50));
         product3PriceLbl2.setText("329.90");
-        shopPage.add(product3PriceLbl2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 150, -1, -1));
+        shopPage.add(product3PriceLbl2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 180, -1, -1));
 
         product5PriceLbl2.setForeground(new java.awt.Color(50, 50, 50));
         product5PriceLbl2.setText("129.00");
-        shopPage.add(product5PriceLbl2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 380, -1, -1));
+        shopPage.add(product5PriceLbl2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 380, -1, -1));
 
         product6PriceLbl2.setForeground(new java.awt.Color(50, 50, 50));
         product6PriceLbl2.setText("40.00");
-        shopPage.add(product6PriceLbl2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 380, -1, -1));
+        shopPage.add(product6PriceLbl2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 380, -1, -1));
 
         product7PriceLbl2.setForeground(new java.awt.Color(50, 50, 50));
         product7PriceLbl2.setText("500.00");
-        shopPage.add(product7PriceLbl2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 380, -1, -1));
+        shopPage.add(product7PriceLbl2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 380, -1, -1));
 
         mainPanel.add(shopPage, "2");
 
