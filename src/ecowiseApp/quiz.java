@@ -12,17 +12,25 @@ import java.util.Scanner;
  * @author Josh McGlynn
  */
 public class quiz{
-    private wordBank dictionary;
+    private wordBank dictionary; //instance variable for wordBank class
     
+    //initializing wordBank object named dictionary
     public quiz(wordBank dictionary){
-        this.dictionary = dictionary;
+        this.dictionary = dictionary; //https://docs.oracle.com/javase/tutorial/java/javaOO/variables.html
+    }
+    
+    //function to get random word from word bank - https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/util/Random.html
+    //https://stackoverflow.com/questions/5887709/getting-random-numbers-in-java
+    private wordAndDef getRandWord(){
+        Random random = new Random();
+        int randIndex = random.nextInt(dictionary.getWordBank().size()); //creates an integer "index" that is set to the size of the word bank to generate a random integer between 0 and the size of the word bank (being 15)
+        return dictionary.getWordBank().get(randIndex); //retrieves randomly gotten word and definition from arrayList and returns it.
     }
     
     public void startQuiz(){
-        //Get random word from word bank
-        wordAndDef randWord = getRandWord();
-        String correct = randWord.getWord().toLowerCase();
-        String definition = randWord.getDefinition();
+        wordAndDef randWord = getRandWord(); //Get random word from word bank
+        String correct = randWord.getWord().toLowerCase(); //store randWord in variable "correct", as this will be the variable for the correct answer used in the quiz
+        String definition = randWord.getDefinition();//gets the definition of the word to be guessed to be displayed to user
         
         
         
@@ -32,7 +40,7 @@ public class quiz{
         
         //Get user input
         String ans = JOptionPane.showInputDialog(null,("Enter the word: "));
-        String guess = ans.toLowerCase();
+        String guess = ans.toLowerCase(); //making sure answer is set to lowercase
         
         //Check if ans is correct
         if(ans.equals(correct)){
@@ -42,12 +50,5 @@ public class quiz{
         }
     }
     
-    //function to get random word from word bank
-    private wordAndDef getRandWord(){
-        Random random = new Random();
-        int randIndex = random.nextInt(dictionary.getWordBank().size());
-        return dictionary.getWordBank().get(randIndex);
     
-        
-    }
 }

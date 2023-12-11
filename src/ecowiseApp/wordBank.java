@@ -17,9 +17,9 @@ import java.util.Scanner;
 
 class wordAndDef {
     private String word;
-    private String definition;
+    private String definition; 
     
-    //constructor to initialise word and definition
+    //constructor to initialise word and definition to be used in arrayList
     public wordAndDef(String word, String definition) {
         this.word = word;
         this.definition = definition;
@@ -33,6 +33,7 @@ class wordAndDef {
         return definition;
     }
     //allows the word to be displayed as String if user gets the word wrong in quiz, instead of displaying as a file path and hex code for the random word
+    //https://www.javatpoint.com/understanding-toString()-method
     @Override
     public String toString(){
         return word;
@@ -46,13 +47,15 @@ class wordAndDef {
             private ArrayList<wordAndDef> wordBank;
             
             //constructor to initialize word bank 
-            
+            //https://www.geeksforgeeks.org/constructors-in-java/
             public wordBank(){
-                initializeWordBank();
+                createWordBank();
             }
             
-            //initialize the word bank with its words and definitions in the ArrayList - https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html
-            private void initializeWordBank(){
+            //create the word bank with its words and definitions in the ArrayList - https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html
+            //https://www.w3schools.com/java/java_arraylist.asp
+            //https://www.softwaretestinghelp.com/java-arraylist-tutorial/
+            private void createWordBank(){
                 wordBank = new ArrayList<>();
                 wordBank.add(new wordAndDef("Geothermal", "Relating to or produced by the internal heat of the earth."));
                 wordBank.add(new wordAndDef("Conservation", "Careful and efficient use of energy resources to minimize waste and reduce environmental impact."));
@@ -80,7 +83,8 @@ class wordAndDef {
             public String getWordBankAsString(){
                 StringBuilder wordBankText = new StringBuilder();
                 
-                //repeats through each word and definition in the word bank to append each into the string builder so that it shows a colon between each word and def, and makes a new line for each also
+                //repeats through each word and definition in the word bank to append each into the string builder so that it shows a colon between each word and def, and also makes a new line for each
+                //https://www.javatpoint.com/StringBuilder-class
                 for (wordAndDef pair : wordBank){
                     wordBankText.append(pair.getWord()).append(": ").append(pair.getDefinition()).append("\n");
                 }
