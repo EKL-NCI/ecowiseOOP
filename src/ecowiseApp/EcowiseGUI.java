@@ -8,11 +8,11 @@ import java.awt.CardLayout;
 import java.awt.Color;
 import java.util.ArrayList;
 import javax.swing.JPanel;
+import javax.swing.JOptionPane;
 
 //taken from https://mkyong.com/java/how-to-round-double-float-value-to-2-decimal-points-in-java/
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
-import javax.swing.JOptionPane;
 /**
  *
  * @author Erin Lee
@@ -21,6 +21,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
     // Array Lists for Shop - Erin
     public ArrayList <product> products;
     public ArrayList <customer> customers;
+    public ArrayList <Calculator> calculations;
     // end of array lists for shop
     private wordBank wordBankInstance;
     private game game;
@@ -36,6 +37,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
         // Array Lists for Shop - Erin
         products = new ArrayList<>();
         customers = new ArrayList<>();
+        calculations = new ArrayList<>();
         // end of array lists for shop
         this.wordBankInstance = new wordBank();
         this.game = new game(wordBankInstance);
@@ -156,6 +158,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
         freezerTxtField = new javax.swing.JTextField();
         televisionLbl = new javax.swing.JLabel();
         kettleLbl = new javax.swing.JLabel();
+        printButton = new javax.swing.JButton();
         gamePage = new javax.swing.JPanel();
         gamePage1 = new javax.swing.JPanel();
         gameQuizSeparator = new javax.swing.JSeparator();
@@ -808,6 +811,19 @@ public class EcowiseGUI extends javax.swing.JFrame {
 
         kettleLbl.setText("Kettle:");
 
+        printButton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        printButton.setText("PRINT");
+        printButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                printButtonMouseClicked(evt);
+            }
+        });
+        printButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                printButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout calcPageLayout = new javax.swing.GroupLayout(calcPage);
         calcPage.setLayout(calcPageLayout);
         calcPageLayout.setHorizontalGroup(
@@ -815,7 +831,10 @@ public class EcowiseGUI extends javax.swing.JFrame {
             .addGroup(calcPageLayout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(clearButton, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(calcPageLayout.createSequentialGroup()
+                        .addComponent(clearButton, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(printButton, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(calcPageLayout.createSequentialGroup()
                         .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(calcButton)
@@ -874,7 +893,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(questionCTLbl))))
                     .addComponent(calcTitle))
-                .addContainerGap(191, Short.MAX_VALUE))
+                .addContainerGap(79, Short.MAX_VALUE))
         );
         calcPageLayout.setVerticalGroup(
             calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -943,8 +962,10 @@ public class EcowiseGUI extends javax.swing.JFrame {
                         .addComponent(calcButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(mCompLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
-                .addComponent(clearButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addGroup(calcPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(clearButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(printButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(19, 19, 19))
         );
 
@@ -1366,10 +1387,11 @@ public class EcowiseGUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(cartPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(remItemBtn)
-                    .addComponent(totalBalLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(cartPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(totalBalLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(cartPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel2)
+                        .addComponent(remItemBtn)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -1694,8 +1716,6 @@ public class EcowiseGUI extends javax.swing.JFrame {
 
     private void calcButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calcButtonActionPerformed
         // TODO add your handling code here:
-        Calculator calc = new Calculator();
-
         if (dryerTxtField.getText().isEmpty() ||
             televisionTxtField.getText().isEmpty() ||
             kettleTxtField.getText().isEmpty() ||
@@ -1708,6 +1728,8 @@ public class EcowiseGUI extends javax.swing.JFrame {
             mCompLbl.setText("Please fill every input!");
 
         } else {
+            Calculator calc = new Calculator();
+                    
             calc.setDryer(Double.parseDouble(dryerTxtField.getText()));
             calc.setTv(Double.parseDouble(televisionTxtField.getText()));
             calc.setKettle(Double.parseDouble(kettleTxtField.getText()));
@@ -1715,7 +1737,8 @@ public class EcowiseGUI extends javax.swing.JFrame {
             calc.setAppliances(Double.parseDouble(appliancesTxtField.getText()));
             calc.setWashingMachine(Double.parseDouble(washingMachineTxtField.getText()));
             calc.setFreezer(Double.parseDouble(freezerTxtField.getText()));
-
+            
+            calculations.add(calc);
             mCompLbl.setText("You use " +  df.format(calc.getmComp()) + " kilo Watts per month!");
 
             gasCompLbl.setVisible(true);
@@ -1747,6 +1770,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
         }else{
         ct.setGasComp(Double.parseDouble(gasCompTxtField.getText()));    
         mCompCTLbl.setText("Your household emits " + df.format(ct.getmComp())+ " kgCO2 per month");
+        calculations.add(ct);
         }
     }//GEN-LAST:event_ctButtonActionPerformed
 
@@ -1770,9 +1794,13 @@ public class EcowiseGUI extends javax.swing.JFrame {
             else if(windRButton.isSelected()){
                 re.setInstallCost(24000);
                 re.setMonthlyProduction(300);
+            }else{
+                mCompRELbl.setText("Please select an option!");
+                return;
             }
 
             mCompRELbl.setText("Your house hold will save €" + df.format(re.getmComp())+ " every month!");
+            calculations.add(re);           
         }
     }//GEN-LAST:event_reButtonActionPerformed
 
@@ -1791,6 +1819,9 @@ public class EcowiseGUI extends javax.swing.JFrame {
     private void clearButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clearButtonMouseClicked
         // TODO add your handling code here:
         Calculator calc = new Calculator();
+        CarbonTracker ct = new CarbonTracker();
+        RenewableEnergy re = new RenewableEnergy();
+
         calc.setDryer(0);
         dryerTxtField.setText("");
         calc.setTv(0);
@@ -1806,11 +1837,9 @@ public class EcowiseGUI extends javax.swing.JFrame {
         calc.setFreezer(0);
         freezerTxtField.setText("");
 
-        CarbonTracker ct = new CarbonTracker();
         ct.setGasComp(0);
         gasCompTxtField.setText("");
 
-        RenewableEnergy re = new RenewableEnergy();
         re.setCostPerHour(0);
         costHourTxtField.setText("");
         re.setInstallCost(0);
@@ -1834,11 +1863,11 @@ public class EcowiseGUI extends javax.swing.JFrame {
         reButton.setVisible(false);
         seRButton.setVisible(false);
         windRButton.setVisible(false);
+        
     }//GEN-LAST:event_clearButtonMouseClicked
 
     private void clearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearButtonActionPerformed
         // TODO add your handling code here:
-
     }//GEN-LAST:event_clearButtonActionPerformed
 
     private void dryerTxtFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dryerTxtFieldActionPerformed
@@ -1927,6 +1956,39 @@ public class EcowiseGUI extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_remItemBtnActionPerformed
+
+    private void printButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_printButtonMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_printButtonMouseClicked
+
+    private void printButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_printButtonActionPerformed
+        // TODO add your handling code here:    
+        if (calculations.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Sorry, there are no values to print");
+        } else {
+            StringBuilder message = new StringBuilder("Your results per Month:");
+
+            // Define an array of names
+            String[] names = {"Monthly Consumption", "Greenhouse Gas Emissions", "Energy Savings"};
+            String[] val = {"kW", "kgCO2", "euro"};
+
+            for (int i = 0; i < calculations.size(); i++) {
+                Calculator c = calculations.get(i);
+
+                // Use the name from the array, or a default if there are more calculations than names
+                String name = (i < names.length) ? names[i] : "DefaultName" + i;
+                String value = (i < val.length) ? val[i] : "DefaultName" + i;
+
+                message.append("\n").append(name).append(": ").append(df.format(c.getmComp())).append(value);
+            }
+
+            JOptionPane.showMessageDialog(null, message.toString());
+        }
+
+        /*
+        
+        */
+    }//GEN-LAST:event_printButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2049,6 +2111,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
     private javax.swing.JLabel mCompRELbl;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JLabel myCartLbl;
+    private javax.swing.JButton printButton;
     private javax.swing.JLabel product1;
     private javax.swing.JButton product1Btn;
     private javax.swing.JLabel product1Desc;
