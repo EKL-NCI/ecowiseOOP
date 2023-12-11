@@ -26,7 +26,8 @@ public class shopCart extends product{
         totalPrice = 0;
     }
 
-    public void setTotalPrice(int quantity) {
+    //getters and setters for totalPrice 
+    public void setTotalPrice(double totalPrice) {
         this.totalPrice = totalPrice;
     }
 

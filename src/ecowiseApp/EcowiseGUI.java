@@ -18,8 +18,10 @@ import javax.swing.JOptionPane;
  * @author Erin Lee
  */
 public class EcowiseGUI extends javax.swing.JFrame {
+    // Array Lists for Shop - Erin
     public ArrayList <product> products;
     public ArrayList <customer> customers;
+    // end of array lists for shop
     private wordBank wordBankInstance;
     private game game;
     private quiz quiz;
@@ -31,8 +33,10 @@ public class EcowiseGUI extends javax.swing.JFrame {
      */
     public EcowiseGUI() {
         initComponents();
+        // Array Lists for Shop - Erin
         products = new ArrayList<>();
         customers = new ArrayList<>();
+        // end of array lists for shop
         this.wordBankInstance = new wordBank();
         this.game = new game(wordBankInstance);
         this.quiz = new quiz(wordBankInstance);
@@ -1450,11 +1454,13 @@ public class EcowiseGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_exitBtnActionPerformed
 
     private void homePanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homePanelMouseClicked
+        // colour changes for side menu, change colour depending on what section you are in - Erin
         setColor(homePanel);
         resetColor(shopPanel);
         resetColor(gamePanel);
         resetColor(calcPanel);
         
+        // Card Layout used to change sections - https://docs.oracle.com/javase/tutorial/uiswing/layout/card.html https://www.javatpoint.com/CardLayout - Erin
         CardLayout card = (CardLayout)mainPanel.getLayout();
         card.show(mainPanel, "1");
     }//GEN-LAST:event_homePanelMouseClicked
@@ -1521,15 +1527,23 @@ public class EcowiseGUI extends javax.swing.JFrame {
         CardLayout card = (CardLayout)mainPanel.getLayout();
         card.show(mainPanel, "5");
         
+        //create instance of shop cart
         shopCart myCart = new shopCart();
         
+        // cart text box not editable for user
         cartText.setEditable(false);
+        
+        //used string builder to display array content - https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html
         StringBuilder cartContent = new StringBuilder();
 
+        //loops through products and appends them all to display correctly using override toString()
         for (product p : products) {
             cartContent.append(p.toString()).append("\n");
         }
+        
+        //setting the cart text box to display the stringbuilder
             cartText.setText(cartContent.toString());
+        //setting the totalBalLbl to display the calculated total
             totalBalLbl.setText(df.format(myCart.calTotal(products)));
     }//GEN-LAST:event_cartBtnMouseClicked
 
@@ -1563,6 +1577,8 @@ public class EcowiseGUI extends javax.swing.JFrame {
 
     private void confirmBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmBtnActionPerformed
         // TODO add your handling code here:
+        
+        // creates new instance of customer and saves to array on checkout
         customer c = new customer();
             c.setName(dNameTxt.getText());
             c.setPhoneNo(dPhoneTxt.getText());
@@ -1579,6 +1595,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
 
     private void donateBtn2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_donateBtn2MouseClicked
         // TODO add your handling code here:
+        //adds product to cart array
         product p = new product();
             p.setName("Donate");
             p.setPrice(5.00);
