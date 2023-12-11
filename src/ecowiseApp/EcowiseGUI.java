@@ -25,6 +25,8 @@ public class EcowiseGUI extends javax.swing.JFrame {
     private wordBank wordBankInstance;
     private game game;
     private quiz quiz;
+// Array Lists for Calculator - Paul
+    public ArrayList <Calculator> calculations;
     
     //taken from https://mkyong.com/java/how-to-round-double-float-value-to-2-decimal-points-in-java/
     private static final DecimalFormat df = new DecimalFormat("0.00");
@@ -1630,6 +1632,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
         CardLayout card = (CardLayout)mainPanel.getLayout();
         card.show(mainPanel, "3");
         
+        //labels, buttons and textfields are hidden
         gasCompLbl.setVisible(false);
         questionCTLbl.setVisible(false);
         questionRELbl.setVisible(false);
@@ -1840,8 +1843,12 @@ public class EcowiseGUI extends javax.swing.JFrame {
 
     private void calcButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calcButtonActionPerformed
         // TODO add your handling code here:
+        
+        //code to try
+        //taken from https://www.w3schools.com/java/java_try_catch.asp
         try{
-                if (dryerTxtField.getText().isEmpty() ||
+            //if textfields are empty
+            if (dryerTxtField.getText().isEmpty() ||
                 televisionTxtField.getText().isEmpty() ||
                 kettleTxtField.getText().isEmpty() ||
                 waterHeaterTxtField.getText().isEmpty() ||
@@ -1849,12 +1856,16 @@ public class EcowiseGUI extends javax.swing.JFrame {
                 washingMachineTxtField.getText().isEmpty() ||
                 freezerTxtField.getText().isEmpty()) {
 
-
+                //label displays message
                 mCompLbl.setText("Please fill every input!");
-
+               
+            //if all textfields have inputs    
             } else {
+                
+                //creates object from Calculator class
                 Calculator calc = new Calculator();
-
+                
+                //calls object and is designated with respective textfield, input is taken
                 calc.setDryer(Double.parseDouble(dryerTxtField.getText()));
                 calc.setTv(Double.parseDouble(televisionTxtField.getText()));
                 calc.setKettle(Double.parseDouble(kettleTxtField.getText()));
@@ -1862,10 +1873,14 @@ public class EcowiseGUI extends javax.swing.JFrame {
                 calc.setAppliances(Double.parseDouble(appliancesTxtField.getText()));
                 calc.setWashingMachine(Double.parseDouble(washingMachineTxtField.getText()));
                 calc.setFreezer(Double.parseDouble(freezerTxtField.getText()));
-
+                
+                //inputs are taken into array
                 calculations.add(calc);
+                //label display Monthly Consumption of electricity
+                //df format to set output to two decimal places
                 mCompLbl.setText("You use " +  df.format(calc.getmComp()) + " kilo Watts per month!");
-
+                
+                //labels, buttons and text fields are visible
                 gasCompLbl.setVisible(true);
                 questionCTLbl.setVisible(true);
                 questionRELbl.setVisible(true);
@@ -1880,8 +1895,14 @@ public class EcowiseGUI extends javax.swing.JFrame {
                 reButton.setVisible(true);
                 seRButton.setVisible(true);
                 windRButton.setVisible(true);
+                
+                //button is disabled
+                calcButton.setEnabled(false);
             }
+         //code to catch
+         //NumberFormatException taken from https://stackoverflow.com/questions/18711896/how-can-i-prevent-java-lang-numberformatexception-for-input-string-n-a
         }catch(NumberFormatException e){
+            //label displays message
             mCompLbl.setText("Please input a number!");
         }
     }//GEN-LAST:event_calcButtonActionPerformed
@@ -1892,17 +1913,31 @@ public class EcowiseGUI extends javax.swing.JFrame {
 
     private void ctButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ctButtonActionPerformed
         // TODO add your handling code here:
+        //creates object from CarbonTracker class
         CarbonTracker ct = new CarbonTracker();
         
+        //code to try
         try{
+            //if textfield is empty
             if(gasCompTxtField.getText().isEmpty()){
+                //label displays message
                 mCompCTLbl.setText("Please fill every input!");
+             //if textfield have input   
             }else{
+                //calls object and is designated with respective textfield, input is taken
                 ct.setGasComp(Double.parseDouble(gasCompTxtField.getText()));    
+                //label displays message
+                //df format to set output to two decimal places
                 mCompCTLbl.setText("Your household emits " + df.format(ct.getmComp())+ " kgCO2 per month");
+                //inputs are taken into array
                 calculations.add(ct);
+                
+                //button is disabled
+                ctButton.setEnabled(false);
             }          
+         //code to catch
         }catch(NumberFormatException e){
+            //label displays message
             mCompLbl.setText("Please input a number!");
         }
        
@@ -1914,38 +1949,60 @@ public class EcowiseGUI extends javax.swing.JFrame {
 
     private void reButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reButtonActionPerformed
         // TODO add your handling code here:
+        //creates object from RenewableEnergy class
         RenewableEnergy re = new RenewableEnergy();
         
+        //code to try
         try{
+            //if textfield is empty
             if(costHourTxtField.getText().isEmpty()){
+                    //label displays message
                     mCompRELbl.setText("Please fill every input!");
+                 //if textfield have input   
                 }else{
+                    //calls object and is designated with respective textfield, input is taken
                     re.setCostPerHour(Double.parseDouble(costHourTxtField.getText()));
-
+                    //if Solar Energy button is selected
                     if(seRButton.isSelected()){
+                        //variables take set input
                         re.setInstallCost(12000);
                         re.setMonthlyProduction(60);
                     }
+                    //if Wind Energy button is selected
                     else if(windRButton.isSelected()){
+                        //variables take set input
                         re.setInstallCost(24000);
                         re.setMonthlyProduction(300);
+                     //if no button is selected   
                     }else{
+                        //label displays message
                         mCompRELbl.setText("Please select an option!");
+                        //returns function
                         return;
                     }
-
+                    
+                    //label displays message
+                    //df format to set output to two decimal places
                     mCompRELbl.setText("Your house hold will save €" + df.format(re.getmComp())+ " every month!");
-                    calculations.add(re);           
+                    //inputs are taken into array
+                    calculations.add(re);
+                    //button is disabled
+                    reButton.setEnabled(false);
             }
+         //code to catch   
         }catch(NumberFormatException e){
+            //label displays message
             mCompLbl.setText("Please input a number!");
         }
     }//GEN-LAST:event_reButtonActionPerformed
 
     private void seRButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seRButtonActionPerformed
         // TODO add your handling code here:
+        //Solar Energy button id added into radio group
         radioGroup.add(seRButton);
+        //radio button given text
         seRButton.setText("Solar Energy");
+        //when button is clicked
         seRButton.addActionListener(new java.awt.event.ActionListener() {
             @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1956,10 +2013,14 @@ public class EcowiseGUI extends javax.swing.JFrame {
 
     private void clearButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clearButtonMouseClicked
         // TODO add your handling code here:
+        //objects are created
         Calculator calc = new Calculator();
         CarbonTracker ct = new CarbonTracker();
         RenewableEnergy re = new RenewableEnergy();
-
+        StringBuilder message = new StringBuilder();
+        calculations = new ArrayList<>();
+        
+        //all textfields and labels are cleared
         calc.setDryer(0);
         dryerTxtField.setText("");
         calc.setTv(0);
@@ -1986,7 +2047,8 @@ public class EcowiseGUI extends javax.swing.JFrame {
         mCompLbl.setText("");
         mCompCTLbl.setText("");
         mCompRELbl.setText("");
-
+        
+        //labels, buttons and textfields are hidden
         gasCompLbl.setVisible(false);
         questionCTLbl.setVisible(false);
         questionRELbl.setVisible(false);
@@ -2001,6 +2063,20 @@ public class EcowiseGUI extends javax.swing.JFrame {
         reButton.setVisible(false);
         seRButton.setVisible(false);
         windRButton.setVisible(false);
+        
+        
+        //all contents from array are removed
+        for(Calculator c : calculations){
+            calculations.removeAll(calculations);
+        }
+        
+        //new message is built
+        message = new StringBuilder();
+                
+        //buttons are enabled
+        calcButton.setEnabled(true);
+        ctButton.setEnabled(true);
+        reButton.setEnabled(true);
         
     }//GEN-LAST:event_clearButtonMouseClicked
 
@@ -2051,8 +2127,11 @@ public class EcowiseGUI extends javax.swing.JFrame {
 
     private void windRButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_windRButtonActionPerformed
         // TODO add your handling code here:
+        //Solar Energy button id added into radio group
         radioGroup.add(windRButton);
+        //radio button given text
         windRButton.setText("Wind Energy");
+        //when button is clicked
         windRButton.addActionListener(new java.awt.event.ActionListener() {
             @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2110,32 +2189,38 @@ public class EcowiseGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_printButtonMouseClicked
 
     private void printButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_printButtonActionPerformed
-        // TODO add your handling code here:    
+        // TODO add your handling code here: 
+        //if array is empty
         if (calculations.isEmpty()) {
+            //label displays message
             JOptionPane.showMessageDialog(null, "Sorry, there are no values to print");
+          //if array has contents
         } else {
+            //string builder creates message
+            //taken from https://docs.oracle.com/javase/tutorial/java/data/buffers.html
             StringBuilder message = new StringBuilder("Your results per Month:");
 
-            // Define an array of names
+            //define an array of names
             String[] names = {"Monthly Consumption", "Greenhouse Gas Emissions", "Energy Savings"};
             String[] val = {"kW", "kgCO2", "euro"};
-
+            
+            //loops through array for inputs
             for (int i = 0; i < calculations.size(); i++) {
+                //creates object to access all inputs
                 Calculator c = calculations.get(i);
 
-                // Use the name from the array, or a default if there are more calculations than names
-                String name = (i < names.length) ? names[i] : "DefaultName" + i;
-                String value = (i < val.length) ? val[i] : "DefaultName" + i;
-
+                //use the name from the array
+                String name = (i < names.length) ? names[i] : "" + i;
+                String value = (i < val.length) ? val[i] : "" + i;
+                
+                //message is built using appends
                 message.append("\n").append(name).append(": ").append(df.format(c.getmComp())).append(value);
+                    
             }
-
+            //message is turned to string in order to display in JOptionPane
             JOptionPane.showMessageDialog(null, message.toString());
         }
 
-        /*
-        
-        */
     }//GEN-LAST:event_printButtonActionPerformed
 
     private void clearCrtBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearCrtBtnActionPerformed

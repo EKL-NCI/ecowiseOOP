@@ -5,13 +5,15 @@
 package ecowiseApp;
 
 /**
- *
+ * Calculate monthly consumption of electricity
  * @author paul paus
  */
 
 public class Calculator {
+    //different modes of electricty usage in home as my data members
     private double dryer, tv, kettle, waterHeater, appliances, washingMachine, freezer, mComp;
     
+    //constructors - default
     public Calculator(){
         dryer = 0;
         tv = 0;
@@ -24,6 +26,7 @@ public class Calculator {
         
     }
     
+    //constructors - with parameter 
     public Calculator(double dryer, double tv, double kettle, double waterHeater, double appliances, double washingMachine, double freezer, double mComp){
         this.dryer = dryer;
         this.tv = tv;
@@ -35,11 +38,14 @@ public class Calculator {
         this.mComp = mComp;
 
     }
-
+    
+    //get methods - one for every output
+    //set methods - one for every input
+    
     public double getDryer() {
         return dryer;
     }
-
+    
     public void setDryer(double dryer) {
         this.dryer = dryer;
     }
@@ -92,6 +98,8 @@ public class Calculator {
         this.freezer = freezer;
     }
     
+    
+    //computing method, will become super 
     public double getmComp(){
       return (dryer + tv + kettle + waterHeater + appliances + washingMachine + freezer) * 30;
     } 

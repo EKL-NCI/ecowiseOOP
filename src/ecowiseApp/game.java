@@ -69,8 +69,8 @@ public class game{
     
     }
     //function in order to get random word from wordbank
-    private wordAndDef getRandWord(){
-        
+    
+        private wordAndDef getRandWord(){
         Random random = new Random();
         int randIndex = random.nextInt(dictionary.getWordBank().size());
         return dictionary.getWordBank().get(randIndex);
