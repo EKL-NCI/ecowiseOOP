@@ -6,6 +6,7 @@ package ecowiseApp;
 
 import java.awt.CardLayout;
 import java.awt.Color;
+import java.awt.HeadlessException;
 import java.util.ArrayList;
 import javax.swing.JPanel;
 
@@ -36,7 +37,6 @@ public class EcowiseGUI extends javax.swing.JFrame {
         // Array Lists for Shop - Erin
         products = new ArrayList<>();
         customers = new ArrayList<>();
-        // end of array lists for shop
         this.wordBankInstance = new wordBank();
         this.game = new game(wordBankInstance);
         this.quiz = new quiz(wordBankInstance);
@@ -1366,10 +1366,11 @@ public class EcowiseGUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(cartPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(remItemBtn)
-                    .addComponent(totalBalLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(cartPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(totalBalLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(cartPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel2)
+                        .addComponent(remItemBtn)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -1454,13 +1455,13 @@ public class EcowiseGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_exitBtnActionPerformed
 
     private void homePanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homePanelMouseClicked
-        // colour changes for side menu, change colour depending on what section you are in - Erin
+    // colour changes for side menu, change colour depending on what section you are in - Erin
         setColor(homePanel);
         resetColor(shopPanel);
         resetColor(gamePanel);
         resetColor(calcPanel);
         
-        // Card Layout used to change sections - https://docs.oracle.com/javase/tutorial/uiswing/layout/card.html https://www.javatpoint.com/CardLayout - Erin
+    // Card Layout used to change sections - https://docs.oracle.com/javase/tutorial/uiswing/layout/card.html https://www.javatpoint.com/CardLayout - Erin
         CardLayout card = (CardLayout)mainPanel.getLayout();
         card.show(mainPanel, "1");
     }//GEN-LAST:event_homePanelMouseClicked
@@ -1527,24 +1528,24 @@ public class EcowiseGUI extends javax.swing.JFrame {
         CardLayout card = (CardLayout)mainPanel.getLayout();
         card.show(mainPanel, "5");
         
-        //create instance of shop cart
+    //create instance of shop cart
         shopCart myCart = new shopCart();
         
-        // cart text box not editable for user
+    // cart text box not editable for user
         cartText.setEditable(false);
         
-        //used string builder to display array content - https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html
+    //used string builder to display array content - https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html
         StringBuilder cartContent = new StringBuilder();
 
-        //loops through products and appends them all to display correctly using override toString()
+    //loops through products and appends them all to display correctly using override toString() method in product class
         for (product p : products) {
             cartContent.append(p.toString()).append("\n");
         }
         
-        //setting the cart text box to display the stringbuilder
+        //setting the cart text box to display the stringbuilder output
             cartText.setText(cartContent.toString());
         //setting the totalBalLbl to display the calculated total
-            totalBalLbl.setText(df.format(myCart.calTotal(products)));
+            totalBalLbl.setText(String.valueOf(myCart.calTotal(products)));
     }//GEN-LAST:event_cartBtnMouseClicked
 
     private void dCityTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dCityTxtActionPerformed
@@ -1578,7 +1579,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
     private void confirmBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmBtnActionPerformed
         // TODO add your handling code here:
         
-        // creates new instance of customer and saves to array on checkout
+    // creates new instance of customer and saves to array on checkout
         customer c = new customer();
             c.setName(dNameTxt.getText());
             c.setPhoneNo(dPhoneTxt.getText());
@@ -1908,24 +1909,32 @@ public class EcowiseGUI extends javax.swing.JFrame {
 
     private void remItemBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_remItemBtnActionPerformed
         // TODO add your handling code here:
+        
+    //checks to see if array is empty
         if(products.isEmpty()){
             JOptionPane.showMessageDialog(null,"Sorry, there are no items to delete");
         }
+        
+    // if not empty, the array takes the search term from user input and searches for the corresponding input in the array
         else{
+            //takes search input from user
             String searchTerm = JOptionPane.showInputDialog(null, "Enter the ID you wish to delete:");
 
+        //loops through array and checks against searchTerm
             for(product p:products){
                 if(p.getProductId().equalsIgnoreCase(searchTerm)){
                     products.remove(p);
                     JOptionPane.showMessageDialog(null,p.getDetail()+" has been deleted.");
+                //if not found in loop, gives error
+                   }else{
+                       JOptionPane.showMessageDialog(null, "Incorrect item code, Please try again.");
+                   }
+                //if customer cart is empty display message
+                    if(products.isEmpty()){
+                        JOptionPane.showMessageDialog(null,"Your Cart is now Empty.");
+                        }
                 }
-                if(products.isEmpty()){
-                JOptionPane.showMessageDialog(null,"Your Cart is now Empty.");
-                }
-                
-                //cartText.update(cartContent.toString());
             }
-        }
     }//GEN-LAST:event_remItemBtnActionPerformed
 
     /**
