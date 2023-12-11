@@ -25,6 +25,7 @@ public class product {
         this.productId = productId;
     }
     
+    //setters and getters for product info
     public void setPrice(double price) {
         this.price = price;
     }
@@ -44,9 +45,16 @@ public class product {
     public String getProductId() {
         return productId;
     }
-        
+      
+    
+    //override toString so array information would print correctly
     @Override
     public String toString(){
         return  name + "   EUR:  " + price + " Product Code: "+ productId;
+    }
+    
+    // get details method for remove product button 
+    public String getDetail(){
+        return  name + " Product Code: "+ productId;
     }
 }
