@@ -11,6 +11,7 @@ import javax.swing.JFrame;
 
 //@author Josh McGlynn - We ran into a lot of issues with GitHub during this project, particularly when it came to pulling and pushing files without having conflicts
 //Essentially, every time we pushed or pulled files, it would push every single file in the ecowiseOOP project folder, including local files and binary files.
+//This would completely break the project for whoever pulled, and stop people from being able to push due to conflicts
 //I found that the solution to this would be to use a .gitignore file in order write certain file paths that we want GitHub to ignore when we push or pull files
 //The .gitignore file can be found within the project folder, so feel free to take a look, I found a NetBeans gitignore template on GitHub, and added a couple other paths I thought should be ignored
 //Initially, we thought this had worked, but the next day we ran into issues with pushing and pulling files again, and so I had to do more research
