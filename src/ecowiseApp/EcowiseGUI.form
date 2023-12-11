@@ -1735,11 +1735,13 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Group type="102" attributes="0">
                               <Component id="backBtn" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="129" max="-2" attributes="0"/>
                               <Component id="myCartLbl" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="refreshCartBtn" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
@@ -1758,7 +1760,7 @@
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="10" max="32767" attributes="0"/>
+                      <EmptySpace pref="20" max="32767" attributes="0"/>
                       <Component id="cartSep" min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
@@ -1776,15 +1778,18 @@
                                                   <Component id="cCardnoLbl" alignment="0" min="-2" max="-2" attributes="0"/>
                                                   <Component id="cNameTxt" min="-2" pref="172" max="-2" attributes="0"/>
                                               </Group>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="1" attributes="0">
-                                                  <Component id="cExpiryLbl" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="cCvvLbl" min="-2" pref="37" max="-2" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="cExpiryTxt" min="-2" pref="86" max="-2" attributes="0"/>
-                                                  <Component id="cCvvTxt" min="-2" pref="88" max="-2" attributes="0"/>
+                                                  <Group type="102" attributes="0">
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Group type="103" groupAlignment="1" attributes="0">
+                                                          <Component id="cExpiryLbl" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="cCvvLbl" min="-2" pref="37" max="-2" attributes="0"/>
+                                                      </Group>
+                                                  </Group>
+                                                  <Group type="102" attributes="0">
+                                                      <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                                                      <Component id="cExpiryTxt" min="-2" pref="86" max="-2" attributes="0"/>
+                                                  </Group>
                                               </Group>
                                           </Group>
                                           <Component id="cardDetailsLbl" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -1800,16 +1805,20 @@
                                           <Component id="dCityTxt" min="-2" pref="231" max="-2" attributes="0"/>
                                           <Component id="dCountyLbl" min="-2" max="-2" attributes="0"/>
                                           <Component id="dCountyTxt" min="-2" pref="255" max="-2" attributes="0"/>
-                                          <Component id="cCardnoTxt" alignment="0" min="-2" pref="170" max="-2" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="cCardnoTxt" min="-2" pref="170" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="cCvvTxt" min="-2" pref="88" max="-2" attributes="0"/>
+                                          </Group>
                                       </Group>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="51" max="32767" attributes="0"/>
+                              <EmptySpace pref="45" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="confirmBtn" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -1847,21 +1856,25 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="cNameLbl" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="cExpiryLbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="cExpiryTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="cNameTxt" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="cNameTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cExpiryTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="cCardnoLbl" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="cCvvLbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="cCvvTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="cCardnoTxt" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="cCardnoTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cCvvTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="confirmBtn" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -1871,7 +1884,10 @@
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="myCartLbl" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="myCartLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="refreshCartBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -2200,6 +2216,14 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="clearCrtBtnActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="refreshCartBtn">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Refresh Cart"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="refreshCartBtnActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
