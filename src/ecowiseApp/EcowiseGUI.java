@@ -6,13 +6,11 @@ package ecowiseApp;
 
 import java.awt.CardLayout;
 import java.awt.Color;
-import java.awt.HeadlessException;
 import java.util.ArrayList;
 import javax.swing.JPanel;
 import javax.swing.JOptionPane;
 
 //taken from https://mkyong.com/java/how-to-round-double-float-value-to-2-decimal-points-in-java/
-import java.math.RoundingMode;
 import java.text.DecimalFormat;
 /**
  *
@@ -22,7 +20,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
 // Array Lists for Shop - Erin
     public ArrayList <product> products;
     public ArrayList <customer> customers;
-// end of array lists for shop
+
     public ArrayList <Calculator> calculations;
     private wordBank wordBankInstance;
     private game game;
@@ -38,8 +36,8 @@ public class EcowiseGUI extends javax.swing.JFrame {
         // Array Lists for Shop - Erin
         products = new ArrayList<>();
         customers = new ArrayList<>();
+        
         calculations = new ArrayList<>();
-        // end of array lists for shop
         this.wordBankInstance = new wordBank();
         this.game = new game(wordBankInstance);
         this.quiz = new quiz(wordBankInstance);
@@ -459,6 +457,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
         jScrollPane3.setViewportView(companydescTxt);
 
         logoHomeLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo.png"))); // NOI18N
+        logoHomeLbl.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         javax.swing.GroupLayout homePageLayout = new javax.swing.GroupLayout(homePage);
         homePage.setLayout(homePageLayout);
@@ -490,7 +489,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(145, 145, 145)
-                        .addComponent(homeImgSep, javax.swing.GroupLayout.DEFAULT_SIZE, 1, Short.MAX_VALUE))
+                        .addComponent(homeImgSep))
                     .addGroup(homePageLayout.createSequentialGroup()
                         .addComponent(homeImg, javax.swing.GroupLayout.PREFERRED_SIZE, 482, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
@@ -2045,6 +2044,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
 
     private void backBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backBtnMouseClicked
         // TODO add your handling code here:
+    //back button for cart that brings you back to shop page
         CardLayout card = (CardLayout)mainPanel.getLayout();
         card.show(mainPanel, "2");
     }//GEN-LAST:event_backBtnMouseClicked
@@ -2140,7 +2140,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
 
     private void clearCrtBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearCrtBtnActionPerformed
         // TODO add your handling code here:
-        //remove all products from cart 
+    //remove all products from cart (checks if already empty first) 
         if(products.isEmpty()){
             JOptionPane.showMessageDialog(null, "Your Cart is already Empty.");
         }else{
@@ -2152,21 +2152,19 @@ public class EcowiseGUI extends javax.swing.JFrame {
 
     private void refreshCartBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshCartBtnActionPerformed
         // TODO add your handling code here:
-    //used string builder to display array content - https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html
+    
         StringBuilder cartContent = new StringBuilder();
-    //create instance of shop cart
         shopCart myCart = new shopCart();
         
-    // cart text box not editable for user
         cartText.setEditable(false);
 
     //loops through products and appends them all to display correctly using override toString() method in product class
         for (product p : products) {
             cartContent.append(p.toString()).append("\n");
         }
-        
         //setting the cart text box to display the stringbuilder output
             cartText.setText(cartContent.toString());
+            
         //setting the totalBalLbl to display the calculated total
             totalBalLbl.setText(String.valueOf(myCart.calTotal(products)));
     }//GEN-LAST:event_refreshCartBtnActionPerformed
@@ -2181,6 +2179,7 @@ public class EcowiseGUI extends javax.swing.JFrame {
         //used string builder to display array content - https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html
             StringBuilder cartContent = new StringBuilder();
         
+        //checks if there is an item in both the product and customer array before sending reciept 
         if(products.size() > 0 && customers.size() > 0){
                 
             CardLayout card = (CardLayout)mainPanel.getLayout();
@@ -2198,6 +2197,8 @@ public class EcowiseGUI extends javax.swing.JFrame {
                     recieptDisplayTxtArea.setText(cartContent.toString());
                 //setting the totalBalLbl to display the calculated total
                     recieptTotalTxtLbl.setText(String.valueOf(myCart.calTotal(products)));
+                    
+        // else if used as error messages based on what is missing - if not either, "something went wrong" error
             }else if(products.isEmpty()){
                 JOptionPane.showMessageDialog(null, "There is nothing to purchase in your cart.");
             }else if (customers.isEmpty()){
